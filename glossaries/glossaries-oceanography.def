@@ -1,0 +1,4 @@
+\ProvidesFile{glossaries-oceanography.def}
+\makeglossaries
+
+\newacronym[description={},]{OA}{OA}{ocean acidification}

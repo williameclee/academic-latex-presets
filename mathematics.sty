@@ -1,0 +1,200 @@
+\ProvidesPackage{mathematics}
+
+\RequirePackage{xkeyval}
+
+% Maths mode left-aligned (default true)
+\newif\if@mathematics@leftaligned
+\@mathematics@leftalignedtrue
+% Maths mode bold vectors (default true)
+\newif\if@mathematics@boldvector
+\@mathematics@boldvectortrue
+
+\ProcessOptions\relax
+
+%% Units
+\input{units.def}
+
+%% Brackets
+\RequirePackage{amsmath, amsthm, amsfonts, cancel, mathtools}
+\usepackage{amssymb}
+\RequirePackage{etoolbox}
+
+%% Maths alignment
+\newcommand{\mathleft}{\@fleqntrue\@mathmargin\parindent}
+\newcommand{\mathcenter}{\@fleqnfalse}
+\newcommand{\nomathskip}{\setlength{\abovedisplayskip}{4pt}\setlength{\belowdisplayskip}{4pt}\setlength{\abovedisplayshortskip}{2pt}\setlength{\belowdisplayshortskip}{2pt}}
+
+\BeforeBeginEnvironment{bmatrix}{\renewcommand{\arraystretch}{0.8}}
+\BeforeBeginEnvironment{vmatrix}{\renewcommand{\arraystretch}{0.8}}
+	
+%% Proof and solution
+\renewcommand\qedsymbol{\textcolor{\accentcolour}{$\square$}}
+\renewenvironment{proof}[1][\proofname]{\par
+\pushQED{\qed}%
+\normalfont \topsep6\p@\@plus6\p@\relax
+\trivlist
+\item\relax{\sffamily
+	\color{\accentcolour}#1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+	\popQED\endtrivlist\@endpefalse
+}
+
+\let\solution\@undefined
+\let\endsolution\@undefined 
+\def\solutionname{Solution}
+\newenvironment{solution}{
+	\renewcommand\qedsymbol{\textcolor{\accentcolour}{$\blacksquare$}}\begin{proof}[\solutionname]
+}{
+	\end{proof}
+}
+
+%% Upright math
+\newcommand{\e}[1][]{{\mathop{\mathrm{e}^{#1}}}}
+\let\ii\i
+\def\i{{\mathrm{i}}}
+
+\def\diff{\mathop{}\!\mathrm{d}}
+\def\Diff{\mathop{}\!\mathrm{D}}
+
+%% Differentiation
+\newcommand{\hfrac}[2]{{#1}/{#2}}
+\newcommand{\difffrac}[2]{\frac{\mathrm{d}{#1}}{\mathrm{d}{#2}}}
+\newcommand{\hdifffrac}[2]{\diff{#1}/\mathrm{d}{#2}}
+\newcommand{\difffracs}[3][2]{\frac{\mathrm{d}^{#1}{#2}}{\mathrm{d}{#3}^{#1}}}
+\newcommand{\hdifffracs}[3][2]{\diff^{#1}{#2}/\mathrm{d}{#3}^{#1}}
+\newcommand{\Difffrac}[2]{\frac{\mathrm{D}{#1}}{\mathrm{D}{#2}}}
+\newcommand{\hDifffrac}[2]{\Diff{#1}/\mathrm{D}{#2}}
+\newcommand{\Difffracs}[3][2]{\frac{\Diff^{#1}{#2}}{\mathrm{D}{#3}^{#1}}}
+\newcommand{\hDifffracs}[3][2]{\Diff^{#1}{#2}/\mathrm{D}{#3}^{#1}}
+\newcommand{\partfrac}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\hpartfrac}[2]{\partial{#1}/\partial{#2}}
+\newcommand{\partfracs}[3][2]{\frac{\partial^{#1}{#2}}{\partial{#3}^{#1}}}
+\newcommand{\hpartfracs}[3][2]{\partial^{#1}{#2}/\partial{#3}^{#1}}
+\newcommand{\Deltafrac}[2]{\frac{\Delta{#1}}{\Delta{#2}}}
+\newcommand{\Deltafracs}[3][2]{\frac{\Delta^{#1}{#2}}{\Delta{#3}^{#1}}}
+\newcommand{\hDeltafrac}[2]{\Delta{#1}/\Delta{#2}}
+
+%% Integrals
+\newcommand{\intlims}[2]{\int\limits_{#1}^{#2}}
+\newcommand{\fxnlims}[3]{{\left[#1\right]_{#2}^{#3}}}
+
+%% Transforms
+\newcommand{\lt}[2][]{{\mathcal{L}\left[#2\right]\ifx\relax#1\relax\else\left(#1\right)\fi}}
+\newcommand{\ilt}[2][]{{\mathcal{L}^{-1}\left[#2\right]\ifx\relax#1\relax\else\left(#1\right)\fi}}
+\newcommand{\ft}[2][]{{\mathcal{F}\left[#2\right]\ifx\relax#1\relax\else\left(#1\right)\fi}}
+\newcommand{\ift}[2][]{{\mathcal{F}^{-1}\left[#2\right]\ifx\relax#1\relax\else\left(#1\right)\fi}}
+
+%% Custom code
+\def\textand{\ \text{and}\ }
+\def\textor{\ \text{or}\ }
+\def\suchthat{\text{ s.t. }}
+\def\contradict{\ (\rightarrow\!\leftarrow)\ }
+\def\cross{\times}
+\let\Span\undefined
+\let\Re\undefined
+\let\Im\undefined
+\let\O\undefined
+\newcommand{\abs}[1]{{\left|#1\right|}}
+\newcommand{\norm}[2][]{{\left\lVert#2\right\rVert^{#1}}}
+\newcommand{\inv}[1]{{{#1}^{-1}}}
+\newcommand{\trans}[1]{{{#1}^{\mathrm{T}}}}
+\newcommand{\comp}[1]{{{#1}^{\mathrm{C}}}}
+\newcommand{\set}[2]{\left\{#1{}\middle|{}#2\right\}}
+\newcommand{\O}[1]{\mathcal{O}\left(#1\right)}
+\newcommand{\dimension}[1]{{}\mathop{\left[\mathrm{#1}\right]}{}}
+\newcommand{\intpm}[1]{\int\limits_{-#1}^{#1}}
+\newcommand{\innerprod}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\mathss}[3][]{{{#2}\ifx\relax#1\relax\else^{#1}\fi_{\mathrm{#3}}}}
+\newcommand{\fhat}[1][]{\hat{f}_{#1}}
+
+%% Colour settings
+\providecommand{\accentcolour}{black}
+\define@key{mathematics}{color}[\accentcolour]{
+	\def\@mathematics@accentcolor{#1}
+}
+\define@key{mathematics}{cancelto}[]{
+	\def\@mathematics@cancelto{#1}
+}
+\define@key{mathematics}{to}[]{
+	\def\@mathematics@cancelto{#1}
+}
+
+\newcommand{\des}[2][]{{{}%
+	\def\@mathematics@accentcolor{\accentcolour}%
+	\setkeys{mathematics}{#1}%
+	\color{\@mathematics@accentcolor}%
+	\text{#2}%
+{}}}
+\newcommand{\desmath}[2][]{{%
+	\def\@mathematics@accentcolor{\accentcolour}%
+	\setkeys{mathematics}{#1}%
+	\color{\@mathematics@accentcolor}%
+	#2%
+}}
+\newcommand{\cunderset}[3][\accentcolour]{{}{\color{#1}%
+	\underset{#2}{{\color{black}#3}}
+}{}}
+\newcommand{\cunderbrace}[3][\accentcolour]{{}{\color{#1}%
+	\underbrace{\color{black}{#3}}_{#2}%
+}{}}
+\newcommand{\coverset}[3][\accentcolour]{{}{\color{#1}%
+	\overset{#2}{\color{black}{#3}}%
+}{}}
+\newcommand{\coverbrace}[3][\accentcolour]{{}{\color{#1}%
+	\overbrace{\color{black}{#3}}^{#2}%
+}{}}
+\newcommand{\ccancelto}[3][\accentcolour]{{}{\color{#1}%
+	\cancelto{#2}{\color{black}{#3}}%
+}{}}
+\newcommand{\ccancel}[2][\accentcolour]{{}{\color{#1}%
+	\cancel{\color{black}{#2}}%
+}{}}
+
+%% Vector
+\newcommand{\vb}[1]{{%
+	\boldsymbol{\mathrm{#1}}%
+}}
+
+\newcommand{\avec}[1]{{\left\langle{#1}\right\rangle}}
+
+\input{mathematics-symbols.def}
+
+
+
+\define@key{mathematics}{align}[]{
+	\ifstrequal{#1}{left}{\@mathematics@leftalignedtrue}{}
+	\ifstrequal{#1}{center}{\@mathematics@leftalignedfalse}{}
+}
+\define@key{mathematics}{vector}[]{
+	\ifstrequal{#1}{bold}{\@mathematics@boldvectortrue}{}
+	\ifstrequal{#1}{arrow}{\@mathematics@boldvectorfalse}{}
+}
+\define@key{mathematics}{reset}[]{
+	\@mathematics@leftalignedtrue
+	\@mathematics@boldvectortrue
+}
+
+\def\@mathematics@update@alignment{
+	\if@mathematics@leftaligned
+		\mathleft
+	\else
+		\mathcenter
+	\fi
+}
+\@mathematics@update@alignment
+
+\def\@mathematics@update@vector{
+	\if@mathematics@boldvector
+		\let\vvec\vec
+		\renewcommand{\vec}[1]{\vb{##1}}
+	\else
+		\let\vec\vvec
+	\fi
+}
+\@mathematics@update@vector
+
+\newcommand{\mathematics}[1]{
+	\setkeys{mathematics}{#1}
+	\@mathematics@update@alignment
+	\@mathematics@update@vector
+}

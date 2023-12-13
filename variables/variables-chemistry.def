@@ -1,0 +1,40 @@
+\ProvidesFile{variables-chemistry.def}
+
+\usepackage{chemfig, chemformula}
+\usepackage[version=3]{mhchem}
+%\setchemformula{radical-radius=.5pt}
+%\setcharge{.radius=.5pt}
+
+\newcommand{\ceconc}[1]{{[\ce{#1}]}}
+
+\def\el		{{{\mathrm{e}^-}}}
+
+\def\NA		{{\mathss{n}{A}}}
+\def\kB		{{\mathss{k}{B}}}
+\def\me		{{\mathss{m}{e}}}
+\def\RH		{{\mathss{R}{H}}}
+\def\ml		{{m_l}}
+\def\ms		{{m_s}}
+\def\Ea		{{\mathss{E}{a}}}
+\def\KM		{{\mathss{K}{M}}}
+\def\Ka		{{\mathss{K}{a}}}
+\def\Kb		{{\mathss{K}{b}}}
+\def\Kw		{{\mathss{K}{w}}}
+\def\Ksp	{{\mathss{K}{sp}}}
+\def\pKa	{{\mathrm{p}\Ka}}
+\def\pKb	{{\mathrm{p}\Kb}}
+\def\pH		{{\mathrm{pH}}}
+
+\usepackage{xstring}
+\newcommand{\evarChem}[1]{%
+	\IfEqCase{#1}{%
+		{h}{{6.6261\cdot10^{-34}\J\s}}%
+		{hbar}{{1.0546\cdot10^{-34}\J\s}}%
+		{me}{{9.1094\cdot10^{-34}\kg}}%
+		{RH}{{3.2881\cdot10^{15}\s^{-1}}}%
+		{a0}{{0.52918\cdot10^{-10}\m}}%
+		{kb}{{1.38\cdot10^{-23}\J\K^{-1}}}%
+		{R}{{8.315\J\K^{-1}\mol^{-1}}}%
+		{F}{{9.65\cdot10^{4}\C\mol^{-1}}}%
+	}
+}

@@ -1,0 +1,88 @@
+\ProvidesFile{variables-atmosphericsciences.def}
+
+\def\Tv		{{T_\mathrm{v}}}
+\def\Td		{{T_\mathrm{d}}}
+%\def\TLCL	{{\mathss{T}{LCL}}}
+\def\TLCL	{{T_\mathrm{c}}}
+\def\Tc		{{T_\mathrm{c}}}
+\def\Tw		{{T_\mathrm{w}}}
+\def\Te		{{T_\mathrm{e}}}
+\def\Ti		{{T_\mathrm{i}}}
+\def\Th		{\theta}
+\def\The	{{\theta_\mathrm{e}}}
+\def\Thes	{{\theta_\mathrm{es}}}
+\def\Thv	{{\theta_\mathrm{v}}}
+\def\Thw	{{\theta_\mathrm{w}}}
+\def\sd		{{s_\mathrm{d}}}
+\def\Gd		{{\Gamma_\mathrm{d}}}
+\def\Gm		{{\Gamma_\mathrm{m}}}
+\def\es		{{e_\mathrm{s}}}
+\def\ei		{{e_\mathrm{i}}}
+\def\pd		{{e_\mathrm{d}}}
+%\def\pm		{{p_\mathrm{m}}}
+\def\qv		{{q_\mathrm{v}}}
+\def\qc		{{q_\mathrm{c}}}
+\def\qt		{{q_\mathrm{t}}}
+\def\qvs	{{q_\mathrm{vs}}}
+\def\qvi	{{q_\mathrm{vi}}}
+\def\rv		{{r_\mathrm{v}}}
+\def\rvs	{{r_\mathrm{vs}}}
+\def\rl		{{r_\mathrm{l}}}
+\def\rc		{{r_\mathrm{c}}}
+\def\rt		{{r_\mathrm{t}}}
+\def\md		{{m_\mathrm{d}}}
+\def\mv		{{m_\mathrm{v}}}
+\def\Md		{{M_\mathrm{d}}}
+\def\Mv		{{M_\mathrm{v}}}
+\def\rhod	{{\rho_\mathrm{d}}}
+\def\rhov	{{\rho_\mathrm{v}}}
+\def\rhom	{{\rho_\mathrm{m}}}
+\def\Rgas	{{R_\mathrm{gas}}}
+\def\Rd		{{R_\mathrm{d}}}
+\def\Rm		{{R_\mathrm{m}}}
+\def\Rv		{{R_\mathrm{v}}}
+\def\cp		{{c_p}}
+\def\cps	{{c_p}^*}
+\def\cv		{{c_v}}
+\def\Lv		{{L_\mathrm{v}}}
+\def\sfc	{\mathrm{sfc}}
+\def\DSE	{\mathrm{DSE}}
+\def\MSE	{\mathrm{MSE}}
+\def\MSEs	{{\mathrm{MSE}_\mathrm{s}}}
+\def\RH		{\mathrm{RH}}
+\def\LCL	{\mathrm{LCL}}
+\def\CCL	{\mathrm{CCL}}
+\def\LFC	{\mathrm{LFC}}
+\def\EL		{\mathrm{EL}}
+\def\CAPE	{\mathrm{CAPE}}
+\def\CIN	{\mathrm{CIN}}
+\def\Ro		{\mathrm{Ro}}
+
+\def\vg		{{\mathss{v}{g}}}
+\def\va		{{\mathss{v}{a}}}
+
+\def\PV		{{\mathrm{PV}}}
+\def\PGF	{{\mathrm{PGF}}}
+\def\Co		{{\mathrm{Co}}}
+\def\Ce		{{\mathrm{Ce}}}
+\def\Ro		{{\mathrm{Ro}}}
+\def\Ri		{{\mathrm{Ri}}}
+\def\cofvec	{{\vb{c}_\mathrm{f}}}
+\def\cof	{{c_\mathrm{f}}}
+\def\cfgvec	{{\vb{c}_\mathrm{fg}}}
+\def\cfg		{{c_\mathrm{fg}}}
+
+\def\Re		{{\mathrm{Re}}}
+
+\usepackage{xstring}
+\newcommand{\evarAS}[1]{%
+	\IfEqCase{#1}{%
+		{Rd}{287\J\K^{-1}\kg^{-1}}%
+		{Rv}{461\J\K^{-1}\kg^{-1}}%
+		{cp}{1004\J\K^{-1}\kg^{-1}}%
+		{cv}{717\J\K^{-1}\kg^{-1}}%
+		{Lv}{2.50\cdot10^6\J\kg^{-1}}%
+		{g}{9.8\m\s^{-2}}%
+		{Omega}{7.292\cdot10^{-5}\s^{-1}}%
+	}
+}

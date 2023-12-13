@@ -1,0 +1,65 @@
+\ProvidesPackage{cvtheme}
+
+\usepackage{xstring}
+\newcommand{\cvtheme}[1]{
+	\IfSubStr{#1}{elegant}{\def\cvthemeElegant{1}}{}
+	\IfSubStr{#1}{simple}{\def\cvthemeSimple{1}}{}
+%	\IfEqCase{#1}{
+%		{elegant}{\def\cvthemeElegant{1}}%
+%		{simple}{\def\cvthemeSimple{1}}%
+%	}
+	% Elegant
+	\ifdefined\cvthemeElegant
+	\def\accentcolour{mygreydark}
+	\geometry{left=4cm, right=4cm, bottom=3cm, top=3cm, 
+	marginparwidth=0cm, marginparsep=0cm, includemp}
+	\setstretch{1.6}
+	\setsansfont[
+		SmallCapsFont = SF Pro Text-Bold,
+		BoldFont = HelveticaNeue-Medium
+		]{HelveticaNeue-Light}
+	\ifdefined\docOptionChinese
+		\setCJKsansfont[
+			BoldFont = NotoSansCJKtc-Medium ,
+			]{NotoSansCJKtc-Light}
+	\fi
+	\renewcommand{\timeline}[2]{
+		\begin{tikzpicture}[x={\gap}, y={\baselineskip}, baseline={(base.base)}]
+			\draw[white] (0,0) -- (0.7,0);
+			\node[text width=1pt, inner sep=0pt, outer sep=0pt, fill=\accentcolour, circle] () at (0,0) {};
+			\node[text width=1pt, inner sep=0pt, outer sep=0pt, fill=\accentcolour, circle] () at (0,-1) {};
+			\node[align=right, anchor=mid east, yshift=-1pt, inner sep=0pt, outer sep=0pt] (base) at (-0.5,0) {##2};
+			\node[align=right, anchor=mid east, yshift=-1pt, inner sep=0pt, outer sep=0pt] () at (-0.5,-1) {##1};
+			\draw[\accentcolour, thick] (0,0) -- (0,-1);
+		\end{tikzpicture}
+	}
+	\renewcommand{\timepoint}[1]{
+		\begin{tikzpicture}[x={\gap}, y={\baselineskip}, baseline={(base.base)}]
+			\draw[white] (0,0) -- (0.7,0);
+			\node[text width=1.5pt, inner sep=0pt, outer sep=0pt, fill=\accentcolour, circle] (base) at (0,0) {};
+			\node[align=right, anchor=mid east, yshift=-1pt, inner sep=0pt, outer sep=0pt] (base) at (-0.5,0) {##1};
+		\end{tikzpicture}
+	}
+	\fi
+	% Simple
+	\ifdefined\cvthemeSimple
+	\RequirePackage{fontawesome}
+	\renewenvironment{cvsection}[1][]{
+		\section*{##1}
+		\begin{tabular}{@{}>{\raggedright\arraybackslash}b{\linewidth}@{}}
+	}{
+		\end{tabular}
+	}
+	\renewcommand{\event}[5]{%
+		\textbf{##2}, ##3
+		\begin{itemize}
+			\item [\textcolor{\accentcolour}{\faCalendarO}] ##1
+			\item [\textcolor{\accentcolour}{\faMapMarker}] ##5
+			\item [] ##4
+		\end{itemize} \\
+%		\textcolor{\accentcolour}{\faCalendarO} ##1 \linebreak
+%		\textcolor{\accentcolour}{\faMapMarker} ##5 \linebreak
+%		##4 \\
+	}
+	\fi
+}

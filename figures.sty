@@ -1,0 +1,54 @@
+\ProvidesPackage{figures}
+
+\RequirePackage{tikz, pgfplots}
+\RequirePackage{tikz-3dplot, tikz-qtree, circuitikz}
+\RequirePackage{etoolbox}
+
+%% Tikz environment settings
+\BeforeBeginEnvironment{tikzpicture}{\footnotesize}
+\pgfplotsset{compat = newest}
+\usetikzlibrary{positioning, angles, calc, trees, 
+	patterns, patterns.meta,
+	decorations, decorations.markings, decorations.pathreplacing, decorations.pathmorphing, decorations.shapes,
+	calligraphy, 
+	arrows.meta
+	}
+\usepgfplotslibrary{patchplots, fillbetween}
+\tikzset{>=latex}
+\tikzset{
+	very thin/.style= {line width=0.25pt},
+	thin/.style= {line width=0.5pt},
+	thick/.style= {line width=1pt},
+	very thick/.style= {line width=2pt},
+}
+
+%% Custom commands
+\newcommand{\annL}[6][]{
+	\ifthenelse{\equal{#1}{t}}
+		{\def\annLanchor{south}\def\annLrot{-90}\def\annLshift{0.5pt}}
+		{\def\annLanchor{north}\def\annLrot{90}\def\annLshift{-0.5pt}}
+	\coordinate (AE1) at ($(#3)!#4!\annLrot:(#2)$);
+	\coordinate (BE1) at ($(#2)!#4!-\annLrot:(#3)$);
+	\coordinate (AE2) at ($(#3)!#4-#5!\annLrot:(#2)$);
+	\coordinate (BE2) at ($(#2)!#4-#5!-\annLrot:(#3)$);
+	\ifthenelse{\equal{#6}{}}{
+		\draw[>=latex,<->]  (AE2) -- (BE2);
+	}{
+		\draw[>=latex,<->]  (AE2) -- (BE2) node[midway, sloped, fill=white, inner sep=1pt, outer sep=-1pt, yshift=\annLshift]{#6};
+	}
+	\draw (#3) -- (AE1);
+	\draw (#2) -- (BE1);
+}
+
+\newcommand{\dir}[3]{
+	\ifthenelse{\equal{#1}{in}}{%
+			\draw #2 circle (#3);
+			\fill #2 circle ({0.2*#3});
+		}{%
+			\draw #2 circle (#3);
+			\draw #2 -- +({0.5*#3},{0.5*#3});
+			\draw #2 -- +(-{0.5*#3},{0.5*#3});
+			\draw #2 -- +(-{0.5*#3},-{0.5*#3});
+			\draw #2 -- +({0.5*#3},-{0.5*#3});
+		}
+}

@@ -1,0 +1,367 @@
+\ProvidesFile{glossaries-geosciences.def}
+\makeglossaries
+
+\newglossaryentry{amorphous}{
+	name=amorphous,
+	description=}
+\newglossaryentry{symmetry element}{
+	name=symmetry element,
+	description=}
+\newglossaryentry{symmetry operation}{
+	name=symmetry operation,
+	description=}
+\newglossaryentry{pahoehoe lava}{
+	name=pahoehoe lava,
+	description=}
+\newglossaryentry{crystalline}{
+	name=crystalline,
+	description=}
+\newglossaryentry{microcrystalline}{
+	name=microcrystalline,
+	parent={crystalline},
+	description=}
+\newglossaryentry{cryptocrystalline}{
+	name=cryptocrystalline,
+	parent={crystalline},
+	description=}
+\newglossaryentry{spatter cone}{
+	name=spatter cone,
+	description=}
+\newglossaryentry{lava tube}{
+	name=lava tube,
+	description=}
+\newglossaryentry{cinder}{
+	name=cinder,
+	description=}
+\newglossaryentry{lapilli}{
+	name=lapilli,
+	description=}
+\newglossaryentry{block}{
+	name=block,
+	description=}
+\newglossaryentry{cinder cone}{
+	name=cinder cone,
+	description=}
+\newglossaryentry{lava dome}{
+	name=lava dome,
+	description=}
+\newglossaryentry{mineral}{
+	name=mineral,
+	description=}
+\newglossaryentry{mineraloid}{
+	name=mineraloid,
+	description=}
+\newglossaryentry{hydatogenic mineral}{
+	name=hydatogenic mineral,
+	parent={mineral},
+	description=}
+\newglossaryentry{orthomagmatic stage}{
+	name=orthomagmatic stage,
+	description=}
+\newglossaryentry{pneumatolytic stage}{
+	name=pneumatolytic stage,
+	description=}
+\newglossaryentry{euhedral}{
+	name=euhedral,
+	description=}
+\newglossaryentry{anhedral}{
+	name=anhedral,
+	description=}
+\newglossaryentry{subhedral}{
+	name=subhedral,
+	description=}
+\newglossaryentry{magmatic underplating}{
+	name=magmatic underplating,
+	description=}
+\newglossaryentry{frost wedging}{
+	name=frost wedging,
+	description=}
+\newglossaryentry{frost heaving}{
+	name=frost heaving,
+	description=}
+\newglossaryentry{hydrolysis}{
+	name=hydrolysis,
+	description=}
+\newglossaryentry{halmyrolysis}{
+	name=halmyrolysis,
+	description=}
+\newglossaryentry{residual soil}{
+	name=residual soil,
+	description=}
+\newglossaryentry{metasomatism}{
+	name=metasomatism,
+	description=}
+\newglossaryentry{aureole}{
+	name=aureole,
+	description=}
+\newglossaryentry{prograde metamorphism}{
+	name=prograde metamorphism,
+	description=}
+\newglossaryentry{retrograde metamorphism}{
+	name=retrograde metamorphism,
+	description=}
+\newglossaryentry{schistose}{
+	name=schistose,
+	description=}
+\newglossaryentry{melange}{
+	name=melange,
+	description=}
+\newglossaryentry{porphyroblast}{
+	name=porphyroblast,
+	description=}
+\newglossaryentry{poikiloblast}{
+	name=poikiloblast,
+	description=}
+\newglossaryentry{enterolithic structure}{
+	name=enterolithic structure,
+	description=}
+\newglossaryentry{varves}{
+	name=varves,
+	description=}
+\newglossaryentry{permineralisation}{
+	name=permineralisation,
+	description=}
+\newglossaryentry{lahar}{
+	name=lahar,
+	description=}
+\newglossaryentry{loam}{
+	name=loam,
+	description=}
+\newglossaryentry{actualism}{
+	name=actualism,
+	description=}
+\newglossaryentry{uniformitarianism}{
+	name=uniformitarianism,
+	description=}
+\newglossaryentry{disconformity}{
+	name=disconformity,
+	description=}
+\newglossaryentry{paraconformity}{
+	name=paraconformity,
+	description=}
+\newglossaryentry{nonconformity}{
+	name=nonconformity,
+	description=}
+\newglossaryentry{faunal succession}{
+	name=faunal succession,
+	description=}
+\newglossaryentry{chemostratigraphy}{
+	name=chemostratigraphy,
+	description=}
+\newglossaryentry{magnetostratigraphy}{
+	name=magnetostratigraphy,
+	description=}
+\newglossaryentry{mass wasting}{
+	name=mass wasting,
+	description=}
+\newglossaryentry{artesian well}{
+	name=artesian well,
+	description=}
+\newglossaryentry{concretion}{
+	name=concretion,
+	description=}
+\newglossaryentry{geyser}{
+	name=geyser,
+	description=}
+\newglossaryentry{perched water table}{
+	name=perched water table,
+	description=}
+\newglossaryentry{permeability}{
+	name=permeability,
+	description=}
+\newglossaryentry{petrified wood}{
+	name=petrified wood,
+	description=}
+\newglossaryentry{sinkhole}{
+	name=sinkhole,
+	description=}
+\newglossaryentry{speleothem}{
+	name=speleothem,
+	description=}
+\newglossaryentry{stalactite}{
+	name=stalactite,
+	description=}
+\newglossaryentry{stalagmite}{
+	name=stalagmite,
+	description=}
+\newglossaryentry{aquitard}{
+	name=aquitard,
+	description=}
+\newglossaryentry{solifluction}{
+	name=solifluction,
+	description=}
+\newglossaryentry{relief}{
+	name=relief,
+	description=}
+\newglossaryentry{drainage pattern}{
+	name=drainage pattern,
+	description=}
+\newglossaryentry{dendritic pattern}{
+	name=dendritic pattern,
+	description=}
+\newglossaryentry{trellis pattern}{
+	name=trellis pattern,
+	description=}
+\newglossaryentry{drainage basin}{
+	name=drainage basin,
+	description=}
+\newglossaryentry{tributary}{
+	name=tributary,
+	plural=tributaries,
+	description=}
+\newglossaryentry{divide}{
+	name=divide,
+	description=}
+\newglossaryentry{sheetwash}{
+	name=sheetwash,
+	description=}
+\newglossaryentry{gaining stream}{
+	name=gaining stream,
+	description=}
+\newglossaryentry{losing stream}{
+	name=losing stream,
+	description=}
+\newglossaryentry{placer deposit}{
+	name=placer deposit,
+	description=}
+\newglossaryentry{point bar}{
+	name=point bar,
+	description=}
+\newglossaryentry{meander cutoff}{
+	name=meander cutoff,
+	description=}
+\newglossaryentry{hydraulic action}{
+	name=hydraulic action,
+	description=}
+\newglossaryentry{pothole}{
+	name=pothole,
+	description=}
+\newglossaryentry{traction}{
+	name=traction,
+	description=}
+\newglossaryentry{saltation}{
+	name=saltation,
+	description=}
+\newglossaryentry{talus}{
+	name=talus,
+	description=}
+\newglossaryentry{Alpine glacier}{
+	name=Alpine glacier,
+	description=}
+\newglossaryentry{continental glacier}{
+	name=continental glacier,
+	description=}
+\newglossaryentry{firn}{
+	name=firn,
+	description=}
+\newglossaryentry{ablation}{
+	name=ablation,
+	description=}
+\newglossaryentry{terminus}{
+	name=terminus,
+	description=}
+\newglossaryentry{crevasse}{
+	name=crevasse,
+	description=}
+\newglossaryentry{hanging valley}{
+	name=hanging valley,
+	description=}
+\newglossaryentry{truncated spur}{
+	name=truncated spur,
+	description=}
+\newglossaryentry{tarn}{
+	name=tarn,
+	description=}
+\newglossaryentry{horn}{
+	name=horn,
+	description=}
+\newglossaryentry{arêtes}{
+	name=arêtes,
+	description=}
+\newglossaryentry{erratic}{
+	name=erratic,
+	description=}
+\newglossaryentry{ground moraine}{
+	name=ground moraine,
+	description=}
+\newglossaryentry{esker}{
+	name=esker,
+	description=}
+\newglossaryentry{kettle}{
+	name=kettle,
+	description=}
+\newglossaryentry{kame}{
+	name=kame,
+	description=}
+\newglossaryentry{pluvial lake}{
+	name=pluvial lake,
+	description=}
+\newglossaryentry{fjord}{
+	name=fjord,
+	description=}
+\newglossaryentry{estuary}{
+	name=estuary,
+	plural=estuaries,
+	description=}
+\newglossaryentry{hypocentre}{
+	name=hypocentre,
+	description=}
+\newglossaryentry{birefringence}{
+	name=birefringence,
+	description=}
+\newglossaryentry{polarised light}{
+	name=polarised light,
+	description=}
+\newglossaryentry{silicate}{
+	name=silicate,
+	description=}
+\newglossaryentry{tectosilicate}{
+	name=tectosilicate,
+	parent={silicate},
+	description=}
+\newglossaryentry{phyllosilicate}{
+	name=phyllosilicate,
+	parent={silicate},
+	description=}
+\newglossaryentry{inosilicate}{
+	name=inosilicate,
+	parent={silicate},
+	description=}
+\newglossaryentry{cyclosilicate}{
+	name=cyclosilicate,
+	parent={silicate},
+	description=}
+\newglossaryentry{nesosilicate}{
+	name=nesosilicate,
+	parent={silicate},
+	description=}
+\newglossaryentry{sorosilicate}{
+	name=sorosilicate,
+	parent={silicate},
+	description=}
+\newglossaryentry{framework silicate}{
+	name=framework silicate,
+	parent={silicate},
+	description=}
+\newglossaryentry{sheet silicate}{
+	name=sheet silicate,
+	parent={silicate},
+	description=}
+\newglossaryentry{chain silicate}{
+	name=chain silicate,
+	parent={silicate},
+	description=}
+\newglossaryentry{ring silicate}{
+	name=ring silicate,
+	parent={silicate},
+	description=}
+\newglossaryentry{orthosilicate}{
+	name=orthosilicate,
+	parent={silicate},
+	description=}
+	
+	
+\newacronym[description={},]{CN}{CN}{coordination number}
+\newacronym[description={}, plural={coordination polyhedra}]{CP}{CP}{coordination polyhedron}
+\newacronym[description={}, parent={polarised light}]{PPL}{PPL}{plane polarised light}
+\newacronym[description={}, parent={polarised light}]{XPL}{XPL}{cross polarised light}

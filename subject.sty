@@ -1,0 +1,86 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{subject}[2023/11/28]
+
+\RequirePackage{xkeyval}
+
+% Mathematics
+\newif\if@subject@mathematics
+\DeclareOption{mathematics}{\@subject@mathematicstrue}
+\DeclareOption{math}{\@subject@mathematicstrue}
+\DeclareOption{maths}{\@subject@mathematicstrue}
+
+% Atmospheric sciences
+\newif\if@subject@atmosphericsciences
+\DeclareOption{atmospheric sciences}{\@subject@atmosphericsciencestrue\@subject@mathematicstrue}
+\DeclareOption{atmospheric science}{\@subject@atmosphericsciencestrue\@subject@mathematicstrue}
+\DeclareOption{atmosphere}{\@subject@atmosphericsciencestrue\@subject@mathematicstrue}
+\DeclareOption{atmo}{\@subject@atmosphericsciencestrue\@subject@mathematicstrue}
+\DeclareOption{atmsci}{\@subject@atmosphericsciencestrue\@subject@mathematicstrue}
+
+% Biology
+\newif\if@subject@biology
+\DeclareOption{biology}{\@subject@biologytrue}
+\DeclareOption{biol}{\@subject@biologytrue}
+\DeclareOption{bio}{\@subject@biologytrue}
+
+% Chemistry
+\newif\if@subject@chemistry
+\DeclareOption{chemistry}{\@subject@chemistrytrue}
+\DeclareOption{chem}{\@subject@chemistrytrue}
+
+% Geosciences
+\newif\if@subject@geosciences
+\DeclareOption{geosciences}{\@subject@geosciencestrue}
+\DeclareOption{geoscience}{\@subject@geosciencestrue}
+\DeclareOption{geo}{\@subject@geosciencestrue}
+\DeclareOption{geos}{\@subject@geosciencestrue}
+\DeclareOption{geology}{\@subject@geosciencestrue}
+\DeclareOption{geopysics}{\@subject@geosciencestrue}
+
+% Oceanography
+\newif\if@subject@oceanography
+\DeclareOption{oceanography}{\@subject@oceanographytrue}
+\DeclareOption{ocean}{\@subject@oceanographytrue}
+
+% Physics
+\newif\if@subject@physics
+\DeclareOption{physics}{\@subject@physicstrue}
+\DeclareOption{phys}{\@subject@physicstrue}
+\DeclareOption{phy}{\@subject@physicstrue}
+
+
+\ProcessOptions\relax
+
+\RequirePackage[toc, style=index, nogroupskip, nopostdot, automake]{glossaries}
+\setacronymstyle{long-short-desc}
+\RequirePackage{glossary-mcols}
+\renewcommand{\glsmcols}{2}
+\setglossarystyle{mcolindex}
+
+\if@subject@mathematics
+	\input{glossaries-mathematics.def}
+\fi
+\if@subject@atmosphericsciences
+	\input{variables-atmosphericsciences.def}
+	\input{glossaries-atmosphericsciences.def}
+\fi
+\if@subject@biology
+	\input{glossaries-biology.def}
+\fi
+\if@subject@chemistry
+	\input{variables-chemistry.def}
+	\input{glossaries-chemistry.def}
+\fi
+\if@subject@geosciences
+	\input{variables-geosciences.def}
+	\input{glossaries-geosciences.def}
+	\input{glossaries-mineralsrocks.def}
+\fi
+\if@subject@oceanography
+	\input{variables-oceanography.def}
+	\input{glossaries-oceanography.def}
+\fi
+\if@subject@physics
+	\input{variables-physics.def}
+	\input{glossaries-physics.def}
+\fi

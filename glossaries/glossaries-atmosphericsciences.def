@@ -1,0 +1,148 @@
+\ProvidesFile{glossaries-atmosphericsciences.def}
+
+\makeglossaries
+
+
+\newglossaryentry{temperature}{
+	name=temperature,
+	symbol={\ensuremath{T}},
+	description=}
+\newglossaryentry{pressure}{
+	name=pressure,
+	symbol={\ensuremath{p}},
+	description=}
+\newglossaryentry{state variable}{
+	name=state variable,
+	description=}
+\newglossaryentry{process variable}{
+	name=process variable,
+	description=}
+\newglossaryentry{specific volume}{
+	name=specific volume,
+	symbol={\ensuremath{\alpha}},
+	description=}
+\newglossaryentry{virtual temperature}{
+	name=virtual temperature,
+	parent={temperature},
+	symbol={\ensuremath{\Tv}},
+	description=}
+\newglossaryentry{vapour pressure}{
+	name=vapour pressure,
+	symbol={\ensuremath{e}},
+	description=}
+\newglossaryentry{mixing ratio}{
+	name=mixing ratio,
+	symbol={\ensuremath{\rv}},
+	description=}
+\newglossaryentry{specific humidity}{
+	name=specific humidity,
+	symbol={\ensuremath{\qv}},
+	description=}
+\newglossaryentry{equation of state}{
+	name=equation of state,
+	description=}
+\newglossaryentry{hydrostatic equilibrium}{
+	name=hydrostatic equilibrium,
+	description=}
+\newglossaryentry{buoyancy temperature}{
+	name=buoyancy temperature,
+	description=}
+\newglossaryentry{skew-T log-p diagram}{
+	name=skew-\textit{T} log-\textit{p} diagram,
+	description=}
+\newglossaryentry{geopotential}{
+	name=geopotential,
+	symbol={\ensuremath{\Phi}},
+	description=}
+\newglossaryentry{geopotential tendency}{
+	name=geopotential tendency,
+	parent={geopotential},
+	description=}
+\newglossaryentry{Coriolis force}{
+	name=Coriolis force,
+	description=}
+\newglossaryentry{Coriolis coefficient}{
+	name=Coriolis coefficient,
+	symbol={\ensuremath{f}},
+	description=}
+\newglossaryentry{viscosity coefficient}{
+	name=viscosity coefficient,
+	description=}
+\newglossaryentry{dynamic viscosity coefficient}{
+	name=dynamic viscosity coefficient,
+	parent={viscosity coefficient},
+	description=}
+\newglossaryentry{kinematic viscosity coefficient}{
+	name=kinematic viscosity coefficient,
+	parent={viscosity coefficient},
+	description=}
+\newglossaryentry{scale height}{
+	name=scale height,
+	description=}
+\newglossaryentry{trajectory}{
+	name=trajectory,
+	plural=trajectories,
+	description=}
+\newglossaryentry{streamline}{
+	name=streamline,
+	description=}
+\newglossaryentry{stream function}{
+	name=stream function,
+	description=}
+\newglossaryentry{velocity potential}{
+	name=velocity potential,
+	description=}
+\newglossaryentry{thermal wind}{
+	name=thermal wind,
+	description=}
+\newglossaryentry{circulation}{
+	name=circulation,
+	description=}
+\newglossaryentry{vorticity}{
+	name=vorticity,
+	description=}
+\newglossaryentry{absolute vorticity}{
+	name=absolute vorticity,
+	parent={vorticity},
+	description=}
+\newglossaryentry{relative vorticity}{
+	name=relative vorticity,
+	parent={vorticity},
+	description=}
+\newglossaryentry{planetary vorticity}{
+	name=planetary vorticity,
+	parent={vorticity},
+	description=}
+\newglossaryentry{curvature vorticity}{
+	name=curvature vorticity,
+	parent={vorticity},
+	description=}
+\newglossaryentry{shear vorticity}{
+	name=shear vorticity,
+	parent={vorticity},
+	description=}
+\newglossaryentry{speed divergence}{
+	name=speed divergence,
+	parent={divergence},
+	description=}
+\newglossaryentry{confluence}{
+	name=confluence,
+	description=}
+\newglossaryentry{diffluence}{
+	name=diffluence,
+	description=}
+\newglossaryentry{baroclinicity}{
+	name=baroclinicity,
+	description=}
+\newglossaryentry{baroclinic}{
+	name=baroclinic,
+	parent={baroclinicity},
+	description=}
+\newglossaryentry{barotropic}{
+	name=barotropic,
+	description=}
+	
+\newacronym[description={},]{PGF}{PGF}{pressure gradient force}
+\newacronym[description={},]{SWE}{SWE}{shallow water equation}
+\newacronym[description={}, parent=geopotential, symbol={\ensuremath{Z}}]{GPH}{GPH}{geopotential height}
+\newacronym[description={}, parent=vorticity]{PV}{PV}{potential vorticity}

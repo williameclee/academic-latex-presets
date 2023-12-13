@@ -1,0 +1,168 @@
+\ProvidesFile{glossaries-physics.def}
+
+\makeglossaries
+
+\newglossaryentry{centrifugal force}{
+	name        = centrifugal force,
+	description = }
+\newglossaryentry{conductor}{
+	name        = conductor,
+	description = }
+\newglossaryentry{semiconductor}{
+	name        = semiconductor,
+	description = }
+\newglossaryentry{superconductor}{
+	name        = superconductor,
+	description = }
+\newglossaryentry{insulator}{
+	name        = insulator,
+	description = }
+\newglossaryentry{resistance}{
+	name        = resistance,
+	description = }
+\newglossaryentry{Coulomb's law}{
+	name        = Coulomb's law,
+	description = }
+\newglossaryentry{electrostatic force}{
+	name        = electrostatic force,
+	description = }
+\newglossaryentry{permittivity constant}{
+	name        = permittivity constant,
+	description = }
+\newglossaryentry{electric field}{
+	name        = electric field,
+	description = }
+\newglossaryentry{magnetic field}{
+	name        = magnetic field,
+	description = }
+\newglossaryentry{dipole}{
+	name        = dipole,
+	description = }
+\newglossaryentry{dipole moment}{
+	name        = dipole moment,
+	description = }
+\newglossaryentry{electric dipole}{
+	name        = electric dipole,
+	parent      = dipole,
+	description = }
+\newglossaryentry{electric dipole moment}{
+	name        = electric dipole moment,
+	parent      = dipole moment,
+	description = }
+\newglossaryentry{magnetic dipole moment}{
+	name        = magnetic dipole moment,
+	parent      = dipole moment,
+	description = }
+\newglossaryentry{potential energy}{
+	name        = potential energy,
+	description = }
+\newglossaryentry{electric flux}{
+	name        = electric flux,
+	description = }
+\newglossaryentry{magnetic flux}{
+	name        = magnetic flux,
+	description = }
+\newglossaryentry{Gaussian surface}{
+	name        = Gaussian surface,
+	description = }
+\newglossaryentry{elementary charge}{
+	name        = elementary charge,
+	description = }
+\newglossaryentry{displacement current}{
+	name        = displacement current,
+	description = }
+\newglossaryentry{capacitor}{
+	name        = capacitor,
+	description = }
+\newglossaryentry{capacitance}{
+	name        = capacitance,
+	description = }
+\newglossaryentry{inductor}{
+	name        = inductor,
+	description = }
+\newglossaryentry{inductance}{
+	name        = inductance,
+	description = }
+\newglossaryentry{induction}{
+	name        = induction,
+	description = }
+\newglossaryentry{mutual induction}{
+	name        = mutual induction,
+	parent      = induction,
+	description = }
+\newglossaryentry{dielectric}{
+	name        = dielectric,
+	description = }
+\newglossaryentry{resistivity}{
+	name        = resistivity,
+	description = }
+\newglossaryentry{conductivity}{
+	name        = conductivity,
+	description = }
+\newglossaryentry{angular momentum}{
+	name        = angular momentum,
+	description = }
+\newglossaryentry{quantum number}{
+	name=quantum number,
+	description=}
+\newglossaryentry{principal quantum number}{
+	name=principal quantum number,
+	parent={quantum number},
+	description=}
+\newglossaryentry{angular momentum quantum number}{
+	name=angular momentum quantum number,
+	parent={quantum number},
+	description=}
+\newglossaryentry{magnetic quantum number}{
+	name=magnetic quantum number,
+	parent={quantum number},
+	description=}
+	\newglossaryentry{electron spin quantum number}{
+	name=electron spin quantum number,
+	parent={quantum number},
+	description=}
+\newglossaryentry{spin angular momentum}{
+	name        = spin angular momentum,
+	parent      = angular momentum,
+	description = }
+\newglossaryentry{orbital angular momentum}{
+	name        = orbital angular momentum,
+	parent      = angular momentum,
+	description = }
+\newglossaryentry{spin magnetic dipole moment}{
+	name        = spin magnetic dipole moment,
+	parent      = dipole moment,
+	description = }
+\newglossaryentry{orbital magnetic dipole moment}{
+	name        = orbital magnetic dipole moment,
+	parent      = dipole moment,
+	description = }
+\newglossaryentry{spin magnetic quantum number}{
+	name        = spin magnetic quantum number,
+	parent      = quantum number,
+	description = }
+\newglossaryentry{orbital magnetic quantum number}{
+	name        = orbital magnetic quantum number,
+	parent      = quantum number,
+	description = }
+\newglossaryentry{Bohr magneton}{
+	name        = Bohr magneton,
+	description = }
+\newglossaryentry{magnetisation}{
+	name        = magnetisation,
+	description = }
+\newglossaryentry{solenoid}{
+	name        = solenoid,
+	description = }
+\newglossaryentry{toroid}{
+	name        = toroid,
+	description = }
+\newglossaryentry{phasor}{
+	name        = phasor,
+	description = }
+
+\newacronym[description={},]{UCM}{UCM}{uniform circular motion}
+\newacronym[description={},]{emf}{emf}{electromotive force}
+\newacronym[description={},]{MFT}{MFT}{mean free time}
+\newacronym[description={},]{MFP}{MFP}{mean free path}
+\newacronym[description={},]{EM wave}{EM wave}{electromagnetic wave}

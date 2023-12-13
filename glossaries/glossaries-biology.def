@@ -1,0 +1,32 @@
+\ProvidesFile{glossaries-biology.def}
+
+\makeglossaries
+
+\newglossaryentry{protozoan}{
+	name=protozoan,
+	plural=protozoa,
+	description=A group of single-celled eukaryotes}
+\newglossaryentry{eukaryote}{
+	name=eukaryote,
+	description=}
+\newglossaryentry{cnidarian}{
+	name=cnidarian,
+	plural=cnidaria,
+	description=}
+\newglossaryentry{copepod}{
+	name=copepod,
+	description=}
+\newglossaryentry{arthropod}{
+	name=arthropod,
+	description=}
+\newglossaryentry{krill}{
+	name=krill,
+	description=}
+\newglossaryentry{chaetognath}{
+	name=chaetognath,
+	description=}
+\newglossaryentry{crustacean}{
+	name=crustacean,
+	description=}
+	
+\newacronym[description={},]{CCM}{CCM}{carbon concentrating mechanism}

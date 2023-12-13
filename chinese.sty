@@ -1,0 +1,39 @@
+\ProvidesPackage{chinese}
+
+%% Captions
+\def\figurename{圖}
+\def\tablename{表}
+\def\bibname{參考資料}
+\def\refname{參考資料}
+\def\contentsname{目錄}
+
+
+%\DeclareCaptionLabelSeparator{colonchn}{：}
+%\captionsetup[figure]{labelsep=colonchn}
+%\captionsetup[table]{labelsep=colonchn}
+\titlespacing*{\paragraph}{0pt}{0.25\baselineskip}{0pt}
+
+%% Math
+%\renewenvironment{proof}[1][\proofname]{\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\sffamily#1\@addpunct{：\!\!\!}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}
+\def\proofname{證明}
+\def\solutionname{解}
+
+% Cross referencing
+\def\@ref@sep{、}
+\def\@ref@sepspace{}
+\def\@ref@sepfinal{和}
+\def\@ref@eqprfx{式}
+\def\@ref@eqprfxpl{式}
+\def\@ref@figprfx{圖}
+\def\@ref@figprfxpl{圖}
+\def\@ref@secprfx{節}
+\def\@ref@secprfxpl{節}
+
+%% Boxed environments
+\def\theoremname{定理}
+\def\definitionname{定義}
+\def\lemmaname{引理}
+\def\corollaryname{推論}
+\def\remarkname{重點}
+\def\examplename{範例}
+\def\exercisename{例題}

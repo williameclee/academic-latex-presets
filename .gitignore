@@ -1,0 +1,14 @@
+# Personal bibliography files
+bibliographies
+*.bib
+
+# LaTeX related cache files
+.texpadtmp
+*.tex
+*.synctex(busy)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz

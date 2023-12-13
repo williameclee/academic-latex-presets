@@ -1,0 +1,4 @@
+\ProvidesFile{variables-oceanography.def}
+
+%% Units
+\DeclareMathOperator{\psu}{psu}

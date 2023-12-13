@@ -1,0 +1,156 @@
+\ProvidesFile{mathematics-symbols.def}[2023/11/29]
+
+% Unit vectors
+\newcommand{\xhat}{
+    \if@mathematics@boldvector
+        \hat{\vb{x}}
+    \else
+        \hat{x}
+    \fi
+}
+\newcommand{\yhat}{
+    \if@mathematics@boldvector
+        \hat{\vb{y}}
+    \else
+        \hat{y}
+    \fi
+}
+\newcommand{\zhat}{
+    \if@mathematics@boldvector
+        \hat{\vb{z}}
+    \else
+        \hat{z}
+    \fi
+}
+\newcommand{\ihat}{
+    \if@mathematics@boldvector
+        \hat{\vb{\ii}}
+    \else
+        \hat{\imath}
+    \fi
+}
+\newcommand{\jhat}{
+    \if@mathematics@boldvector
+        \hat{\vb{\j}}
+    \else
+        \hat{\jmath}
+    \fi
+}
+\newcommand{\khat}{
+    \if@mathematics@boldvector
+        \hat{\vb{k}}
+    \else
+        \hat{k}
+    \fi
+}
+\newcommand{\nhat}{
+    \if@mathematics@boldvector
+        \hat{\vb{n}}
+    \else
+        \hat{n}
+    \fi
+}
+\newcommand{\shat}{
+    \if@mathematics@boldvector
+        \hat{\vb{s}}
+    \else
+        \hat{s}
+    \fi
+}
+\newcommand{\rhat}{
+    \if@mathematics@boldvector
+        \hat{\vb{r}}
+    \else
+        \hat{r}
+    \fi
+}
+\newcommand{\that}{
+    \if@mathematics@boldvector
+        \hat{\vb{t}}
+    \else
+        \hat{t}
+    \fi
+}
+\newcommand{\Rhat}{
+    \if@mathematics@boldvector
+        \hat{\vb{R}}
+    \else
+        \hat{R}
+    \fi
+}
+\newcommand{\lambdahat}{
+    \if@mathematics@boldvector
+        \hat{\vb{\lambda}}
+    \else
+        \hat{\lambda}
+    \fi
+}
+\newcommand{\thetahat}{
+    \if@mathematics@boldvector
+        \hat{\vb{\theta}}
+    \else
+        \hat{\theta}
+    \fi
+}
+\newcommand{\phihat}{
+    \if@mathematics@boldvector
+        \hat{\vb{\phi}}
+    \else
+        \hat{\phi}
+    \fi
+}
+
+% Differential operators
+\newcommand{\Dx}{{\Delta x}}
+\newcommand{\Dy}{{\Delta y}}
+\newcommand{\Dz}{{\Delta z}}
+\newcommand{\Dt}{{\Delta t}}
+\newcommand{\dx}{{\diff x}}
+\newcommand{\dy}{{\diff y}}
+\newcommand{\dz}{{\diff z}}
+\newcommand{\dt}{{\diff t}}
+\newcommand{\dk}{{\diff k}}
+\newcommand{\dr}{{\diff r}}
+\newcommand{\du}{{\diff u}}
+\newcommand{\dv}{{\diff v}}
+\newcommand{\dV}{{\diff V}}
+\newcommand{\dm}{{\diff m}}
+\newcommand{\dtau}{{\diff\tau}}
+\newcommand{\dphi}{{\diff\phi}}
+\newcommand{\dtheta}{{\diff\theta}}
+
+% trigonometry
+\newcommand{\asin}{\sin^{-1}}
+\newcommand{\acos}{\cos^{-1}}
+\newcommand{\atan}{\tan^{-1}}
+\newcommand{\acot}{\cot^{-1}}
+\newcommand{\asec}{\sec^{-1}}
+\newcommand{\acsc}{\csc^{-1}}
+
+% Abbreviations
+\DeclareMathOperator{\LHS}{LHS}
+\DeclareMathOperator{\RHS}{RHS}
+\DeclareMathOperator{\const}{const}
+\DeclareMathOperator{\DNE}{DNE}
+
+% Special functions
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\erfi}{erfi}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Prob}{Prob}
+
+% Linear algebra
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\rank}{rank}
+
+% Number sets
+\DeclareMathOperator{\Nbb}{\mathbb{N}}
+\DeclareMathOperator{\Zbb}{\mathbb{Z}}
+\DeclareMathOperator{\Qbb}{\mathbb{Q}}
+\DeclareMathOperator{\Rbb}{\mathbb{R}}
+\DeclareMathOperator{\Cbb}{\mathbb{C}}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\sgn}{sgn}

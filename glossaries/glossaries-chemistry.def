@@ -1,0 +1,53 @@
+\ProvidesFile{glossaries-chemistry.def}
+
+\makeglossaries
+
+\newglossaryentry{Rydberg constant}{
+	name=Rydberg constant,
+	description=}
+\newglossaryentry{energy level}{
+	name=energy level,
+	description=}
+\newglossaryentry{de Broglie wavelength}{
+	name=de Broglie wavelength,
+	description=}
+\newglossaryentry{energy shell}{
+	name=energy shell,
+	description=}
+\newglossaryentry{degenerate orbital}{
+	name=degenerate orbital,
+	description=}
+\newglossaryentry{radial probability function}{
+	name=radial probability function,
+	description=}
+\newglossaryentry{boundary surface}{
+	name=boundary surface,
+	description=}
+\newglossaryentry{bond dissociation energy}{
+	name=bond dissociation energy,
+	plural=bond dissociation energies,
+	description=}
+\newglossaryentry{bond length}{
+	name=bond length,
+	description=}
+\newglossaryentry{octet rule}{
+	name=octet rule,
+	description=}
+\newglossaryentry{bond order}{
+	name=bond order,
+	description=}
+\newglossaryentry{covalent radius}{
+	name=covalent radius,
+	plural=covalent radii,
+	description=}
+\newglossaryentry{electronegativity}{
+	name=electronegativity,
+	description=}
+\newglossaryentry{formal charge}{
+	name=formal charge,
+	description=}
+\newglossaryentry{coordinate covalent bond}{
+	name=coordinate covalent bond,
+	description=}
+
+\newacronym[description={},]{GFE}{GFE}{Gibbs free energy}

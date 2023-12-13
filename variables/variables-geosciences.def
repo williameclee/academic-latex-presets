@@ -1,0 +1,26 @@
+\ProvidesFile{variables-geosciences.def}
+
+\def\RI		{{\mathrm{RI}}}
+
+\def\taum		{{\mathss{\tau}{m}}}
+\def\RadE		{{{R_\oplus}}}
+\def\RadS		{{{R_\odot}}}
+\def\MasE		{{{M_\oplus}}}
+\def\MasS		{{{M_\odot}}}
+\def\psph		{{{p_\mathrm{sph}}}}
+
+\def\dO{{\mathop{}\mathrm{\delta^{18}O}\mathop{}}}
+\def\dC{{\mathop{}\mathrm{\delta^{13}C}\mathop{}}}
+
+\RequirePackage[version=3]{mhchem}
+\usepackage{xstring}
+\newcommand{\evarGeo}[1]{%
+	\IfEqCase{#1}{%
+		{RadE}{{6.37\cdot10^{6}\m}}%
+		{RadS}{{6.96\cdot10^{8}\m}}%
+		{MasE}{{5.97\cdot10^{24}\kg}}%
+		{MasS}{{1.99\cdot10^{30}\kg}}%
+		{DayS}{{86164\s}}%
+		{OmgE}{{7.29\cdot10^{-5}\s^{-1}}}%
+	}
+}

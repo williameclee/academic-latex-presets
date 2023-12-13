@@ -1,0 +1,36 @@
+\ProvidesPackage{typography}
+\RequirePackage{xstring, etoolbox}
+
+\ifdefstring{\@document@language}{chinese}{
+	\RequirePackage{xeCJK}
+	\setCJKmainfont{Source Han Serif TC}
+	\setCJKsansfont{Source Han Sans TC}
+}{}
+
+\ifdefstring{\@document@performance}{high}{
+	\RequirePackage{kpfonts}
+	\RequirePackage{FiraSans}
+	\RequirePackage[scale=0.85]{FiraMono}
+	\ifdefstring{\@document@fontfamily}{serif}{
+	}{
+		\renewcommand{\familydefault}{\sfdefault}
+	}
+}{
+	\RequirePackage{fontspec}
+	\setmonofont[Scale=0.9]{Fira Code}
+	\newfontfamily\textttsmbf{Fira Code Medium}
+	\RequirePackage{FiraSans}
+	\ifdefstring{\@document@fontfamily}{serif}{
+		\RequirePackage{newpxtext, newpxmath}
+	}{
+		% Sans-serif, low-performance
+		\renewcommand{\familydefault}{\sfdefault}
+		\let\not=\relax
+		\let\not>\relax
+		\let\not<\relax
+		\RequirePackage[mathrm=sym]{unicode-math}
+		\setmathfont{Fira Math}
+		\renewcommand{\mathrm}[1]{\symup{#1}}
+		\renewcommand{\vb}[1]{\symbfup{#1}}
+	}
+}

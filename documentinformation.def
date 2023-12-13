@@ -1,0 +1,54 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{documentinformation.def}[2023/11/28]
+
+% title
+\let\title\undefined 
+\def\@info@title{Title} 
+\def\@info@title@short{Title}
+\newcommand{\title}[2][]{\gdef\@info@title{#2}
+	\ifx\relax#1\relax 
+		\gdef\@info@title@short{#2} 
+	\else
+		\gdef\@info@title@short{#1}
+	\fi
+}
+% subtitle
+\let\subtitle\undefined 
+\def\@info@subtitle{Subtitle}
+\newcommand{\subtitle}[1]{\gdef\@info@subtitle{#1}}
+% author
+\let\author\undefined 
+\def\@info@author{Author}
+\newcommand{\author}[1]{\gdef\@info@author{#1}}
+% email
+\let\mail\undefined \let\@info@mail\undefined
+\newcommand{\mail}[1]{\gdef\@info@mail{#1}}
+% additional information
+\let\information\undefined 
+\let\@info@additionalinfo\undefined
+\newcommand{\information}[1]{\gdef\@info@additionalinfo{#1}}
+% institute
+\let\institute\undefined 
+\let\@info@institute\undefined
+\newcommand{\institute}[1]{\gdef\@info@institute{#1}}
+% course
+\let\course\undefined 
+\let\@info@course\undefined
+\newcommand{\course}[1]{\gdef\@info@course{#1}}
+% project
+\let\project\undefined 
+\let\@info@project\undefined
+\newcommand{\project}[1]{\gdef\@info@project{#1}}
+% textbook
+\let\textbook\undefined 
+\let\@info@book\undefined
+\newcommand{\textbook}[1]{\gdef\@info@book{#1}}
+% document link
+\let\documentlink\undefined 
+\let\@info@link\undefined
+\newcommand{\documentlink}[1]{\gdef\@info@link{#1}}
+
+% Default settings
+\author{En-Chi (William) Lee}
+\mail{williameclee@gmail.com}
+\institute{University of Arizona}
