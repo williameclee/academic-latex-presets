@@ -2,18 +2,7 @@
 \ProvidesClass{homework}[2022/12/28 initial commit]
 
 %% Declare options
-% Language
-\gdef\@document@language{english}
-\DeclareOption{chinese}{\gdef\@document@language{chinese}}
-% Typography
-\gdef\@document@fontfamily{serif}
-\DeclareOption{sans-serif}{\gdef\@document@fontfamily{sans-serif}}
-% Margin
-\newif\if@document@margin
-\DeclareOption{margin}{\@document@margintrue}
-% Typeset speed
-\gdef\@document@performance{high}
-\DeclareOption{fancy}{\gdef\@document@performance{low}}
+\input{option.def}
 % Reports and title page
 \gdef\@document@reporttype{false}
 \DeclareOption{report}{\gdef\@document@reporttype{true}}

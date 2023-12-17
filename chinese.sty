@@ -1,4 +1,5 @@
-\ProvidesPackage{chinese}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{chinese}[2023/12/15]
 
 %% Captions
 \def\figurename{圖}
@@ -19,21 +20,21 @@
 \def\solutionname{解}
 
 % Cross referencing
-\def\@ref@sep{、}
-\def\@ref@sepspace{}
-\def\@ref@sepfinal{和}
-\def\@ref@eqprfx{式}
-\def\@ref@eqprfxpl{式}
-\def\@ref@figprfx{圖}
-\def\@ref@figprfxpl{圖}
-\def\@ref@secprfx{節}
-\def\@ref@secprfxpl{節}
+\def\@crossref@sep{、}
+\def\@crossref@sepspace{}
+\def\@crossref@sepfinal{和}
+\def\@crossref@eqprfx{式}
+\def\@crossref@eqprfxpl{式}
+\def\@crossref@figprfx{圖}
+\def\@crossref@figprfxpl{圖}
+\def\@crossref@secprfx{節}
+\def\@crossref@secprfxpl{節}
 
 %% Boxed environments
-\def\theoremname{定理}
-\def\definitionname{定義}
-\def\lemmaname{引理}
-\def\corollaryname{推論}
-\def\remarkname{重點}
-\def\examplename{範例}
-\def\exercisename{例題}
+\def\@env@theorem@title{定理}
+\def\@env@definition@title{定義}
+\def\@env@lemma@title{引理}
+\def\@env@corollary@title{推論}
+\def\@env@remark@title{重點}
+\def\@env@example@title{範例}
+\def\@env@exercise@title{例題}

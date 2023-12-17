@@ -1,0 +1,31 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{option.def}[2023/12/17]
+
+% language
+\gdef\@document@language{english}
+\DeclareOption{chinese}{\gdef\@document@language{chinese}}
+
+% typography
+\newif\if@document@sansserif
+\@document@sansseriffalse
+\DeclareOption{serif}{\@document@sansseriffalse}
+\DeclareOption{sans-serif}{\@document@sansseriftrue}
+
+% margin
+\newif\if@document@margin
+\DeclareOption{margin}{\@document@margintrue}
+
+% typeset speed
+\newif\if@document@draft
+\@document@draftfalse
+\DeclareOption{draft}{\@document@drafttrue}
+
+
+%% default options
+% font size
+\DeclareOption{11pt}{\PassOptionsToClass{11pt}{article}}
+\ExecuteOptions{11pt}
+
+% paper size
+\DeclareOption{a4paper}{\PassOptionsToClass{a4paper}{article}}
+\ExecuteOptions{a4paper}

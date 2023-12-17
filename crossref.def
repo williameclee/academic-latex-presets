@@ -1,0 +1,68 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{crossref.def}[2023/12/15]
+
+\RequirePackage{listofitems}
+
+\providecommand{\@crossref@sep}{,}
+\providecommand{\@crossref@sepspace}{\ }
+\providecommand{\@crossref@sepfinal}{\ \&}
+
+\newcommand{\readreflist}[1]{%
+	\let\refstring\undefined%
+	\newcommand{\refstring}{#1}%
+	\readlist*\reflist{\refstring}%
+}
+\newcommand{\multiref}[1]{%
+	\foreachitem\x\in#1[]{%
+		\ifnum\xcnt=1\else\ifnum\xcnt=\listlen#1[]\@crossref@sepfinal\else\@crossref@sep\fi\@crossref@sepspace\fi\ref{\x}%
+	}%
+}
+\newcommand{\multieqref}[1]{%
+	\foreachitem\x\in#1[]{%
+		\ifnum\xcnt=1\else\ifnum\xcnt=\listlen#1[]\@crossref@sepfinal\else\@crossref@sep\fi\@crossref@sepspace\fi(\ref{\x})%
+	}%
+}
+% Equations
+\def\@crossref@eqprfx{Eq.}
+\def\@crossref@eqprfxpl{Eqs.}
+\renewcommand{\eqref}[1]{%
+	\readreflist{#1}%
+	\ifnum\listlen\reflist[]=1 %
+		\@crossref@eqprfx\@crossref@sepspace%
+	\else %
+		\@crossref@eqprfxpl\@crossref@sepspace%
+	\fi\multieqref{\reflist}%
+}
+% Figures
+\def\@crossref@figprfx{Fig.}
+\def\@crossref@figprfxpl{Figs.}
+\newcommand{\figref}[1]{%
+	\readreflist{#1}%
+	\ifnum\listlen\reflist[]=1 %
+		\@crossref@figprfx\@crossref@sepspace%
+	\else %
+		\@crossref@figprfxpl\@crossref@sepspace%
+	\fi\multiref{\reflist}%
+}
+% Tables
+\def\@crossref@tblprfx{Table}
+\def\@crossref@tblprfxpl{Tables}
+\newcommand{\tblref}[1]{%
+	\readreflist{#1}%
+	\ifnum\listlen\reflist[]=1 %
+		\@crossref@tblprfx\@crossref@sepspace%
+	\else %
+		\@crossref@tblprfxpl\@crossref@sepspace%
+	\fi\multiref{\reflist}%
+}
+% Sections
+\def\@crossref@secprfx{Sec.}
+\def\@crossref@secprfxpl{Secs.}
+\newcommand{\secref}[1]{%
+	\readreflist{#1}%
+	\ifnum\listlen\reflist[]=1 %
+		\@crossref@secprfx\@crossref@sepspace%
+	\else %
+		\@crossref@secprfxpl\@crossref@sepspace%
+	\fi\multiref{\reflist}%
+}

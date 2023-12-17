@@ -14,9 +14,8 @@
 %% Units
 \input{units.def}
 
-%% Brackets
+%% Maths
 \RequirePackage{amsmath, amsthm, amsfonts, cancel, mathtools}
-\usepackage{amssymb}
 \RequirePackage{etoolbox}
 
 %% Maths alignment
@@ -152,8 +151,10 @@
 
 %% Vector
 \newcommand{\vb}[1]{{%
-	\boldsymbol{\mathrm{#1}}%
+	\mathbf{#1}%
 }}
+\let\nnabla\nabla
+\renewcommand{\nabla}{{\vec{\nnabla}}}
 
 \newcommand{\avec}[1]{{\left\langle{#1}\right\rangle}}
 
