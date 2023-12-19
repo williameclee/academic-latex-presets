@@ -7,32 +7,13 @@
 
 %% Geometry
 \RequirePackage{geometry, setspace, titlesec}
-\def\linestretch{1.4}
-\setstretch{\linestretch}
-\renewcommand{\arraystretch}{1}
-\newlength{\textsize}
-\setlength{\textsize}{\f@size pt}
-\newlength{\@parindent}
-\setlength{\@parindent}{2\textsize}
-\setlength{\parindent}{2\textsize}
-\newlength{\@marginwidth}
-\setlength{\@marginwidth}{2cm}
+\input{layout.def}
 \if@document@margin
-	\geometry{
-		left=\@marginwidth, right=\@marginwidth, 
-		bottom=\@marginwidth, top=\@marginwidth, 
-		marginparwidth=2.5cm, marginparsep=0.5cm, includemp
-	}
 	\RequirePackage{marginnote, todonotes}
 	\newcommand{\margin}[1]{%
 		\todo[size=\footnotesize, noline, color=white, backgroundcolor=white, bordercolor=white]{\sffamily #1}%
 	}
 \else
-	\geometry{
-		left=\@marginwidth, right=\@marginwidth, 
-		bottom=\@marginwidth, top=\@marginwidth, 
-		marginparwidth=0cm, marginparsep=0cm, includemp
-	}
 \fi
 \RequirePackage{floatrow, placeins}
 \RequirePackage{etoolbox, xstring, listofitems}
@@ -47,10 +28,8 @@
 
 %% Table settings
 \RequirePackage{multicol, multirow, array, tabularx, longtable, makecell, arydshln, algorithm, algpseudocode}
-\newcommand{\STAB}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
-\newcolumntype{C}{>{\centering\arraybackslash}X}
-\setlength{\arrayrulewidth}{1pt}
-\BeforeBeginEnvironment{table}{\renewcommand{\arraystretch}{\linestretch}}
+\setlength{\arrayrulewidth}{\@document@linewidth@thick}
+\BeforeBeginEnvironment{table}{\renewcommand{\arraystretch}{\@document@linestretch}}
 
 %% Figure settings
 \RequirePackage{ifthen}
@@ -59,7 +38,7 @@
 \RequirePackage[labelfont={sf,bf}]{caption, subcaption}
 \captionsetup{labelsep=quad}
 \captionsetup[subfigure]{format=hang}
-\RequirePackage{figures}
+\input{plot.def}
 
 %% List settings
 \RequirePackage[inline]{enumitem}
@@ -75,16 +54,16 @@
 % Annotated bibliography
 \RequirePackage{scrextend}
 \newenvironment{abibliography}{%
-	\begin{addmargin}[\@parindent]{0pt}
+	\begin{addmargin}[\@document@indent]{0pt}
 		\newcommand*{\abitem}[1]{
-			\setlength{\parindent}{-\@parindent}
+			\setlength{\parindent}{-\@document@indent}
 			\par\noindent\indent\relax##1\quad
 		}
 }{%
-  \end{addmargin}
+	\end{addmargin}
 }
-\BeforeBeginEnvironment{enumerate}{\setlength{\parindent}{\@parindent}}
-\BeforeBeginEnvironment{itemize}{\setlength{\parindent}{\@parindent}}
+\BeforeBeginEnvironment{enumerate}{\setlength{\parindent}{\@document@indent}}
+\BeforeBeginEnvironment{itemize}{\setlength{\parindent}{\@document@indent}}
 
 %% Citation settings
 \RequirePackage[tocbib]{apacite}
@@ -92,10 +71,7 @@
 \newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{#1}}}
 
 %% Header & footer settings
-\RequirePackage{fancyhdr}
-\setlength{\headheight}{\textsize}
-\addtolength{\headheight}{0.05003pt}
-\addtolength{\topmargin}{-0.05003pt}
+\input{headerfooter.def}
 
 \let\hl\undefined
 \newcommand{\alert}[1]{{\color{\accentcolour}#1}}
@@ -107,7 +83,7 @@
 \newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
 
 % Custom appearances
-\RequirePackage{typography}
+\input{typography.def}
 \RequirePackage{mathematics}
 
 %% Math settings

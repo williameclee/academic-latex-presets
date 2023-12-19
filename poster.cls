@@ -48,9 +48,9 @@
 
 %% Page geometry
 \RequirePackage{geometry, setspace, titlesec}
-\newlength{\textsize}
-\setlength{\textsize}{\f@size pt}
-\setlength{\parindent}{2\textsize}
+\newlength{\@document@fontsize}
+\setlength{\@document@fontsize}{\f@size pt}
+\setlength{\parindent}{2\@document@fontsize}
 \geometry{
 	left=2\parindent, right=2\parindent, 
 	bottom=2\parindent, top=2\parindent, 
@@ -100,8 +100,8 @@
 	backgroundcolor=primarycolour, linewidth=0pt,
 	skipabove=0.5\baselineskip, skipbelow=0pt,
 	leftmargin=0pt, rightmargin=0pt,
-	innerleftmargin=\textsize, innerrightmargin=0pt,
-	innertopmargin=0.5\textsize, innerbottommargin=0.5\textsize
+	innerleftmargin=\@document@fontsize, innerrightmargin=0pt,
+	innertopmargin=0.5\@document@fontsize, innerbottommargin=0.5\@document@fontsize
 	]
 	{\hfill\large\bfseries\color{secondarycolour}#1\hfill}
 \end{mdframed}

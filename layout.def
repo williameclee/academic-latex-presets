@@ -1,0 +1,80 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{layout.def}[2023/12/18]
+
+\RequirePackage{geometry, setspace}
+
+% font size
+\newlength{\@document@fontsize}
+\setlength{\@document@fontsize}{\f@size pt}
+\let\textsize\@document@fontsize
+
+% indentation
+\newlength{\@document@indent}
+\setlength{\@document@indent}{2\@document@fontsize}
+\setlength{\parindent}{\@document@indent}
+
+% line stretches
+\let\ssetstretch\setstretch
+\renewcommand{\setstretch}[1]{
+	\gdef\@document@linestretch{#1}
+	\ssetstretch{#1}
+}
+\gdef\@document@arraystretch{1}
+\renewcommand{\arraystretch}{\@document@arraystretch}
+
+% line width
+\newlength{\@document@linewidth@verythin}
+\setlength{\@document@linewidth@verythin}{0.25pt}
+\newlength{\@document@linewidth@thin}
+\setlength{\@document@linewidth@thin}{0.5pt}
+\newlength{\@document@linewidth@thick}
+\setlength{\@document@linewidth@thick}{1pt}
+\newlength{\@document@linewidth@verythick}
+\setlength{\@document@linewidth@verythick}{2pt}
+
+% margin
+\newlength{\@document@margin@horizontal}
+\setlength{\@document@margin@horizontal}{2cm}
+\newlength{\@document@margin@vertical}
+\setlength{\@document@margin@vertical}{2cm}
+\newlength{\@document@margin@width}
+\newlength{\@document@margin@sep}
+\if@document@margin
+	\setlength{\@document@margin@width}{1.25\@document@margin@horizontal}
+	\setlength{\@document@margin@sep}{0.25\@document@margin@horizontal}
+\else
+	\setlength{\@document@margin@width}{0cm}
+	\setlength{\@document@margin@sep}{0cm}
+\fi
+
+% set page geometry
+\newcommand{\@document@geometry}{
+	\if@document@margin
+		\geometry{
+			left=\@document@margin@horizontal, right=\@document@margin@horizontal, 
+			bottom=\@document@margin@vertical, top=\@document@margin@vertical, 
+			marginparwidth=\@document@margin@width, marginparsep=\@document@margin@sep, 
+			includemp,
+		}
+	\else
+		\geometry{
+			left=\@document@margin@horizontal, right=\@document@margin@horizontal, 
+			bottom=\@document@margin@vertical, top=\@document@margin@vertical, 
+			marginparwidth=0cm, marginparsep=0cm, 
+		}
+	\fi
+}
+
+\newcommand{\@document@geometry@nomargin}{
+	\geometry{
+		left=\@document@margin@horizontal, right=\@document@margin@horizontal, 
+		bottom=\@document@margin@vertical, top=\@document@margin@vertical, 
+		marginparwidth=0pt, marginparsep=0pt,
+	}
+}
+
+\@document@geometry
+
+\if@document@draft
+	\geometry{showframe}
+\fi

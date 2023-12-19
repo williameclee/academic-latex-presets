@@ -6,12 +6,13 @@
 \setCJKmainfont{Source Han Serif TC}
 \setCJKsansfont{Source Han Sans TC}
 
+\gdef\@document@colon{：}
 
 % title
 \titlespacing*{\paragraph}{0pt}{0.25\baselineskip}{0pt}
 
 % document information
-\gdef\@info@updatenote@title{最後更新：}
+\gdef\@info@updatenote@title{最後更新}
 \gdef\@info@mail@title{電子郵件}
 \gdef\@info@website@title{個人網站}
 \gdef\@info@phone@title{聯絡電話}

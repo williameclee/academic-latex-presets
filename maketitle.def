@@ -13,19 +13,22 @@
   \expandafter\capitalisefirst#1%
 }
 
+\def\infoupdatenote{\@info@updatenote}
+\def\infoupdatenotedefault{\@info@updatenote@default}
+
 % note title
 \newcommand{\maketitle@note@titlepage}{
-    \ifdefined\@info@course
+	\ifdefined\@info@course
 		\newcommand{\coursestring}{\@info@course}
 		\readlist*\courselist{\coursestring}
 	\fi
 	\begin{titlepage}
 		\thispagestyle{empty}
 		\newgeometry{
-            inner=\@marginwidth, outer=\@marginwidth, 
-            bottom=\@marginwidth, top=\@marginwidth, 
+			inner=\@document@margin@horizontal, outer=\@document@margin@horizontal, 
+			bottom=\@document@margin@vertical, top=\@document@margin@vertical, 
 			marginparwidth=0cm, marginparsep=0cm, includemp
-        }
+		}
 		\centering
 		\vspace*{7cm}
 		\vspace*{0.3cm}
@@ -58,46 +61,158 @@
 		\vfill
 		\setstretch{1}
 		\small
-		\capitalise{\@info@author@title}: 
+		\capitalise{\@info@author@title}\@document@colon
 		\ifdefined\@info@mail
 			\href{mailto:\@info@mail}{\@info@author}
 		\else
 			\@info@author
 		\fi \\
-        \@info@updatenote
+		\ifdefstring{\@info@updatenote}{\@info@updatenote@default}{
+			\capitalise{\@info@updatenote@title}\@document@colon\today
+		}{
+			\@info@updatenote
+		}
 	\end{titlepage}
+}
+
+% homework short title
+\newcommand{\maketitle@homework@short}{
+	\thispagestyle{homework@titlesection}
+		\noindent
+		\begin{tabular}{@{}>{\raggedright\arraybackslash}b{0.75\linewidth}@{}>{\raggedleft\arraybackslash\setlength{\baselineskip}{0.6\baselineskip}}b{0.25\linewidth}@{}}
+		\setstretch{0.9}
+		{\ifdefstring{\@info@subtitle}{\@info@subtitle@default}
+			{\ifdefined\@info@course
+				\noindent\small\@info@course \linebreak
+			\fi}{
+				{\noindent\small\@info@subtitle}\linebreak
+			} 
+		\LARGE\bfseries\@info@title
+		}
+		& 
+		\setstretch{0.9}
+		{\scriptsize\sffamily
+		\ifdefined\@info@mail
+			\href{mailto:\@info@mail}{\@info@author}
+		\else
+			\@info@author
+		\fi \linebreak 
+		\@info@updatenote
+		}
+	\end{tabular}
+	\linebreak%
+	\vspace{0.5\baselineskip}%
+	\normalfont\noindent%
+}
+
+% homework title page
+\newcommand{\maketitle@homework@titlepage}{
+	\begin{titlepage}
+		\thispagestyle{empty}
+		\newgeometry{
+			inner=\@document@margin@horizontal, outer=\@document@margin@horizontal, 
+			bottom=\@document@margin@vertical, top=\@document@margin@vertical, 
+			marginparwidth=0cm, marginparsep=0cm, includemp
+		}
+		\centering
+		\null\vfill
+		{\setstretch{1}\large\sffamily
+			\ifdefstring{\@info@subtitle}{\@info@subtitle@default}
+			{\ifdefined\@info@course
+				\@info@course \linebreak
+			\fi}{
+				\@info@subtitle \linebreak
+			}
+		}
+		\vspace{0.5\baselineskip}
+		{\Huge\sffamily\bfseries\@info@title} \\
+		\ifdefined\@info@additionalinfo
+			\vfill
+			\ifdefined\@info@mail
+				\href{mailto:\@info@mail}{\textbf{\@info@author}} \\
+			\else
+				\textbf{\@info@author} \\
+			\fi
+			\vfill
+			\@info@additionalinfo
+			\vfill
+		\else
+			\vfill\vfill
+			\setstretch{1}
+			\ifdefined\@info@mail
+				\href{mailto:\@info@mail}{\@info@author}
+			\else
+				\@info@author
+			\fi
+		\fi
+		\vfill
+	\end{titlepage}
+	\restoregeometry
+}
+
+% homework title mla
+\newcommand{\maketitle@homework@mla}{
+	\thispagestyle{homework@titlesection}
+	{\footnotesize\sffamily\setstretch{1}
+	\noindent
+	\begin{minipage}{\linewidth}
+		\raggedright
+		\ifdefstring{\@info@subtitle}{\@info@subtitle@default}
+		{\ifdefined\@info@course
+			\@info@course \vspace{0.4\baselineskip}\linebreak
+		\fi}{
+			\@info@subtitle \vspace{0.4\baselineskip}\linebreak
+		}
+	\end{minipage}
+	\begin{minipage}{\linewidth}
+		\centering
+		{\LARGE\bfseries\@info@title} \vspace{0.4\baselineskip}\linebreak
+		\ifdefined\@info@mail
+			\href{mailto:\@info@mail}{\@info@author}
+		\else
+			\@info@author
+		\fi \linebreak 
+		\@info@updatenote
+	\end{minipage}
+	}
+	\vspace{0.5\baselineskip}
 }
 
 % CV title
 \newcommand{\maketitle@cv}{
-    \noindent
-	\thispagestyle{empty}
+	\noindent
+	\thispagestyle{cv@titlepage}
 	\begin{tabular}{@{}
-            >{\raggedright\arraybackslash}b{0.8\linewidth-\gap}
-            >{\raggedleft\arraybackslash\setlength{\baselineskip}{0.6\baselineskip}}b{0.2\linewidth}
+			% >{\raggedright\arraybackslash}b{0.8\linewidth-\gap}
+			% >{\raggedleft\arraybackslash\setlength{\baselineskip}{0.6\baselineskip}}b{0.2\linewidth}
+			ll
 		@{}}
-        {\Huge\bfseries \@info@author}
-		& {\scriptsize \@info@updatenote}
-	\end{tabular} \par\vspace{0.5\baselineskip}
+		{\Huge\bfseries \@info@author}
+		& \alert{\Huge Curriculum Vitae}
+	\end{tabular} 
+	\par\vspace{0.5\baselineskip}
 	\sectionline
 	\noindent{
 	\renewcommand{\arraystretch}{1}
-	\begin{tabular}{@{}R{\lmarginwidth + 0.2\gap}P{\linewidth - \lmarginwidth - 1.2\gap}@{}}
+	\begin{tabular}{@{}T{}A{}@{}}
 		\ifdefined\@info@mail
-			\MakeUppercase\@info@mail@title \hspace{0.2\gap} & \href{mailto:\@info@mail}{\@info@mail} \\
+			\MakeUppercase\@info@mail@title & \href{mailto:\@info@mail}{\@info@mail} \\
 		\fi
 		\ifdefined\@info@website
-			\MakeUppercase\@info@website@title \hspace{0.2\gap} & \href{\@info@website}{\@info@website} \\
+			\MakeUppercase\@info@website@title & \href{\@info@website}{\@info@website} \\
 		\fi
 		\ifdefined\@info@phone
-			\MakeUppercase\@info@phone@title \hspace{0.2\gap} & \@info@phone \\
+			\MakeUppercase\@info@phone@title & \@info@phone \\
+		\fi
+		\ifdefined\@info@citizenship
+			\MakeUppercase\@info@citizenship@title & \@info@citizenship \\
 		\fi
 		\ifdefined\@info@institute
-			\MakeUppercase\@info@institute@title \hspace{0.2\gap} & \@info@institute \\
+			\MakeUppercase\@info@institute@title & \@info@institute \\
 		\fi
 		\ifdefined\@info@address
-			\MakeUppercase\@info@address@title \hspace{0.2\gap} & \@info@address \\
+			\MakeUppercase\@info@address@title & \@info@address \\
 		\fi
 	\end{tabular}
-    }
+	}
 }

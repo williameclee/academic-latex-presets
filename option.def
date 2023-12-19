@@ -23,7 +23,9 @@
 
 %% default options
 % font size
+\DeclareOption{10pt}{\PassOptionsToClass{10pt}{article}}
 \DeclareOption{11pt}{\PassOptionsToClass{11pt}{article}}
+\DeclareOption{12pt}{\PassOptionsToClass{12pt}{article}}
 \ExecuteOptions{11pt}
 
 % paper size

@@ -1,0 +1,104 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{headerfooter.def}[2023/12/18]
+
+\RequirePackage{fancyhdr, lastpage}
+
+
+\setlength{\headheight}{\@document@fontsize}
+\addtolength{\headheight}{0.05003pt}
+\addtolength{\topmargin}{-0.05003pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% homework: title section
+\fancypagestyle{homework@titlesection}{
+	\fancyhf{}
+	\fancyfoot[C]{\sffamily\footnotesize\thepage}
+}
+% \fancyhf[FC]{\makebox[\textwidth][c]{\sffamily\footnotesize\thepage}}
+
+
+% homework: normal page (plain)
+\fancypagestyle{homework@plain}{
+	\fancyhf{}
+	\fancyhead[L]{\sffamily\footnotesize\@info@title@short}
+	\fancyhead[R]{
+		\ifdefined\@info@mail
+			\href{mailto:\@info@mail}{\sffamily\footnotesize\@info@author}
+		\else
+			\sffamily\footnotesize\@info@author
+		\fi
+	}
+
+	\fancyfoot[L]{
+		\ifdefined\@info@link
+			\begin{minipage}{0.6\linewidth}
+			\raggedright
+			\sffamily\tiny\url{\@info@link}
+			\end{minipage}
+		\fi
+	}
+	\fancyfoot[R]{
+		\ifdefined\@info@link
+			\sffamily\footnotesize\thepage
+		\fi
+	}
+	% \fancyfoot[C]{
+	% 	\ifdefined\@info@link
+	% 		hello
+	% 	\else
+	% 		\sffamily\footnotesize\thepage
+	% 	\fi
+	% }
+	% \fancyfoot[C]{}
+	% \fancyfoot[C]{
+	% 	\ifdefined\@info@link
+	% 		\sffamily\footnotesize\thepage
+	% 	\else
+	% 	\fi
+	% }
+}
+
+% CV: title page
+\fancypagestyle{cv@titlepage}{%
+	\fancyhf{}
+	\fancyfoot[L]{
+		\alert{\footnotesize
+			\ifdefstring{\@info@updatenote}{\@info@updatenote@default}{
+				\capitalise{\@info@updatenote@title}\@document@colon \today
+			}{
+				\@info@updatenote
+			}
+		}
+	}
+	\fancyfoot[R]{
+		\alert{\footnotesize \thepage\,/\,\pageref{LastPage}}%
+	}
+}
+
+% CV: normal page (plain)
+\fancypagestyle{cv@plain}{%
+	\fancyhf{}
+	\fancyhead[L]{
+		\ifdefined\@info@mail
+			\alert{\href{mailto:\@info@mail}{\footnotesize\@info@author}}
+		\else
+			\alert{\footnotesize\@info@author}
+		\fi
+	}
+	\fancyhead[R]{
+		\alert{\footnotesize Curriculum Vitae}%
+	}
+	\fancyfoot[L]{
+		\alert{\footnotesize
+		\ifdefstring{\@info@updatenote}{\@info@updatenote@default}{
+			\today
+		}{
+			\@info@updatenote
+		}
+		}
+	}
+	\fancyfoot[R]{
+		\alert{\footnotesize \thepage\,/\,\pageref{LastPage}}%
+	}
+}

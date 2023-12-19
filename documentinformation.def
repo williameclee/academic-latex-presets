@@ -1,6 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesFile{documentinformation.def}[2023/12/15]
 
+\gdef\@document@colon{:\ }
+
 % title
 \let\title\undefined 
 \gdef\@info@title{Title} 
@@ -53,9 +55,10 @@
 
 % update note
 \let\updatenote\undefined
-\gdef\@info@updatenote@title{Last updated:}
-\gdef\@info@updatenote{\@info@updatenote@title\ \today}
-\gdef\@info@updatenote@short{\@info@updatenote@title \today}
+\gdef\@info@updatenote@title{updated}
+\gdef\@info@updatenote@default{\today}
+\gdef\@info@updatenote{\@info@updatenote@default}
+\gdef\@info@updatenote@short{\@info@updatenote@default}
 \newcommand{\updatenote}[2][]{
 	\gdef\@info@updatenote{#2} 
 	\ifx\relax#1\relax
@@ -69,13 +72,17 @@
 \let\institute\undefined 
 \let\@info@institute\undefined
 \gdef\@info@institute@title{school}
-\newcommand{\institute}[1]{
-	\gdef\@info@institute{#1}
+\newcommand{\institute}[2][]{
+	\gdef\@info@institute{#2}
+	\ifx\relax#1\relax\else
+		\gdef\@info@institute@title{#1}
+	\fi
 }
 
 
 % phone
 \let\phone\undefined
+\let\@info@phone\undefined
 \gdef\@info@phone@title{phone}
 \newcommand{\phone}[1]{
 	\gdef\@info@phone{#1}
@@ -83,11 +90,12 @@
 
 % website
 \let\website\undefined
+\let\@info@website\undefined
 \gdef\@info@website@title{website}
 \newcommand{\website}[2][]{
 	\gdef\@info@website{#2} 
 	\ifx\relax#1\relax\else
-		\gdef\@info@website{#1}
+		\gdef\@info@website@title{#1}
 	\fi
 }
 
@@ -96,6 +104,14 @@
 \gdef\@info@address@title{address}
 \newcommand{\address}[1]{
 	\gdef\@info@address{#1}
+}
+
+% document link
+\let\citizenship\undefined
+\gdef\@info@citizenship@title{citizenship}
+\let\@info@citizenship\undefined
+\newcommand{\citizenship}[1]{
+	\gdef\@info@citizenship{#1}
 }
 
 % course

@@ -1,4 +1,6 @@
-\ProvidesPackage{typography}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{typography.def}[2023/12/17]
+
 \RequirePackage{xstring, etoolbox}
 
 \if@document@sansserif
@@ -6,7 +8,7 @@
 \fi
 
 \RequirePackage{kpfonts}
-\RequirePackage{FiraSans}
+\RequirePackage[scale=0.95]{FiraSans}
 
 \if@document@draft
 	\RequirePackage[scale=0.85]{FiraMono}

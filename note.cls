@@ -1,11 +1,11 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{note}[2023/11/28]
+\ProvidesClass{note}[2023/12/18]
 
 %% Declare options
 \input{option.def}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
-\LoadClass{article}
+\LoadClassWithOptions{article}
 
 %% Load custom packages
 \RequirePackage{default}

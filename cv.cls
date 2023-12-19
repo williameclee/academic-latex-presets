@@ -5,37 +5,29 @@
 %% Class options
 \input{option.def}
 \ExecuteOptions{sans-serif}
+\ExecuteOptions{10pt}
 % Pass on options
 \ProcessOptions\relax
-\LoadClass{article}
+\LoadClassWithOptions{article}
 
 %% Personal information options
 \RequirePackage{etoolbox}
 \input{documentinformation.def}
 \let\title\author
-\gdef\@info@updatenote{\@info@updatenote@title \linebreak \today}
 
 \ifdefstring{\@document@language}{chinese}{
 	\input{languagee-chinese.def}
 }{}
 
 %% Geometry
+\input{layout.def}
 \RequirePackage{geometry, setspace, titlesec}
 \setstretch{1.3}
 \renewcommand{\arraystretch}{1.6}
-\newlength{\textsize}
-\setlength{\textsize}{\f@size pt}
-\setlength{\parindent}{2\textsize}
-\geometry{left=2.5cm, right=2.5cm, bottom=2cm, top=2cm, 
-	marginparwidth=0cm, marginparsep=0cm, includemp}
+
 \usepackage{floatrow, placeins}
 
-%% Draft mode
-\if@document@draft
-	\geometry{showframe}
-\fi
-
-\RequirePackage{typography}
+\input{typography.def}
 
 %% Link settings
 \RequirePackage[hidelinks]{hyperref}
@@ -44,17 +36,6 @@
 \RequirePackage{color, xcolor}
 \input{color.def}
 \def\accentcolor{sandgreen}
-
-%% Table settings
-\RequirePackage{multicol, multirow, array, tabularx, longtable}
-\setlength{\arrayrulewidth}{1pt}
-\renewcommand{\tabcolsep}{0.5\gap}
-\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
-\newcolumntype{T}[1]{R{\lmarginwidth + 1.2\gap}}
-\newcolumntype{C}[1]{P{\linewidth - \lmarginwidth - \rmarginwidth - 2.2\gap}}
-\newcolumntype{I}[1]{P{\rmarginwidth}}
-\BeforeBeginEnvironment{tabular}{\vspace{-0.6\baselineskip}}
 
 %% Figure settings
 \RequirePackage{graphicx, pdfpages, tikz, pgfplots}
@@ -70,36 +51,18 @@
 \RequirePackage[inline]{enumitem}
 \setlist{leftmargin=\parindent}
 \newlist{tablelist}{itemize}{10}
-\setlist[tablelist]{itemsep=0pt, topsep=0pt, partopsep=0pt, 
+\setlist[tablelist]{
+	nosep,
+	topsep=-\baselineskip, 
 	leftmargin=\gap, 
-	label={\color{\accentcolor}\tikz{\fill circle(2pt)}}
+	label={\color{\accentcolor}\tikz{\fill circle(2pt)}},
 }
-\AtBeginEnvironment{tablelist}{\vspace*{-\baselineskip}}
+% \AtBeginEnvironment{tablelist}{\vspace*{-\baselineskip}}
+\AfterEndEnvironment{tablelist}{$\displaystyle$}
 
 %% Header & footer settings
-\RequirePackage{fancyhdr, lastpage}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\fancypagestyle{empty}{%
-	\fancyhf{}
-	\fancyfoot[C]{
-		\alert{\footnotesize \thepage\ / \pageref{LastPage}}
-	}
-}
-\fancypagestyle{plain}{%
-	\fancyhf{}
-	\fancyhead[L]{
-		\ifdefined\@info@mail
-			\alert{\href{mailto:\@info@mail}{\footnotesize\@info@author}}
-		\else
-			\alert{\footnotesize\@info@author}
-		\fi
-	}
-	\fancyfoot[C]{
-		\alert{\footnotesize \thepage\ / \pageref{LastPage}}
-	}
-}
-\pagestyle{plain}
+\input{headerfooter.def}
+\pagestyle{cv@plain}
 
 %% Math settings
 \RequirePackage{amsmath, amsthm, amsfonts, mathtools}
@@ -139,54 +102,86 @@
 
 %% Table items
 % Sections
-\usepackage{longtable}
-\newenvironment{cvsection}[1][]{%
-	\section*{#1}%
-	\begin{tabular}{@{}T{}@{}C{}I{}@{}}%
-}{
-	\end{tabular}
-}
-\newenvironment{cvsection*}[1][]{%
-	\begin{tabular}{@{}T{}@{}C{}I{}@{}}%
-}{
-	\end{tabular}
-}
+% \usepackage{longtable}
+% \newenvironment{cvsection}[1][]{%
+% 	\section*{#1}%
+% 	\begin{tabular}{@{}T{}@{}C{}I{}@{}}%
+% }{
+% 	\end{tabular}
+% }
+% \newenvironment{cvsection*}[1][]{%
+% 	\begin{tabular}{@{}T{}@{}C{}I{}@{}}%
+% }{
+% 	\end{tabular}
+% }
 % Timeline
-\def\xlocation{-0.4}
-\newcommand{\timeline}[2]{
-	\begin{tikzpicture}[x={\gap}, y={\baselineskip}, baseline={(base.base)}]
-		\draw[white] (0,0) -- (0.7,0);
-		\node[text width=4pt, inner sep=0pt, outer sep=0pt, fill=\accentcolor, circle] () at (0,0) {};
-		\node[text width=4pt, inner sep=0pt, outer sep=0pt, fill=\accentcolor, circle] () at (0,-1) {};
-		\node[align=right, anchor=mid east, yshift=-1pt, inner sep=0pt, outer sep=0pt] (base) at (\xlocation,0) {\uppercase{#2}};
-		\node[align=right, anchor=mid east, yshift=-1pt, inner sep=0pt, outer sep=0pt] () at (\xlocation,-1) {\uppercase{#1}};
-		\draw[\accentcolor, thick] (0,0) -- (0,-1);
-	\end{tikzpicture}
-}
-\newcommand{\timepoint}[1]{
-	\begin{tikzpicture}[x={\gap}, y={\baselineskip}, baseline={(base.base)}]
-		\draw[white] (0,0) -- (0.7,0);
-		\node[text width=4pt, inner sep=0pt, outer sep=0pt, fill=\accentcolor, circle] (base) at (0,0) {};
-		\node[align=right, anchor=mid east, yshift=-1pt, inner sep=0pt, outer sep=0pt] (base) at (\xlocation,0) {\uppercase{#1}};
-	\end{tikzpicture}
-}
+% \def\xlocation{-0.4}
+% \newcommand{\timeline}[2]{
+% 	\begin{tikzpicture}[x={\gap}, y={\baselineskip}, baseline={(base.base)}]
+% 		\draw[white] (0,0) -- (0.7,0);
+% 		\node[text width=4pt, inner sep=0pt, outer sep=0pt, fill=\accentcolor, circle] () at (0,0) {};
+% 		\node[text width=4pt, inner sep=0pt, outer sep=0pt, fill=\accentcolor, circle] () at (0,-1) {};
+% 		\node[align=right, anchor=mid east, yshift=-1pt, inner sep=0pt, outer sep=0pt] (base) at (\xlocation,0) {\uppercase{#2}};
+% 		\node[align=right, anchor=mid east, yshift=-1pt, inner sep=0pt, outer sep=0pt] () at (\xlocation,-1) {\uppercase{#1}};
+% 		\draw[\accentcolor, thick] (0,0) -- (0,-1);
+% 	\end{tikzpicture}
+% }
+% \newcommand{\timepoint}[1]{
+% 	\begin{tikzpicture}[x={\gap}, y={\baselineskip}, baseline={(base.base)}]
+% 		\draw[white] (0,0) -- (0.7,0);
+% 		\node[text width=4pt, inner sep=0pt, outer sep=0pt, fill=\accentcolor, circle] (base) at (0,0) {};
+% 		\node[align=right, anchor=mid east, yshift=-1pt, inner sep=0pt, outer sep=0pt] (base) at (\xlocation,0) {\uppercase{#1}};
+% 	\end{tikzpicture}
+% }
 
 % Events
-\RequirePackage{listofitems, etoolbox}
-\newcommand{\event}[5]{\noindent%
-	\begin{tabular}{@{}T{}@{}C{}I{}@{}}
+\RequirePackage{listofitems}
+% \newcommand{\event}[5]{\noindent%
+% 	\begin{tabular}{@{}T{}@{}C{}I{}@{}}
+% 		\let\timestring\undefined%
+% 		\newcommand{\timestring}{#1}%
+% 		\readlist*\timelist{\timestring}%
+% 		\ifnum\listlen\timelist[]=1 %
+% 			\timepoint{\MakeUppercase{\timelist[1]}}%
+% 		\else %
+% 			\timeline{\MakeUppercase{\timelist[1]}}{\MakeUppercase{\timelist[2]}}%
+% 		\fi% date
+% 		& \textbf{#2}% position
+% 		\ifx\relax#3\relax\else , #3 \fi% event
+% 		\ifx\relax#4\relax\else \newline #4 \fi% description
+% 		& #5 % host
+% 	\end{tabular}
+% 	\newline
+% }
+
+\RequirePackage{multicol, multirow, array, tabularx, longtable}
+\setlength{\arrayrulewidth}{1pt}
+\renewcommand{\tabcolsep}{0.5\gap}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{T}[1]{R{\lmarginwidth}}
+\newcolumntype{C}[1]{P{\linewidth - \lmarginwidth - \rmarginwidth - 2\gap}}
+\newcolumntype{I}[1]{P{\rmarginwidth}}
+\newcolumntype{A}[1]{P{\linewidth - \lmarginwidth - \gap}}
+\BeforeBeginEnvironment{tabular}{\vspace{-0.6\baselineskip}}
+\AfterEndEnvironment{tabular}{\vspace{0.2\baselineskip}}
+
+\newcommand{\event}[5]{%
+	\noindent%
+	\begin{tabular}{@{}T{}A{}@{}}
 		\let\timestring\undefined%
 		\newcommand{\timestring}{#1}%
 		\readlist*\timelist{\timestring}%
 		\ifnum\listlen\timelist[]=1 %
-			\timepoint{\MakeUppercase{\timelist[1]}}%
-		\else %
-			\timeline{\MakeUppercase{\timelist[1]}}{\MakeUppercase{\timelist[2]}}%
+			\timelist[1]%
+		\else
+			\timelist[1] - \timelist[2]%
 		\fi% date
 		& \textbf{#2}% position
-		\ifx\relax#3\relax\else , #3 \fi% event
-		\ifx\relax#4\relax\else \newline #4 \fi% description
-		& #5 % host
+		\ifx\relax#3\relax\else, #3 \fi% event
+		\\[-1.4em]
+		& { #5} % institute
+		\ifx\relax#4\relax\else \\[-1em] & \expandafter#4 \fi% description
 	\end{tabular}
 	\newline
 }
