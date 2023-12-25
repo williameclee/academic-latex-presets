@@ -1,0 +1,41 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{language-chinese.def}[2023/12/24]
+
+
+% typography
+\RequirePackage{fontspec, xeCJK}
+\setCJKmainfont{Source Han Serif TC}
+\setCJKsansfont{Source Han Sans TC}
+
+\gdef\@document@colon{：}
+
+% title
+% \titlespacing*{\paragraph}{0pt}{0.25\baselineskip}{0pt}
+
+% document information
+\gdef\@info@updatenote@title{最後更新}
+\gdef\@info@mail@title{電子郵件}
+\gdef\@info@website@title{個人網站}
+\gdef\@info@phone@title{聯絡電話}
+\gdef\@info@institute@title{學校}
+\gdef\@info@address@title{工作地點}
+
+% Cross referencing
+\gdef\@crossref@sep{、}
+\gdef\@crossref@sepspace{}
+\gdef\@crossref@sepfinal{和}
+\gdef\@crossref@eqprfx{式}
+\gdef\@crossref@eqprfxpl{式}
+\gdef\@crossref@figprfx{圖}
+\gdef\@crossref@figprfxpl{圖}
+\gdef\@crossref@secprfx{節}
+\gdef\@crossref@secprfxpl{節}
+
+%% Boxed environments
+\gdef\@env@theorem@title{定理}
+\gdef\@env@definition@title{定義}
+\gdef\@env@lemma@title{引理}
+\gdef\@env@corollary@title{推論}
+\gdef\@env@remark@title{重點}
+\gdef\@env@example@title{範例}
+\gdef\@env@exercise@title{例題}
