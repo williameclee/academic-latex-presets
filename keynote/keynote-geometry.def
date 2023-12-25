@@ -1,0 +1,69 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{keynote-geometry.def}[2023/12/19]
+
+\RequirePackage{geometry, setspace, calc}
+
+% Page sizes
+\ifdefstring{\@document@aspectratio}{wide}{
+	\geometry{
+		paperwidth=1920pt,
+		paperheight=1080pt,
+	}
+}{}
+\ifdefstring{\@document@aspectratio}{standard}{
+	\geometry{
+		paperwidth=1024pt,
+		paperheight=768pt,
+	}
+}{}
+
+% grid
+\RequirePackage[absolute,overlay]{textpos}
+\newlength{\@document@grid}
+\setlength{\@document@grid}{60pt}
+\TPGrid
+	{\numexpr \paperwidth/\@document@grid\relax}
+	{\numexpr \paperheight/\@document@grid\relax}
+\setlength{\TPHorizModule}{\@document@grid}
+\setlength{\TPVertModule}{\@document@grid}
+
+\newlength{\@document@margin} 
+\setlength{\@document@margin}{2\TPHorizModule}
+
+\setbeamersize{
+	text margin left=\@document@margin, 
+	text margin right=\@document@margin,
+}
+
+\newlength{\boxmargin} 
+\setlength{\boxmargin}{16pt}
+\setlength{\jot}{\boxmargin}
+
+% font size
+\renewcommand{\tiny}{\fontsize{18pt}{18pt}\selectfont\setlength{\lineskiplimit}{-\baselineskip}}
+\renewcommand{\scriptsize}{\fontsize{24pt}{32pt}\selectfont\setlength{\lineskiplimit}{-\baselineskip}}
+\renewcommand{\footnotesize}{\fontsize{32pt}{40pt}\selectfont\setlength{\lineskiplimit}{-\baselineskip}}
+\renewcommand{\small}{\fontsize{40pt}{48pt}\selectfont\setlength{\lineskiplimit}{-\baselineskip}}
+\renewcommand{\normalsize}{\fontsize{48pt}{60pt}\selectfont\setlength{\lineskiplimit}{-\baselineskip}}
+\renewcommand{\large}{\fontsize{60}{66}\selectfont\setlength{\lineskiplimit}{-\baselineskip}}
+\renewcommand{\LARGE}{\fontsize{90}{96}\selectfont\setlength{\lineskiplimit}{-\baselineskip}}
+\renewcommand{\Huge}{\fontsize{112}{120}\selectfont\setlength{\lineskiplimit}{-\baselineskip}}
+
+% draft mode: grid
+% \if@document@draft
+% 	\usepackage[absolute,overlay]{textpos}
+% 	\usepackage[texcoord, grid, grid unit=pt, gridcolor=blue!75,subgridcolor=green!75]{eso-pic}
+% 	\gridSetup{1pt}{1}{24}{120}{0}
+% \else
+% 	\usepackage[absolute,overlay]{textpos}
+% 	\usepackage[texcoord]{eso-pic}
+% \fi
+% \AtBeginDocument{%
+% 	\ifESO@texcoord
+% 		\def\ESO@yoffsetI{\z@}\def\ESO@yoffsetII{-\paperheight}%
+% 		\edef\ESO@griddeltaY{-\ESO@griddelta}\edef\ESO@gridDeltaY{-\ESO@gridDelta}%
+% 	\else
+% 		\def\ESO@yoffsetI{-\paperheight}\def\ESO@yoffsetII{\z@}%
+% 		\edef\ESO@griddeltaY{\ESO@griddelta}\edef\ESO@gridDeltaY{\ESO@gridDelta}%
+% 	\fi
+% }

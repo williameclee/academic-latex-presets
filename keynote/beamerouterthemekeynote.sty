@@ -1,0 +1,134 @@
+% \mode<presentation>
+
+% % Margins
+
+% % Title fonts
+% \setbeamerfont{title}{size=\Huge, series=\bfseries}
+% \setbeamerfont{subtitle}{size=\normalsize, series=\normalfont}
+% \setbeamerfont{author}{size=\normalsize, series=\normalfont}
+% \setbeamerfont{institute}{size=\footnotesize, series=\normalfont}
+% \setbeamerfont{date}{size=\footnotesize, series=\normalfont}
+% \setbeamerfont{frametitle}{size=\Huge, series=\bfseries}
+% \setbeamerfont{framesubtitle}{size=\large, series=\normalfont}
+% \setbeamerfont{footline author}{size=\footnotesize, series=\normalfont}
+% \setbeamerfont{footline title}{size=\tiny, series=\bfseries}
+% \setbeamerfont{footline subtitle}{size=\tiny, series=\normalfont}
+% \if@themeOptionFont
+% 	\setbeamerfont{footline frame number}{size=\large, series=\firabook}
+% \else
+% 	\setbeamerfont{footline frame number}{size=\large, series=\bfseries}
+% \fi
+
+\renewcommand{\maketitle}{
+	\frame[plain, noframenumbering]{\titlepage}
+	% \begin{frame}
+	% 	\usebeamerfont{title} \@info@title \newline
+	% \end{frame}
+}
+
+
+\renewcommand{\titlepage}{
+	% \colorbox{yellow}{\parbox{\linewidth}{\usebeamerfont{title}\usebeamercolor[fg]{title}\raggedright\@info@title}}
+	\begin{textblock}{28}[0,1](2,9)
+		{\usebeamerfont{title}\usebeamercolor[fg]{title}\raggedright\@info@title \par}
+	\end{textblock}
+	\begin{textblock}{28}[0,1](2,11)
+		{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\raggedright\@info@subtitle \par}
+	\end{textblock}
+	\if@info@institute
+		\begin{textblock}{28}[0,1](2,12)
+			{\usebeamerfont{author}\usebeamercolor[fg]{author}\raggedright
+				\foreachitem\@info@author@item\in\@info@author{%
+					\ifnum\@info@author@itemcnt=1
+					\@info@author@item%
+					\else
+						\ifnum\@info@author@itemcnt=\@info@authorlen
+							, \& \@info@author@item%
+						\else
+							, \@info@author@item%
+						\fi
+					\fi
+				}
+			}
+		\end{textblock}
+		\begin{textblock}{28}[0,1](2,16)
+			{\usebeamerfont{institute}\usebeamercolor[fg]{institute}\raggedright
+				\foreachitem\@info@institute@item\in\@info@institute[]{
+					\@info@institute@item \par
+				}
+			}
+		\end{textblock}
+	\else
+		\begin{textblock}{28}[0,1](2,16)
+			{\usebeamerfont{author}\usebeamercolor[fg]{author}\raggedright
+				\foreachitem\@info@author@item\in\@info@author{%
+					\ifnum\@info@author@itemcnt=1
+					\@info@author@item%
+					\else
+						\ifnum\@info@author@itemcnt=\@info@authorlen
+							, \& \@info@author@item%
+						\else
+							, \@info@author@item%
+						\fi
+					\fi
+				}
+			}
+		\end{textblock}
+	\fi
+	% \usebeamerfont{institute}\usebeamercolor{institute}\@info@institute
+}
+
+% \setbeamertemplate{title page}{
+% 	\linespread{1.5}
+% 	% \usebeamerfont{title} \@info@title \newline
+% 	% \usebeamerfont{title} \inserttitle \newline
+% 	% \@info@subtitle \newline
+% 	% \@info@author
+% % 	\AddToShipoutPictureFG*{
+% % 		\AtPageUpperLeft{\parbox[t][0.4\paperheight][b]{\paperwidth}{
+% % 			\inserttitlegraphic
+% % 		}}
+% % %		\AtPageUpperLeft{\parbox[t][0.2\paperheight][t]{\paperwidth}{
+% % %			\vspace{\@document@margin}\hspace{\@document@margin} 
+% % %			\insertlogo
+% % %		}}
+% % 		\AtPageLowerLeft{\parbox[b][0.6\paperheight][t]{\paperwidth}{%
+% % 			\begin{mdframed}[hidealllines=true, innertopmargin=0.5\@document@margin, innerbottommargin=0pt, innerleftmargin=\@document@margin, innerrightmargin=\@document@margin, skipabove=0pt, skipbelow=0pt]
+% % 				\raggedright
+% % 				\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle \par
+% % 				\usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle \par
+% % 				\vspace{\baselineskip}
+% % 				\usebeamerfont{author}\insertauthor \par
+% % 				\vspace{0.25\baselineskip}
+% % 				\usebeamerfont{institute}\insertinstitute
+% % 			\end{mdframed}
+% % 		}}
+% % 		\AtPageLowerLeft{\parbox[b][0.6\paperheight][b]{\paperwidth}{
+% % 			\hskip\@document@margin\usebeamerfont{date}\usebeamercolor[fg]{footline}\insertdate\par\vspace{\boxmargin}
+% % 		}}
+% % 	}
+% }
+
+% \setbeamertemplate{footline}{
+% 	\usebeamercolor{footline}
+% 	\begin{tabular}{
+% 			@{}>{\raggedright\arraybackslash}b{0.5\paperwidth-0.5\@document@margin}
+% 			@{}>{\raggedleft\arraybackslash}b{0.5\paperwidth-0.5\@document@margin}  
+% 			>{\raggedright\arraybackslash}b{\@document@margin}@{}
+% 		}
+% 		\hspace{\@document@margin}\usebeamerfont{footline author}\insertshortauthor 
+% 		& \usebeamerfont{footline title}$\phantom{.}$\insertshorttitle \linebreak \usebeamerfont{footline subtitle}\insertshortsubtitle
+% 		& \usebeamerfont{footline frame number}\insertframenumber 
+% 	\end{tabular}
+% 	\vspace{\boxmargin}
+% }
+
+% \setbeamertemplate{navigation symbols}{}
+
+% \setbeamertemplate{frametitle}{
+% 	\vspace{\@document@margin}
+% 	\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle \par
+% 	\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle
+% }
+
+% \mode<all>

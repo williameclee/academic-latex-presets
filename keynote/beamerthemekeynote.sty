@@ -1,0 +1,76 @@
+\input{keynote-option.def}
+\ProcessOptions\relax
+
+\input{keynote-typography.def}
+\input{keynote-info.def}
+\input{keynote-geometry.def}
+
+\mode<presentation>
+
+% %% Layout
+% \RequirePackage{geometry, setspace, calc}
+% % Lengthes
+% \newlength{\@document@margin} \setlength{\@document@margin}{96pt}
+% \newlength{\boxmargin} \setlength{\boxmargin}{16pt}
+% \setlength{\jot}{\boxmargin}
+
+% % Page sizes
+% \geometry{
+% 	paperwidth=1920pt,
+% 	paperheight=1080pt,
+% }
+% \setbeamersize{
+% 	text margin left=\@document@margin, 
+% 	text margin right=\@document@margin,
+% }
+
+
+% %% Floating environments
+% % Figures
+% \RequirePackage{graphicx, pdfpages, wrapfig, mdframed, tikz, pgfplots, tikz-3dplot, eso-pic}
+% \RequirePackage[font=normalsize, labelfont={bf, normalsize}]{caption, subcaption}
+% \pgfplotsset{compat = newest}
+% \usetikzlibrary{positioning, angles, calc, trees, 
+% 	patterns, patterns.meta, 
+% 	decorations, decorations.markings, decorations.pathreplacing, 
+% 	arrows.meta}
+% \usepgfplotslibrary{patchplots}
+% \tikzset{>=latex}
+% \tikzset{
+% 	very thin/.style  = {line width=2pt},
+% 	thin/.style       = {line width=4pt},
+% 	thick/.style      = {line width=6pt},
+% 	very thick/.style = {line width=8pt},
+% }
+
+% % Tables
+% \RequirePackage{multicol, multirow, array, tabularx, longtable, makecell, arydshln}
+% \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+% \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+% % Boxed environments
+% \mdfdefinestyle{blocktitle}{
+% 	backgroundcolor=bg, 
+% 	hidealllines=true, 
+% 	skipabove=\boxmargin, skipbelow=0,
+% 	innertopmargin=\boxmargin, innerbottommargin=\boxmargin, 
+% 	innerleftmargin=\boxmargin, innerrightmargin=\boxmargin,
+% }
+
+% \mdfdefinestyle{blockbody}{
+% 	backgroundcolor=bg, 
+% 	hidealllines=true, 
+% 	skipabove=0mm, skipbelow=\boxmargin, 
+% 	leftmargin=0mm, rightmargin=0mm,
+% 	innertopmargin=\boxmargin, innerbottommargin=\boxmargin, 
+% 	innerleftmargin=\boxmargin, innerrightmargin=\boxmargin,
+% }
+
+
+% Import of theme files
+\useinnertheme{keynote}
+\useoutertheme{keynote}
+\usecolortheme{keynote}
+\usefonttheme{keynote}
+
+\mode<all>

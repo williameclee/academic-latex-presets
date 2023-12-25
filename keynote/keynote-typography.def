@@ -1,0 +1,36 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{keynote-typography.def}[2023/12/19]
+
+\RequirePackage{xstring, etoolbox}
+
+% serif font: Palatino
+\RequirePackage{newpxtext}
+% sans-serif font: Fira Sans
+\RequirePackage{FiraSans}
+% typewriter font: Fira Code (XeLaTeX) Fira Mono (other compilers)
+\if@document@draft
+	\RequirePackage{FiraMono}
+\else
+	\RequirePackage{fontspec}
+	% \setmonofont{Fira Code}
+\fi
+% math font: Fira Math (sans-serif and XeLaTeX) newpxmath (serif or other compilers)
+\if@document@sansserif
+	\if@document@draft\else
+		\RequirePackage{fontspec}
+		\RequirePackage{unicode-math}
+		\setsansfont{Rubik}
+		\setmathfont{Fira Math}
+		\unimathsetup{mathrm=sym, mathbf=sym}
+	\fi
+\else
+	\RequirePackage{newpxmath} % must not be loaded along with unicode-math
+\fi
+
+% set default font style
+\if@document@sansserif
+	\renewcommand{\familydefault}{\sfdefault}
+\else
+	\renewcommand{\familydefault}{\rmdefault}
+	\usefonttheme{serif}
+\fi

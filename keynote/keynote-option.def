@@ -1,0 +1,24 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{keynote-option.def}[2023/12/19]
+
+% aspect ratio
+\gdef\@document@aspectratio{wide}
+\DeclareOption{wide}{\gdef\@document@aspectratio{wide}}
+\DeclareOption{16:9}{\gdef\@document@aspectratio{wide}}
+\DeclareOption{standard}{\gdef\@document@aspectratio{standard}}
+\DeclareOption{4:3}{\gdef\@document@aspectratio{standard}}
+
+% language
+\gdef\@document@language{english}
+\DeclareOption{chinese}{\gdef\@document@language{chinese}}
+
+% typography
+\newif\if@document@sansserif
+\@document@sansseriftrue
+\DeclareOption{serif}{\@document@sansseriffalse}
+\DeclareOption{sans-serif}{\@document@sansseriftrue}
+
+% typeset speed
+\newif\if@document@draft
+\@document@draftfalse
+\DeclareOption{draft}{\@document@drafttrue}
