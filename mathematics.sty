@@ -6,8 +6,12 @@
 \newif\if@mathematics@leftaligned
 \@mathematics@leftalignedtrue
 % Maths mode bold vectors (default true)
-\newif\if@mathematics@boldvector
-\@mathematics@boldvectortrue
+\def\@mathematics@vector@bold{bold}
+\def\@mathematics@vector@arrow{arrow}
+\def\@mathematics@vector@underline{underline}
+\def\@mathematics@vector{bold}
+% \newif\if@mathematics@boldvector
+% \@mathematics@boldvectortrue
 
 \ProcessOptions\relax
 
@@ -16,7 +20,7 @@
 
 %% Maths
 \RequirePackage{amsmath, amsthm, amsfonts, cancel, mathtools}
-\RequirePackage{etoolbox}
+\RequirePackage{xstring, etoolbox}
 
 %% Maths alignment
 \newcommand{\mathleft}{\@fleqntrue\@mathmargin\parindent}
@@ -28,6 +32,7 @@
 	
 %% Proof and solution
 \renewcommand\qedsymbol{\textcolor{\accentcolour}{$\square$}}
+% proof
 \renewenvironment{proof}[1][\proofname]{\par
 \pushQED{\qed}%
 \normalfont \topsep6\p@\@plus6\p@\relax
@@ -37,12 +42,50 @@
 }{%
 	\popQED\endtrivlist\@endpefalse
 }
-
+% proof of theorem
+\def\@mathematics@theoremproof@conjunction{of}
+\NewDocumentEnvironment{theorem proof}{O{} O{}}{
+	% #1: theorem label
+	% #2: theorem prependix
+	\if\relax#2\relax
+		\if\relax#1\relax
+			\let\@mathematics@theoremproof@label\@env@currentlabel
+		\else
+			\def\@mathematics@theoremproof@label{#1}
+		\fi
+		\StrBefore{\@mathematics@theoremproof@label}{:}[\@mathematics@theoremproof@env]
+		\ifx\@mathematics@theoremproof@env\@env@theorem@label
+			\let\@mathematics@theoremproof@title\@env@theorem@title
+		\fi
+		\ifx\@mathematics@theoremproof@env\@env@lemma@label
+			\let\@mathematics@theoremproof@title\@env@lemma@title
+		\fi
+		\ifx\@mathematics@theoremproof@env\@env@definition@label
+			\let\@mathematics@theoremproof@title\@env@definition@title
+		\fi
+		\ifx\@mathematics@theoremproof@env\@env@corollary@label
+			\let\@mathematics@theoremproof@title\@env@corollary@title
+		\fi
+		\ifx\@mathematics@theoremproof@env\@env@remark@label
+			\let\@mathematics@theoremproof@title\@env@remark@title
+		\fi
+		\ifx\@mathematics@theoremproof@env\@env@equation@label
+			\begin{proof}[\proofname~\@mathematics@theoremproof@conjunction~\eqref{\@mathematics@theoremproof@label}.]
+		\else
+			\begin{proof}[\proofname~\@mathematics@theoremproof@conjunction~\@mathematics@theoremproof@title~\ref{\@mathematics@theoremproof@label}.]
+		\fi
+	\else
+		\begin{proof}[\proofname~\@mathematics@theoremproof@conjunction~{\MakeUppercase#2}~\ref{#1}.]
+	\fi
+}{
+	\end{proof}
+}
+% solution
 \let\solution\@undefined
-\let\endsolution\@undefined 
-\def\solutionname{Solution}
+\let\endsolution\@undefined
+\def\@mathematics@solution@title{Solution}
 \newenvironment{solution}{
-	\renewcommand\qedsymbol{\textcolor{\accentcolour}{$\blacksquare$}}\begin{proof}[\solutionname]
+	\renewcommand\qedsymbol{\textcolor{\accentcolour}{$\blacksquare$}}\begin{proof}[\@mathematics@solution@title]
 }{
 	\end{proof}
 }
@@ -150,11 +193,40 @@
 }{}}
 
 %% Vector
+\RequirePackage{contour}
 \newcommand{\vb}[1]{{%
 	\mathbf{#1}%
 }}
 \let\nnabla\nabla
 \renewcommand{\nabla}{{\vec{\nnabla}}}
+\newcommand{\mx}[1]{\vec{#1}}
+
+\contourlength{\@document@linewidth@thin}
+
+\newlength{\@mathematics@underbar@margin}
+\newlength{\@mathematics@underbar@depth}
+\newlength{\@mathematics@underbar@space}
+\setlength{\@mathematics@underbar@margin}{0.3ex}
+\setlength{\@mathematics@underbar@depth}{-0.3ex}
+\setlength{\@mathematics@underbar@space}{0.1ex}
+\newcommand{\vl}[1]{%
+	\tikz[baseline=(vec.base)]{%
+		\node[inner sep=0] (vec) {\phantom{$#1$}};
+		\draw[thin] ([xshift=\@mathematics@underbar@margin, yshift=\@mathematics@underbar@depth]vec.base west) 
+			-- ([xshift=-\@mathematics@underbar@margin, yshift=\@mathematics@underbar@depth]vec.base east);
+		\node[inner sep=0] () {\contour{white}{$#1$}};
+	}
+}
+\newcommand{\vll}[1]{%
+	\tikz[baseline=(vec.base)]{%
+		\node[inner sep=0] (vec) {\phantom{$#1$}};
+		\draw[thin] ([xshift=\@mathematics@underbar@margin, yshift=\@mathematics@underbar@depth+\@mathematics@underbar@space]vec.base west) -- 
+			([xshift=-\@mathematics@underbar@margin, yshift=\@mathematics@underbar@depth+\@mathematics@underbar@space]vec.base east);
+		\draw[thin] ([xshift=\@mathematics@underbar@margin, yshift=\@mathematics@underbar@depth-\@mathematics@underbar@space]vec.base west) -- 
+			([xshift=-\@mathematics@underbar@margin, yshift=\@mathematics@underbar@depth-\@mathematics@underbar@space]vec.base east);
+		\node[inner sep=0] () {\contour{white}{$#1$}};
+	}
+}
 
 \newcommand{\avec}[1]{{\left\langle{#1}\right\rangle}}
 
@@ -162,13 +234,16 @@
 
 
 
+\define@key{mathematics}{british}[]{
+	\def\@mathematics@vector{underline}
+}
 \define@key{mathematics}{align}[]{
 	\ifstrequal{#1}{left}{\@mathematics@leftalignedtrue}{}
 	\ifstrequal{#1}{center}{\@mathematics@leftalignedfalse}{}
 }
 \define@key{mathematics}{vector}[]{
-	\ifstrequal{#1}{bold}{\@mathematics@boldvectortrue}{}
-	\ifstrequal{#1}{arrow}{\@mathematics@boldvectorfalse}{}
+	\def\@mathematics@vector{#1}
+	\ifstrequal{#1}{british}{\def\@mathematics@vector{underline}}{}
 }
 \define@key{mathematics}{reset}[]{
 	\@mathematics@leftalignedtrue
@@ -185,11 +260,18 @@
 \@mathematics@update@alignment
 
 \def\@mathematics@update@vector{
-	\if@mathematics@boldvector
+	\ifx\@mathematics@vector\@mathematics@vector@bold
 		\let\vvec\vec
 		\renewcommand{\vec}[1]{\vb{##1}}
-	\else
+	\fi
+	\ifx\@mathematics@vector\@mathematics@vector@arrow
 		\let\vec\vvec
+		\renewcommand{\mx}[1]{##1}
+	\fi
+	\ifx\@mathematics@vector\@mathematics@vector@underline
+		\let\vvec\vec
+		\renewcommand{\vec}[1]{\vl{##1}}
+		\renewcommand{\mx}[1]{\vll{##1}}
 	\fi
 }
 \@mathematics@update@vector
