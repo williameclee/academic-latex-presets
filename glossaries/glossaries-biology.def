@@ -8,25 +8,32 @@
 	description=A group of single-celled eukaryotes}
 \newglossaryentry{eukaryote}{
 	name=eukaryote,
-	description=}
+	description=
+}
 \newglossaryentry{cnidarian}{
 	name=cnidarian,
 	plural=cnidaria,
-	description=}
+	description=
+}
 \newglossaryentry{copepod}{
 	name=copepod,
-	description=}
+	description=
+}
 \newglossaryentry{arthropod}{
 	name=arthropod,
-	description=}
+	description=
+}
 \newglossaryentry{krill}{
 	name=krill,
-	description=}
+	description=
+}
 \newglossaryentry{chaetognath}{
 	name=chaetognath,
-	description=}
+	description=
+}
 \newglossaryentry{crustacean}{
 	name=crustacean,
-	description=}
+	description=
+}
 	
 \newacronym[description={},]{CCM}{CCM}{carbon concentrating mechanism}

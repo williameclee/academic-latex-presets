@@ -4,50 +4,65 @@
 
 \newglossaryentry{Rydberg constant}{
 	name=Rydberg constant,
-	description=}
+	description=
+}
 \newglossaryentry{energy level}{
 	name=energy level,
-	description=}
+	description=
+}
 \newglossaryentry{de Broglie wavelength}{
 	name=de Broglie wavelength,
-	description=}
+	description=
+}
 \newglossaryentry{energy shell}{
 	name=energy shell,
-	description=}
+	description=
+}
 \newglossaryentry{degenerate orbital}{
 	name=degenerate orbital,
-	description=}
+	description=
+}
 \newglossaryentry{radial probability function}{
 	name=radial probability function,
-	description=}
+	description=
+}
 \newglossaryentry{boundary surface}{
 	name=boundary surface,
-	description=}
+	description=
+}
 \newglossaryentry{bond dissociation energy}{
 	name=bond dissociation energy,
 	plural=bond dissociation energies,
-	description=}
+	description=
+}
 \newglossaryentry{bond length}{
 	name=bond length,
-	description=}
+	description=
+}
 \newglossaryentry{octet rule}{
 	name=octet rule,
-	description=}
+	description=
+}
 \newglossaryentry{bond order}{
 	name=bond order,
-	description=}
+	description=
+}
 \newglossaryentry{covalent radius}{
 	name=covalent radius,
 	plural=covalent radii,
-	description=}
+	description=
+}
 \newglossaryentry{electronegativity}{
 	name=electronegativity,
-	description=}
+	description=
+}
 \newglossaryentry{formal charge}{
 	name=formal charge,
-	description=}
+	description=
+}
 \newglossaryentry{coordinate covalent bond}{
 	name=coordinate covalent bond,
-	description=}
+	description=
+}
 
 \newacronym[description={},]{GFE}{GFE}{Gibbs free energy}

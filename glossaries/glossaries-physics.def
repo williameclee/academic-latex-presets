@@ -104,23 +104,28 @@
 	description = }
 \newglossaryentry{quantum number}{
 	name=quantum number,
-	description=}
+	description=
+}
 \newglossaryentry{principal quantum number}{
 	name=principal quantum number,
 	parent={quantum number},
-	description=}
+	description=
+}
 \newglossaryentry{angular momentum quantum number}{
 	name=angular momentum quantum number,
 	parent={quantum number},
-	description=}
+	description=
+}
 \newglossaryentry{magnetic quantum number}{
 	name=magnetic quantum number,
 	parent={quantum number},
-	description=}
+	description=
+}
 	\newglossaryentry{electron spin quantum number}{
 	name=electron spin quantum number,
 	parent={quantum number},
-	description=}
+	description=
+}
 \newglossaryentry{spin angular momentum}{
 	name        = spin angular momentum,
 	parent      = angular momentum,

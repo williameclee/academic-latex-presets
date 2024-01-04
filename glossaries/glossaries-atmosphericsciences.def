@@ -6,141 +6,180 @@
 \newglossaryentry{temperature}{
 	name=temperature,
 	symbol={\ensuremath{T}},
-	description=}
+	description=
+}
 \newglossaryentry{pressure}{
 	name=pressure,
 	symbol={\ensuremath{p}},
-	description=}
+	description=
+}
 \newglossaryentry{state variable}{
 	name=state variable,
-	description=}
+	description=
+}
 \newglossaryentry{process variable}{
 	name=process variable,
-	description=}
+	description=
+}
 \newglossaryentry{specific volume}{
 	name=specific volume,
 	symbol={\ensuremath{\alpha}},
-	description=}
+	description=
+}
 \newglossaryentry{virtual temperature}{
 	name=virtual temperature,
 	parent={temperature},
 	symbol={\ensuremath{\Tv}},
-	description=}
+	description=
+}
 \newglossaryentry{vapour pressure}{
 	name=vapour pressure,
 	symbol={\ensuremath{e}},
-	description=}
+	description=
+}
 \newglossaryentry{mixing ratio}{
 	name=mixing ratio,
 	symbol={\ensuremath{\rv}},
-	description=}
+	description=
+}
 \newglossaryentry{specific humidity}{
 	name=specific humidity,
 	symbol={\ensuremath{\qv}},
-	description=}
+	description=
+}
 \newglossaryentry{equation of state}{
 	name=equation of state,
-	description=}
+	description=
+}
 \newglossaryentry{hydrostatic equilibrium}{
 	name=hydrostatic equilibrium,
-	description=}
+	description=
+}
 \newglossaryentry{buoyancy temperature}{
 	name=buoyancy temperature,
-	description=}
+	description=
+}
 \newglossaryentry{skew-T log-p diagram}{
 	name=skew-\textit{T} log-\textit{p} diagram,
-	description=}
+	description=
+}
 \newglossaryentry{geopotential}{
 	name=geopotential,
 	symbol={\ensuremath{\Phi}},
-	description=}
+	description=
+}
 \newglossaryentry{geopotential tendency}{
 	name=geopotential tendency,
 	parent={geopotential},
-	description=}
+	description=
+}
 \newglossaryentry{Coriolis force}{
 	name=Coriolis force,
-	description=}
+	description=
+}
 \newglossaryentry{Coriolis coefficient}{
 	name=Coriolis coefficient,
 	symbol={\ensuremath{f}},
-	description=}
+	description=
+}
 \newglossaryentry{viscosity coefficient}{
 	name=viscosity coefficient,
-	description=}
+	description=
+}
 \newglossaryentry{dynamic viscosity coefficient}{
 	name=dynamic viscosity coefficient,
 	parent={viscosity coefficient},
-	description=}
+	description=
+}
 \newglossaryentry{kinematic viscosity coefficient}{
 	name=kinematic viscosity coefficient,
 	parent={viscosity coefficient},
-	description=}
+	description=
+}
 \newglossaryentry{scale height}{
 	name=scale height,
-	description=}
+	description=
+}
 \newglossaryentry{trajectory}{
 	name=trajectory,
 	plural=trajectories,
-	description=}
+	description=
+}
 \newglossaryentry{streamline}{
 	name=streamline,
-	description=}
+	description=
+}
 \newglossaryentry{stream function}{
 	name=stream function,
-	description=}
+	description=
+}
 \newglossaryentry{velocity potential}{
 	name=velocity potential,
-	description=}
+	description=
+}
 \newglossaryentry{thermal wind}{
 	name=thermal wind,
-	description=}
+	description=
+}
 \newglossaryentry{circulation}{
 	name=circulation,
-	description=}
+	description=
+}
 \newglossaryentry{vorticity}{
 	name=vorticity,
-	description=}
+	description=
+}
 \newglossaryentry{absolute vorticity}{
 	name=absolute vorticity,
 	parent={vorticity},
-	description=}
+	description=
+}
 \newglossaryentry{relative vorticity}{
 	name=relative vorticity,
 	parent={vorticity},
-	description=}
+	description=
+}
 \newglossaryentry{planetary vorticity}{
 	name=planetary vorticity,
 	parent={vorticity},
-	description=}
+	description=
+}
 \newglossaryentry{curvature vorticity}{
 	name=curvature vorticity,
 	parent={vorticity},
-	description=}
+	description=
+}
 \newglossaryentry{shear vorticity}{
 	name=shear vorticity,
 	parent={vorticity},
-	description=}
+	description=
+}
 \newglossaryentry{speed divergence}{
 	name=speed divergence,
 	parent={divergence},
-	description=}
+	description=
+}
 \newglossaryentry{confluence}{
 	name=confluence,
-	description=}
+	description=
+}
 \newglossaryentry{diffluence}{
 	name=diffluence,
-	description=}
+	description=
+}
 \newglossaryentry{baroclinicity}{
 	name=baroclinicity,
-	description=}
+	description=
+}
 \newglossaryentry{baroclinic}{
 	name=baroclinic,
 	parent={baroclinicity},
-	description=}
+	description=
+}
 \newglossaryentry{barotropic}{
 	name=barotropic,
-	description=}
+	description=
+}
 	
 \newacronym[description={},]{PGF}{PGF}{pressure gradient force}
 \newacronym[description={},]{SWE}{SWE}{shallow water equation}

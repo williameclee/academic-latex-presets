@@ -2,439 +2,586 @@
 
 \makeglossaries
 
+\newglossaryentry{domain}{
+	name=domain,
+	description=
+}
+\newglossaryentry{codomain}{
+	name=codomain,
+	description=
+}
 \newglossaryentry{Kronecker delta}{
 	name=Kronecker delta,
-	description=}
+	description=
+}
 \newglossaryentry{Dirac delta function}{
 	name=Dirac delta function,
-	description=}
+	description=
+}
 \newglossaryentry{orthogonality}{
 	name=orthogonality,
-	description=}
+	description=
+}
 \newglossaryentry{orthogonal}{
 	name=orthogonal,
 	parent={orthogonality},
-	description=}
+	description=
+}
 \newglossaryentry{orthogonalisation}{
 	name=orthogonalisation,
-	description=}
+	description=
+}
 \newglossaryentry{orthonormality}{
 	name=orthonormality,
-	description=}
+	description=
+}
 \newglossaryentry{orthonormal}{
 	name=orthonormal,
 	parent={orthonormality},
-	description=}
+	description=
+}
 \newglossaryentry{orthonormalisation}{
 	name=orthonormalisation,
-	description=}
+	description=
+}
 \newglossaryentry{error function}{
 	name=error function,
-	description=}
+	description=
+}
 \newglossaryentry{Taylor expansion}{
 	name=Taylor expansion,
-	description=}
+	description=
+}
 \newglossaryentry{Newton's method}{
 	name=Newton's method,
-	description=}
+	description=
+}
 \newglossaryentry{fixed-point iteration method}{
 	name=fixed-point iteration method,
-	description=}
+	description=
+}
 \newglossaryentry{explicit scheme}{
 	name=explicit scheme,
-	description=}
+	description=
+}
 \newglossaryentry{implicit scheme}{
 	name=implicit scheme,
-	description=}
+	description=
+}
 \newglossaryentry{error}{
 	name=error,
-	description=}
+	description=
+}
 \newglossaryentry{truncation error}{
 	name=truncation error,
 	parent={error},
-	description=}
+	description=
+}
 \newglossaryentry{true error}{
 	name=true error,
 	parent={error},
-	description=}
+	description=
+}
 \newglossaryentry{forward Euler method}{
 	name=forward Euler method,
-	description=}
+	description=
+}
 \newglossaryentry{backward Euler method}{
 	name=backward Euler method,
-	description=}
+	description=
+}
 \newglossaryentry{trapezoidal method}{
 	name=trapezoidal method,
-	description=}
+	description=
+}
 \newglossaryentry{midpoint method}{
 	name=midpoint method,
-	description=}
+	description=
+}
 \newglossaryentry{CN method}{
 	name=Crank-Nicolson method,
-	description=}
+	description=
+}
 \newglossaryentry{consistency}{
 	name=consistency,
-	description=}
+	description=
+}
 \newglossaryentry{convergence}{
 	name=convergence,
-	description=}
+	description=
+}
 \newglossaryentry{stability}{
 	name=stability,
-	description=}
+	description=
+}
 \newglossaryentry{absolute stability}{
 	name=absolute stability,
 	parent={stability},
-	description=}
+	description=
+}
 \newglossaryentry{stiffness}{
 	name=stiffness,
-	description=}
+	description=
+}
 \newglossaryentry{stiff}{
 	name=stiff,
 	parent={stiffness},
-	description=}
+	description=
+}
 \newglossaryentry{communicative law}{
 	name=communicative law,
-	description=}
+	description=
+}
 \newglossaryentry{associative law}{
 	name=associative law,
-	description=}
+	description=
+}
 \newglossaryentry{distributive law}{
 	name=distributive law,
-	description=}
+	description=
+}
 \newglossaryentry{cancellation law}{
 	name=cancellation law,
-	description=}
+	description=
+}
 \newglossaryentry{identity element}{
 	name=identity element,
-	description=}
+	description=
+}
 \newglossaryentry{inverse element}{
 	name=inverse element,
-	description=}
+	description=
+}
 \newglossaryentry{subspace}{
 	name=subspace,
-	description=}
+	description=
+}
 \newglossaryentry{subset}{
 	name=subset,
-	description=}
+	description=
+}
 \newglossaryentry{direct sum}{
 	name=direct sum,
-	description=}
+	description=
+}
 \newglossaryentry{span}{
 	name=span,
-	description=}
+	description=
+}
 \newglossaryentry{field}{
 	name=field,
-	description=}
+	description=
+}
 \newglossaryentry{generate}{
 	name=generate,
-	description=}
+	description=
+}
 \newglossaryentry{linearity}{
 	name=linearity,
-	description=}
+	description=
+}
 \newglossaryentry{linear combination}{
 	name=linear combination,
-	description=}
+	description=
+}
 \newglossaryentry{linear transformation}{
 	name=linear transformation,
-	description=}
+	description=
+}
 \newglossaryentry{linear independence}{
 	name=linear independence,
-	description=}
+	description=
+}
 \newglossaryentry{linearly independent}{
 	name=linearly independent,
 	parent={linear independence},
-	description=}
+	description=
+}
 \newglossaryentry{linear dependence}{
 	name=linear dependence,
-	description=}
+	description=
+}
 \newglossaryentry{linearly dependent}{
 	name=linearly dependent,
 	parent={linear dependence},
-	description=}
+	description=
+}
 \newglossaryentry{invertibility}{
 	name=invertibility,
-	description=}
+	description=
+}
 \newglossaryentry{invertible}{
 	name=invertible,
 	parent={invertibility},
-	description=}
+	description=
+}
 \newglossaryentry{basis}{
 	name=basis,
 	plural=bases,
-	description=}
+	description=
+}
 \newglossaryentry{dimension}{
 	name=dimension,
-	description=}
+	description=
+}
 \newglossaryentry{null space}{
 	name=null space,
-	description=}
+	description=
+}
 \newglossaryentry{nullity}{
 	name=nullity,
-	description=}
+	description=
+}
 \newglossaryentry{kernel}{
 	name=kernel,
-	description=}
+	description=
+}
 \newglossaryentry{rank}{
 	name=rank,
-	description=}
+	description=
+}
 \newglossaryentry{range}{
 	name=range,
-	description=}
+	description=
+}
 \newglossaryentry{one-to-one}{
 	name=one-to-one,
-	description=}
+	description=
+}
 \newglossaryentry{onto}{
 	name=onto,
-	description=}
+	description=
+}
 \newglossaryentry{identity transformation}{
 	name=identity transformation,
-	description=}
+	description=
+}
 \newglossaryentry{matrix}{
 	name=matrix,
 	plural=matrices,
-	description=}
+	description=
+}
 \newglossaryentry{identity matrix}{
 	name=identity matrix,
 	plural=identity matrices,
 	parent={matrix},
-	description=}
+	description=
+}
 \newglossaryentry{augmented matrix}{
 	name=augmented matrix,
 	plural=augmented matrices,
 	parent={matrix},
-	description=}
+	description=
+}
 \newglossaryentry{ordered basis}{
 	name=ordered basis,
 	plural=ordered bases,
 	parent={basis},
-	description=}
+	description=
+}
 \newglossaryentry{standard basis}{
 	name=standard basis,
 	plural=standard bases,
 	parent={basis},
-	description=}
+	description=
+}
 \newglossaryentry{orthonormal basis}{
 	name=orthonormal basis,
 	plural=orthonormal bases,
 	parent={basis},
-	description=}
+	description=
+}
 \newglossaryentry{critical point}{
 	name=critical point,
-	description=}
+	description=
+}
 \newglossaryentry{second derivative test}{
 	name=second derivative test,
-	description=}
+	description=
+}
 \newglossaryentry{directional derivative}{
 	name=directional derivative,
-	description=}
+	description=
+}
 \newglossaryentry{Lagrange multiplier}{
 	name=Lagrange multiplier,
-	description=}
+	description=
+}
 \newglossaryentry{cosine transform}{
 	name=cosine transform,
-	description=}
+	description=
+}
 \newglossaryentry{Fourier transform}{
 	name=Fourier transform,
-	description=}
+	description=
+}
 \newglossaryentry{Fourier series}{
 	name=Fourier series,
-	description=}
+	description=
+}
 \newglossaryentry{Fourier integral}{
 	name=Fourier integral,
-	description=}
+	description=
+}
 \newglossaryentry{Fourier coefficient}{
 	name=Fourier coefficient,
-	description=}
+	description=
+}
 \newglossaryentry{discrete Fourier series}{
 	name=discrete Fourier series,
 	parent={Fourier series},
-	description=}
+	description=
+}
 \newglossaryentry{Buckingham's pi theorem}{
 	name=Buckingham's pi theorem,
-	description=}
+	description=
+}
 \newglossaryentry{convolution}{
 	name=convolution,
-	description=}
+	description=
+}
 \newglossaryentry{Jacobian}{
 	name=Jacobian,
-	description=}
+	description=
+}
 \newglossaryentry{Gaussian elimination}{
 	name=Gaussian elimination,
-	description=}
+	description=
+}
 \newglossaryentry{isomorphism}{
 	name=isomorphism,
-	description=}
+	description=
+}
 \newglossaryentry{isomorphic}{
 	name=isomorphic,
 	parent={isomorphism},
-	description=}
+	description=
+}
 \newglossaryentry{EMO}{
 	name=elementary matrix operation,
-	description=}
+	description=
+}
 \newglossaryentry{ERO}{
 	name=elementary row operation,
 	parent={EMO},
-	description=}
+	description=
+}
 \newglossaryentry{ECO}{
 	name=elementary column operation,
 	parent={EMO},
-	description=}
+	description=
+}
 \newglossaryentry{elementary matrix}{
 	name=elementary matrix,
 	plural=elementary matrices,
 	parent={matrix},
-	description=}
+	description=
+}
 \newglossaryentry{Legendre polynomial}{
 	name=Legendre polynomial,
-	description=}
+	description=
+}
 \newglossaryentry{Chebyshev polynomial}{
 	name=Chebyshev polynomial,
-	description=}
+	description=
+}
 \newglossaryentry{Laguerre polynomial}{
 	name=Laguerre polynomial,
-	description=}
+	description=
+}
 \newglossaryentry{Hermite polynomial}{
 	name=Hermite polynomial,
-	description=}
+	description=
+}
 \newglossaryentry{Jacobi polynomial}{
 	name=Jacobi polynomial,
-	description=}
+	description=
+}
 \newglossaryentry{orthogonal polynomial}{
 	name=orthogonal polynomial,
 	parent={orthogonality},
-	description=}
+	description=
+}
 \newglossaryentry{Lagrange interpolant}{
 	name=Lagrange interpolant,
-	description=}
+	description=
+}
 \newglossaryentry{stabilising parameter}{
 	name=stabilising parameter,
-	description=}
+	description=
+}
 \newglossaryentry{transpose}{
 	name=transpose,
-	description=}
+	description=
+}
 \newglossaryentry{divergence}{
 	name=divergence,
-	description=}
+	description=
+}
 \newglossaryentry{DE}{
 	name=differential equation,
-	description=}
+	description=
+}
 \newglossaryentry{Stokes' theorem}{
 	name=Stokes' theorem,
-	description=}
+	description=
+}
 \newglossaryentry{Green's theorem}{
 	name=Green's theorem,
-	description=}
+	description=
+}
 \newglossaryentry{determinant}{
 	name=determinant,
-	description=}
+	description=
+}
 \newglossaryentry{orientation}{
 	name=orientation,
-	description=}
+	description=
+}
 \newglossaryentry{two-linearity}{
 	name=two-linearity,
 	parent={linearity},
-	description=}
+	description=
+}
 \newglossaryentry{two-linear}{
 	name=two-linear,
 	parent={two-linearity},
-	description=}
+	description=
+}
 \newglossaryentry{n-linearity}{
 	name=$n$-linearity,
 	parent={linearity},
-	description=}
+	description=
+}
 \newglossaryentry{n-linear}{
 	name=$n$-linear,
 	parent={n-linearity},
-	description=}
+	description=
+}
 \newglossaryentry{cofactor}{
 	name=cofactor,
-	description=}
+	description=
+}
 \newglossaryentry{characteristic curve}{
 	name=characteristic curve,
-	description=}
+	description=
+}
 \newglossaryentry{weak form}{
 	name=weak form,
-	description=}
+	description=
+}
 \newglossaryentry{weak solution}{
 	name=weak solution,
-	description=}
+	description=
+}
 \newglossaryentry{test function}{
 	name=test function,
-	description=}
+	description=
+}
 \newglossaryentry{alternating}{
 	name=alternating,
-	description=}
+	description=
+}
 \newglossaryentry{diagonalisability}{
 	name=diagonalisability,
-	description=}
+	description=
+}
 \newglossaryentry{diagonalisable}{
 	name=diagonalisable,
 	parent={diagonalisability},
-	description=}
+	description=
+}
 \newglossaryentry{eigenvalue}{
 	name=eigenvalue,
-	description=}
+	description=
+}
 \newglossaryentry{eigenvector}{
 	name=eigenvector,
-	description=}
+	description=
+}
 \newglossaryentry{generalised eigenvector}{
 	name=generalised eigenvector,
 	parent={eigenvector},
-	description=}
+	description=
+}
+\newglossaryentry{eigenspace}{
+	name=eigenspace,
+	description=
+}
 \newglossaryentry{characteristic equation}{
 	name=characteristic equation,
-	description=}
+	description=
+}
+\newglossaryentry{characteristic polynomial}{
+	name=characteristic polynomial,
+	description=
+}
 \newglossaryentry{norm}{
 	name=norm,
-	description=}
+	description=
+}
 \newglossaryentry{inner product}{
 	name=inner product,
-	description=}
+	description=
+}
 \newglossaryentry{inner product space}{
 	name=inner product space,
-	description=}
+	description=
+}
 \newglossaryentry{adjoint operator}{
 	name=adjoint operator,
-	description=}
+	description=
+}
 \newglossaryentry{LT}{
 	name=Laplace transform,
-	description=}
+	description=
+}
 \newglossaryentry{ILT}{
 	name=inverse Laplace transform,
-	description=}
+	description=
+}
 \newglossaryentry{PPP}{
 	name=phase plane portrait,
-	description=}
+	description=
+}
 \newglossaryentry{solution}{
 	name=solution,
-	description=}
+	description=
+}
 \newglossaryentry{general solution}{
 	name=general solution,
 	parent={solution},
-	description=}
+	description=
+}
 \newglossaryentry{particular solution}{
 	name=particular solution,
 	parent={solution},
-	description=}
+	description=
+}
 \newglossaryentry{homogeneous solution}{
 	name=homogeneous solution,
 	parent={solution},
-	description=}
+	description=
+}
 \newglossaryentry{implicit solution}{
 	name=implicit solution,
 	parent={solution},
-	description=}
+	description=
+}
 \newglossaryentry{explicit solution}{
 	name=explicit solution,
 	parent={solution},
-	description=}
+	description=
+}
 \newglossaryentry{interval of existence}{
 	name=interval of existence,
-	description=}
+	description=
+}
 \newglossaryentry{maximum interval of existence}{
 	name=maximum interval of existence,
 	parent={interval of existence},
-	description=}
+	description=
+}
 	
 \newacronym[description={}, parent={Fourier transform}]{FFT}{FFT}{fast Fourier transform}
 \newacronym[description={}, parent={Fourier transform}]{DFT}{DFT}{discrete Fourier transform}

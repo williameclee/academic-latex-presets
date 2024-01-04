@@ -6,32 +6,39 @@
 % Mineral groups
 \newglossaryentry{amphibole}{
 	name=amphibole,
-	description=}
+	description=
+}
 \newglossaryentry{feldspar}{
 	name=feldspar,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{alkali feldspar}{
 	name=alkali feldspar,
 	symbol={\ce{KAlSi3O8 - NaAlSi3O8}},
 	parent={feldspar},
-	description=}
+	description=
+}
 \newglossaryentry{garnet}{
 	name=garnet,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{mica}{
 	name=mica,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{plagioclase}{
 	name=plagioclase,
 	symbol={\ce{NaAlSi3O8 - CaAl2Si2O8}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{pyroxene}{
 	name=pyroxene,
-	description=}
+	description=
+}
 
 
 % Minerals
@@ -39,297 +46,362 @@
 	name=albite,
 	symbol={\ce{NaAlSi3O8}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{andesine}{
 	name=andesine,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{anhydrite}{
 	name=anhydrite,
 	symbol={\ce{CaSO4}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{anorthite}{
 	name=anorthite,
 	symbol={\ce{CaAl2Si2O8}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{apatite}{
 	name=apatite,
 	symbol={\ce{Ca5(PO4)3(F \text{,} Cl \text{,} OH)}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{aragonite}{
 	name=aragonite,
 	symbol={\ce{CaCO3}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{augite}{
 	name=augite,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{barite}{
 	name=barite,
 	symbol={\ce{BaSO4}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{beryl}{
 	name=beryl,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{biotite}{
 	name=biotite,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{bornite}{
 	name=bornite,
 	symbol={\ce{Cu5FeS4}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{bytownite}{
 	name=bytownite,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{calcite}{
 	name=calcite,
 	symbol={\ce{CaCO3}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{celestine}{
 	name=celestine,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{chalcopyrite}{
 	name=chalcopyrite,
 	symbol={\ce{CuFeS2}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{chert}{
 	name=chert,
 	symbol={\ce{SiO2}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{chlorite}{
 	name=chlorite,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{cinnabar}{
 	name=cinnabar,
 	symbol={\ce{HgS}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{corundum}{
 	name=corundum,
 	symbol={\ce{Al2O3}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{diamond}{
 	name=diamond,
 	symbol={\ce{C}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{dolomite}{
 	name=dolomite,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{enargite}{
 	name=enargite,
 	symbol={\ce{Cu3AsS4}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{enstatite}{
 	name=enstatite,
 	symbol={\ce{MgSiO3}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{epidote}{
 	name=epidote,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{ferrosilite}{
 	name=ferrosilite,
 	symbol={\ce{FeSiO3}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{fluorite}{
 	name=fluorite,
 	symbol={\ce{CaF2}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{fulgurite}{
 	name=fulgurite,
 	% type={mineral},
-	description=}
+	description=
+}
 
 
 \newglossaryentry{galena}{
 	name=galena,
 	symbol={\ce{PbS}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{goethite}{
 	name=goethite,
 	symbol={\ce{FeO(OH)}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{gypsum}{
 	name=gypsum,
 	symbol={\ce{CaSO4 . 2 H2O}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{halite}{
 	name=halite,
 	symbol={\ce{NaCl}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{hematite}{
 	name=hematite,
 	symbol={\ce{Fe2O3}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{hornblende}{
 	name=hornblende,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{labradorite}{
 	name=labradorite,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{magnetite}{
 	name=magnetite,
 	symbol={\ce{Fe3O4}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{malachite}{
 	name=malachite,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{microcline}{
 	name=microcline,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{molybdenite}{
 	name=molybdenite,
 	symbol={\ce{MoS2}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{muscovite}{
 	name=muscovite,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{nepheline}{
 	name=nepheline,
 	symbol={\ce{(Na \text{,} K)AlSiO4}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{oligoclase}{
 	name=oligoclase,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{olivine}{
 	name=olivine,
 	symbol={\ce{(Mg \text{,} Fe)2SiO4}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{opal}{
 	name=opal,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{orpiment}{
 	name=orpiment,
 	symbol={\ce{As2S3}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{orthoclase}{
 	name=orthoclase,
 	symbol={\ce{KAlSi3O8}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{pyrite}{
 	name=pyrite,
 	symbol={\ce{FeS2}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{pyrrhotite}{
 	name=pyrrhotite,
 	symbol={\ce{FeS}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{quartz}{
 	name=quartz,
 	symbol={\ce{SiO2}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{realgar}{
 	name=realgar,
 	symbol={\ce{AsS}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{sanidine}{
 	name=sanidine,
 	symbol={\ce{KAlSi3O8}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{serpentine}{
 	name=serpentine,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{sphalerite}{
 		name=sphalerite,
 		symbol={\ce{ZnS}},
 		% type={mineral},
-		description=}
+		description=
+}
 \newglossaryentry{stibnite}{
 	name=stibnite,
 	symbol={\ce{Sb2S3}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{stishovite}{
 	name=stishovite,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{talc}{
 	name=talc,
 	symbol={\ce{Mg3SiO10(OH)2}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{topaz}{
 	name=topaz,
 	symbol={\ce{Al2SiO4(F \text{,} OH)2}},
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{tourmaline}{
 	name=tourmaline,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{turquoise}{
 	name=turquoise,
 	% type={mineral},
-	description=}
+	description=
+}
 \newglossaryentry{zircon}{
 	name=zircon,
 	% type={mineral},
-	description=}
+	description=
+}
 
 % Rocks
 \newglossaryentry{spilite}{
 	name=spilite,
-	description=}
+	description=
+}
 \newglossaryentry{novaculite}{
 	name=novaculite,
-	description=}
+	description=
+}
 \newglossaryentry{tektite}{
 	name=tektite,
-	description=}
+	description=
+}
 \newglossaryentry{orthogneiss}{
 	name=orthogneiss,
-	description=}
+	description=
+}
 \newglossaryentry{paragneiss}{
 	name=paragneiss,
-	description=}
+	description=
+}
 \newglossaryentry{tuff}{
 	name=tuff,
-	description=}
+	description=
+}
 
 
 \newcommand{\mineral}[1]{\glssymbol{#1}}
