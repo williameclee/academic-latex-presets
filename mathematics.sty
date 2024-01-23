@@ -1,34 +1,28 @@
-\ProvidesPackage{mathematics}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mathematics}[2024/01/21]
 
-\RequirePackage{xkeyval}
+\RequirePackage{xkeyval, xparse, xstring, etoolbox}
 
 % Maths mode left-aligned (default true)
-\newif\if@mathematics@leftaligned
-\@mathematics@leftalignedtrue
+\newif\if@mathematics@fleqn
+\@mathematics@fleqntrue
 % Maths mode bold vectors (default true)
 \def\@mathematics@vector@bold{bold}
 \def\@mathematics@vector@arrow{arrow}
 \def\@mathematics@vector@underline{underline}
 \def\@mathematics@vector{bold}
-% \newif\if@mathematics@boldvector
-% \@mathematics@boldvectortrue
-
-\ProcessOptions\relax
-
-%% Units
-\input{units.def}
 
 %% Maths
 \RequirePackage{amsmath, amsthm, amsfonts, cancel, mathtools}
-\RequirePackage{xstring, etoolbox}
 
 %% Maths alignment
 \newcommand{\mathleft}{\@fleqntrue\@mathmargin\parindent}
 \newcommand{\mathcenter}{\@fleqnfalse}
-\newcommand{\nomathskip}{\setlength{\abovedisplayskip}{4pt}\setlength{\belowdisplayskip}{4pt}\setlength{\abovedisplayshortskip}{2pt}\setlength{\belowdisplayshortskip}{2pt}}
+
+%% Units
+\input{units.def}
 
 \BeforeBeginEnvironment{bmatrix}{\renewcommand{\arraystretch}{0.8}}
-\BeforeBeginEnvironment{vmatrix}{\renewcommand{\arraystretch}{0.8}}
 	
 %% Proof and solution
 \renewcommand\qedsymbol{\textcolor{\accentcolour}{$\square$}}
@@ -44,9 +38,7 @@
 }
 % proof of theorem
 \def\@mathematics@theoremproof@conjunction{of}
-\NewDocumentEnvironment{theorem proof}{O{} O{}}{
-	% #1: theorem label
-	% #2: theorem prependix
+\NewDocumentEnvironment{theorem proof}{O{} O{}}{% #1: theorem label, #2: theorem prependix
 	\if\relax#2\relax
 		\if\relax#1\relax
 			\let\@mathematics@theoremproof@label\@env@currentlabel
@@ -93,55 +85,126 @@
 %% Upright math
 \newcommand{\e}[1][]{{\mathop{\mathrm{e}^{#1}}}}
 \let\ii\i
-\def\i{{\mathrm{i}}}
+\def\i{{\mathop{\mathrm{i}}}}
 
 \def\diff{\mathop{}\!\mathrm{d}}
 \def\Diff{\mathop{}\!\mathrm{D}}
 
 %% Differentiation
 \newcommand{\hfrac}[2]{{#1}/{#2}}
-\newcommand{\difffrac}[2]{\frac{\mathrm{d}{#1}}{\mathrm{d}{#2}}}
-\newcommand{\hdifffrac}[2]{\diff{#1}/\mathrm{d}{#2}}
-\newcommand{\difffracs}[3][2]{\frac{\mathrm{d}^{#1}{#2}}{\mathrm{d}{#3}^{#1}}}
-\newcommand{\hdifffracs}[3][2]{\diff^{#1}{#2}/\mathrm{d}{#3}^{#1}}
-\newcommand{\Difffrac}[2]{\frac{\mathrm{D}{#1}}{\mathrm{D}{#2}}}
-\newcommand{\hDifffrac}[2]{\Diff{#1}/\mathrm{D}{#2}}
-\newcommand{\Difffracs}[3][2]{\frac{\Diff^{#1}{#2}}{\mathrm{D}{#3}^{#1}}}
-\newcommand{\hDifffracs}[3][2]{\Diff^{#1}{#2}/\mathrm{D}{#3}^{#1}}
-\newcommand{\partfrac}[2]{\frac{\partial{#1}}{\partial{#2}}}
-\newcommand{\hpartfrac}[2]{\partial{#1}/\partial{#2}}
-\newcommand{\partfracs}[3][2]{\frac{\partial^{#1}{#2}}{\partial{#3}^{#1}}}
-\newcommand{\hpartfracs}[3][2]{\partial^{#1}{#2}/\partial{#3}^{#1}}
-\newcommand{\Deltafrac}[2]{\frac{\Delta{#1}}{\Delta{#2}}}
-\newcommand{\Deltafracs}[3][2]{\frac{\Delta^{#1}{#2}}{\Delta{#3}^{#1}}}
-\newcommand{\hDeltafrac}[2]{\Delta{#1}/\Delta{#2}}
+\NewDocumentCommand{\difffrac}{s O{1} mm}{% #1: starred (horizontal), #2: order, #3: numerator, #4: denominator
+	\ifnum#2=1
+		\IfBooleanTF#1%
+		{{\diff{#3}/\mathrm{d}{#4}}}%
+		{\frac{\mathrm{d}{#3}}{\mathrm{d}{#4}}}%
+	\else
+	\IfBooleanTF#1%
+		{{\diff^{#2}{#3}/\mathrm{d}{#4}^{#2}}}%
+		{\frac{\mathrm{d}^{#2}{#3}}{\mathrm{d}{#4}^{#2}}}%
+	\fi
+}
+\newcommand{\hdifffrac}[2]{\difffrac*{#1}{#2}} % legacy command
+\NewDocumentCommand{\difffracs}{s O{2}mm}{% legacy command
+	\IfBooleanTF#1%
+	{\difffrac*[#2]{#3}{#4}}{\difffrac[#2]{#3}{#4}}%
+}
+\newcommand{\hdifffracs}[3][2]{\difffracs*[#1]{#2}{#3}} % legacy command
+\NewDocumentCommand{\Difffrac}{s O{1} mm}{% #1: starred (horizontal), #2: order, #3: numerator, #4: denominator
+	\ifnum#2=1
+		\IfBooleanTF#1%
+		{\Diff{#3}/\mathrm{D}{#4}}%
+		{\frac{\mathrm{D}{#3}}{\mathrm{D}{#4}}}%
+	\else
+	\IfBooleanTF#1%
+		{\Diff^{#2}{#3}/\mathrm{D}{#4}^{#2}}%
+		{\frac{\mathrm{D}^{#2}{#3}}{\mathrm{D}{#4}^{#2}}}%
+	\fi
+}
+\newcommand{\hDifffrac}[2]{\Difffrac*{#1}{#2}} % legacy command
+\NewDocumentCommand{\Difffracs}{s O{2}mm}{% legacy command
+	\IfBooleanTF#1%
+	{\Difffrac*[#2]{#3}{#4}}{\Difffrac[#2]{#3}{#4}}%
+}
+\newcommand{\hDifffracs}[3][2]{\Difffracs*[#1]{#2}{#3}} % legacy command
+\NewDocumentCommand{\partfrac}{s O{1}mm}{%
+	\ifnum#2=1
+		\IfBooleanTF#1%
+			{\partial{#3}/\partial{#4}}%
+			{\frac{\partial{#3}}{\partial{#4}}}%
+	\else
+		\IfBooleanTF#1%
+			{{\partial^{#2}{#3}/\partial{#4}^{#2}}}%
+			{\frac{\partial^{#2}{#3}}{\partial{#4}^{#2}}}%
+	\fi
+}
+\newcommand{\hpartfrac}[2]{\partfrac*{#1}{#2}} % legacy command
+\NewDocumentCommand{\partfracs}{s O{2}mm}{% legacy command
+	\IfBooleanTF#1%
+	{{\partial^{#2}{#3}/\partial{#4}^{#2}}}%
+	{\frac{\partial^{#2}{#3}}{\partial{#4}^{#2}}}%
+}
+\newcommand{\hpartfracs}[3][2]{\partfracs*[#1]{#2}{#3}} % legacy command
+\NewDocumentCommand{\Deltafrac}{s O{1}mm}{%
+	\ifnum#2=1
+		\IfBooleanTF#1%
+			{\Delta{#3}/\Delta{#4}}%
+			{\frac{\Delta{#3}}{\Delta{#4}}}%
+	\else
+		\IfBooleanTF#1%
+			{{\Delta^{#2}{#3}/\Delta{#4}^{#2}}}%
+			{\frac{\Delta^{#2}{#3}}{\Delta{#4}^{#2}}}%
+	\fi
+}
+\newcommand{\hDeltafrac}[2]{\Deltafrac*{#1}{#2}} % legacy command
+\NewDocumentCommand{\Deltafracs}{s O{2}mm}{% legacy command
+	\IfBooleanTF#1%
+	{{\Delta^{#2}{#3}/\Delta{#4}^{#2}}}%
+	{\frac{\Delta^{#2}{#3}}{\Delta{#4}^{#2}}}%
+}
+\newcommand{\hDeltafracs}[3][2]{\Deltafracs*[#1]{#2}{#3}} % legacy command
 
 %% Integrals
 \newcommand{\intlims}[2]{\int\limits_{#1}^{#2}}
 \newcommand{\fxnlims}[3]{{\left[#1\right]_{#2}^{#3}}}
 
 %% Transforms
-\newcommand{\lt}[2][]{{\mathcal{L}\left[#2\right]\ifx\relax#1\relax\else\left(#1\right)\fi}}
-\newcommand{\ilt}[2][]{{\mathcal{L}^{-1}\left[#2\right]\ifx\relax#1\relax\else\left(#1\right)\fi}}
-\newcommand{\ft}[2][]{{\mathcal{F}\left[#2\right]\ifx\relax#1\relax\else\left(#1\right)\fi}}
-\newcommand{\ift}[2][]{{\mathcal{F}^{-1}\left[#2\right]\ifx\relax#1\relax\else\left(#1\right)\fi}}
+\NewDocumentCommand{\lt}{m O{}}{% #1: function, #2: domain
+	\mathcal{L}\left[#1\right]\ifx\relax#2\relax\else\left(#2\right)\fi%
+}
+\NewDocumentCommand{\ilt}{m O{}}{% #1: function, #2: domain
+	\mathcal{L}^{-1}\left[#1\right]\ifx\relax#2\relax\else\left(#2\right)\fi%
+}
+\NewDocumentCommand{\ft}{m O{}}{% #1: function, #2: domain
+	\mathcal{F}\left[#1\right]\ifx\relax#2\relax\else\left(#2\right)\fi%
+}
+\NewDocumentCommand{\ift}{m O{}}{% #1: function, #2: domain
+	\mathcal{F}^{-1}\left[#1\right]\ifx\relax#2\relax\else\left(#2\right)\fi%
+}
 
 %% Custom code
 \def\textand{\ \text{and}\ }
 \def\textor{\ \text{or}\ }
 \def\suchthat{\text{ s.t. }}
-\def\contradict{\ (\rightarrow\!\leftarrow)\ }
+\def\contradictssign{\rightarrow\!\leftarrow}
+\newcommand{\contradicts}[1][]{%
+	\ifx\relax#1\relax
+		~(\contradictssign)~%
+	\else
+	~(\contradictssign: \text{ #1})~%
+	\fi
+}
 \def\cross{\times}
 \let\Span\undefined
-\let\Re\undefined
-\let\Im\undefined
 \let\O\undefined
 \newcommand{\abs}[1]{{\left|#1\right|}}
 \newcommand{\norm}[2][]{{\left\lVert#2\right\rVert^{#1}}}
 \newcommand{\inv}[1]{{{#1}^{-1}}}
 \newcommand{\trans}[1]{{{#1}^{\mathrm{T}}}}
 \newcommand{\comp}[1]{{{#1}^{\mathrm{C}}}}
-\newcommand{\set}[2]{\left\{#1{}\middle|{}#2\right\}}
+\NewDocumentCommand{\set}{m O{}}{% #1: set, #2: condition
+	\left\{#1\ifx\relax#2\relax\else{}\middle|{}#2\fi\right\} %
+}
+% \newcommand{\set}[2]{\left\{#1{}\middle|{}#2\right\}}
 \newcommand{\O}[1]{\mathcal{O}\left(#1\right)}
 \newcommand{\dimension}[1]{{}\mathop{\left[\mathrm{#1}\right]}{}}
 \newcommand{\intpm}[1]{\int\limits_{-#1}^{#1}}
@@ -194,12 +257,14 @@
 
 %% Vector
 \RequirePackage{contour}
+\let\vvec\vec
 \newcommand{\vb}[1]{{%
 	\mathbf{#1}%
 }}
-\let\nnabla\nabla
-\renewcommand{\nabla}{{\vec{\nnabla}}}
 \newcommand{\mx}[1]{\vec{#1}}
+
+\let\nnabla\nabla
+% \renewcommand{\nabla}{{\vec{\nnabla}}}
 
 \contourlength{\@document@linewidth@thin}
 
@@ -209,15 +274,15 @@
 \setlength{\@mathematics@underbar@margin}{0.3ex}
 \setlength{\@mathematics@underbar@depth}{-0.3ex}
 \setlength{\@mathematics@underbar@space}{0.1ex}
-\newcommand{\vl}[1]{%
+\newcommand{\vl}[1]{{%
 	\tikz[baseline=(vec.base)]{%
 		\node[inner sep=0] (vec) {\phantom{$#1$}};
 		\draw[thin] ([xshift=\@mathematics@underbar@margin, yshift=\@mathematics@underbar@depth]vec.base west) 
 			-- ([xshift=-\@mathematics@underbar@margin, yshift=\@mathematics@underbar@depth]vec.base east);
 		\node[inner sep=0] () {\contour{white}{$#1$}};
-	}
+	}}
 }
-\newcommand{\vll}[1]{%
+\newcommand{\vll}[1]{{%
 	\tikz[baseline=(vec.base)]{%
 		\node[inner sep=0] (vec) {\phantom{$#1$}};
 		\draw[thin] ([xshift=\@mathematics@underbar@margin, yshift=\@mathematics@underbar@depth+\@mathematics@underbar@space]vec.base west) -- 
@@ -225,7 +290,7 @@
 		\draw[thin] ([xshift=\@mathematics@underbar@margin, yshift=\@mathematics@underbar@depth-\@mathematics@underbar@space]vec.base west) -- 
 			([xshift=-\@mathematics@underbar@margin, yshift=\@mathematics@underbar@depth-\@mathematics@underbar@space]vec.base east);
 		\node[inner sep=0] () {\contour{white}{$#1$}};
-	}
+	}}
 }
 
 \newcommand{\avec}[1]{{\left\langle{#1}\right\rangle}}
@@ -237,21 +302,24 @@
 \define@key{mathematics}{british}[]{
 	\def\@mathematics@vector{underline}
 }
+\define@key{mathematics}{fleqn}[]{
+	\@mathematics@fleqntrue
+}
 \define@key{mathematics}{align}[]{
-	\ifstrequal{#1}{left}{\@mathematics@leftalignedtrue}{}
-	\ifstrequal{#1}{center}{\@mathematics@leftalignedfalse}{}
+	\ifstrequal{#1}{left}{\@mathematics@fleqntrue}{}
+	\ifstrequal{#1}{center}{\@mathematics@fleqnfalse}{}
 }
 \define@key{mathematics}{vector}[]{
 	\def\@mathematics@vector{#1}
 	\ifstrequal{#1}{british}{\def\@mathematics@vector{underline}}{}
 }
 \define@key{mathematics}{reset}[]{
-	\@mathematics@leftalignedtrue
+	\@mathematics@fleqntrue
 	\@mathematics@boldvectortrue
 }
 
 \def\@mathematics@update@alignment{
-	\if@mathematics@leftaligned
+	\if@mathematics@fleqn
 		\mathleft
 	\else
 		\mathcenter
@@ -261,17 +329,19 @@
 
 \def\@mathematics@update@vector{
 	\ifx\@mathematics@vector\@mathematics@vector@bold
-		\let\vvec\vec
 		\renewcommand{\vec}[1]{\vb{##1}}
+		\renewcommand{\nabla}{{\boldsymbol{\nnabla}}}
 	\fi
 	\ifx\@mathematics@vector\@mathematics@vector@arrow
 		\let\vec\vvec
 		\renewcommand{\mx}[1]{##1}
+		\renewcommand{\nabla}{{\vvec{\nnabla}}}
 	\fi
 	\ifx\@mathematics@vector\@mathematics@vector@underline
-		\let\vvec\vec
+		% \let\vvec\vec
 		\renewcommand{\vec}[1]{\vl{##1}}
 		\renewcommand{\mx}[1]{\vll{##1}}
+		\renewcommand{\nabla}{{\nnabla}}
 	\fi
 }
 \@mathematics@update@vector
