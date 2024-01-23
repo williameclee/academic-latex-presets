@@ -2,11 +2,11 @@
 \ProvidesClass{homework}[2022/12/28 initial commit]
 
 %% Declare options
-\input{option.def}
+\input{options.def}
 % Reports and title page
-\gdef\@document@reporttype{false}
-\DeclareOption{report}{\gdef\@document@reporttype{true}}
-\DeclareOption{mla}{\gdef\@document@reporttype{mla}}
+\def\@document@reporttype{false}
+\DeclareOption{report}{\def\@document@reporttype{true}}
+\DeclareOption{mla}{\def\@document@reporttype{mla}}
 % Pass on options to article class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax

@@ -1,9 +1,9 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesFile{option.def}[2023/12/17]
+\ProvidesFile{options.def}[2023/12/17]
 
 % language
-\gdef\@document@language{english}
-\DeclareOption{chinese}{\gdef\@document@language{chinese}}
+\def\@document@language{english}
+\DeclareOption{chinese}{\def\@document@language{chinese}}
 
 % typography
 \newif\if@document@sansserif

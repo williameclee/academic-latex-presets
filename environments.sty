@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{environment}[2023/12/15]
+\ProvidesPackage{environments}[2023/12/15]
 
 \RequirePackage{xparse}
 
@@ -25,7 +25,7 @@
 	{customtheoremstyle}%
 	{0}{0}{\normalfont}{}
 	{\color{\accentcolour}\bfseries\sffamily}
-	{}{\@document@fontsize}{\thmname{#1}\thmnumber{ #2}\thmnote{ #3 \ifx\relax#3\relax\else$\displaystyle$\fi}
+	{}{\@document@fontsize}{\thmname{#1}\thmnumber{~#2}\thmnote{\ifx\relax#3\relax$\displaystyle$\else~~#3\newline\fi}
 }
 \theoremstyle{customtheoremstyle}
 
@@ -34,13 +34,13 @@
 \setcounter{defaultlabelcounter}{0}
 
 % Theorem environments
-\gdef\@env@theorem@title{Theorem}
-\gdef\@env@definition@title{Definition}
-\gdef\@env@lemma@title{Lemma}
-\gdef\@env@corollary@title{Corollary}
-\gdef\@env@remark@title{Remark}
-\gdef\@env@example@title{Example}
-\gdef\@env@exercise@title{Exercise}
+\def\@env@theorem@title{Theorem}
+\def\@env@definition@title{Definition}
+\def\@env@lemma@title{Lemma}
+\def\@env@corollary@title{Corollary}
+\def\@env@remark@title{Remark}
+\def\@env@example@title{Example}
+\def\@env@exercise@title{Exercise}
 \def\@env@theorem@label{THM}
 \def\@env@lemma@label{LMA}
 \def\@env@definition@label{DEF}
@@ -57,7 +57,6 @@
 		\addtocounter{defaultlabelcounter}{1}
 		\label{\@env@theorem@label:\thedefaultlabelcounter}
 		\gdef\@env@currentlabel{\@env@theorem@label:\thedefaultlabelcounter}
-		\gdef\testlabel{\@env@theorem@label:\thedefaultlabelcounter}
 	\else
 		\label{#2}
 		\gdef\@env@currentlabel{#2}
@@ -70,17 +69,19 @@
 % definition
 \newtheorem{mydefinition}[mytheorem]{\@env@definition@title}
 \NewDocumentEnvironment{definition}{O{} O{}}{
+	% #1: definition title
+	% #2: definition label
 	\begin{mdframed}[style=leftmargin]
 	\begin{mydefinition}[#1]
 	\if\relax#2\relax
 		\addtocounter{defaultlabelcounter}{1}
 		\label{\@env@definition@label:\thedefaultlabelcounter}
 		\gdef\@env@currentlabel{\@env@definition@label:\thedefaultlabelcounter}
-		\gdef\testlabel{\@env@definition@label:\thedefaultlabelcounter}
 	\else
 		\label{#2}
 		\gdef\@env@currentlabel{#2}
 	\fi
+	\let\testlabel\@env@currentlabel
 }{
 	\end{mydefinition}
 	\end{mdframed}
@@ -95,7 +96,6 @@
 		\addtocounter{defaultlabelcounter}{1}
 		\label{\@env@lemma@label:\thedefaultlabelcounter}
 		\gdef\@env@currentlabel{\@env@lemma@label:\thedefaultlabelcounter}
-		\gdef\testlabel{\@env@lemma@label:\thedefaultlabelcounter}
 	\else
 		\label{#2}
 		\gdef\@env@currentlabel{#2}
@@ -114,7 +114,6 @@
 		\addtocounter{defaultlabelcounter}{1}
 		\label{\@env@corollary@label:\thedefaultlabelcounter}
 		\gdef\@env@currentlabel{\@env@corollary@label:\thedefaultlabelcounter}
-		\gdef\testlabel{\@env@corollary@label:\thedefaultlabelcounter}
 	\else
 		\label{#2}
 		\gdef\@env@currentlabel{#2}
@@ -133,7 +132,6 @@
 		\addtocounter{defaultlabelcounter}{1}
 		\label{\@env@remark@label:\thedefaultlabelcounter}
 		\gdef\@env@currentlabel{\@env@remark@label:\thedefaultlabelcounter}
-		\gdef\testlabel{\@env@remark@label:\thedefaultlabelcounter}
 	\else
 		\label{#2}
 		\gdef\@env@currentlabel{#2}
@@ -164,14 +162,14 @@
 }
 
 \newlist{enumthm_list}{enumerate}{1}
-\setlist[enumthm_list]{leftmargin=1\parindent, labelindent=*, itemindent=*, align=left,
+\setlist[enumthm_list]{leftmargin=\parindent, labelindent=*, itemindent=*, align=left,
 	font=\sffamily\color{\accentcolour}}
 \newenvironment{enumthm}[1][]{
 	% #1: theorem label
 	\if\relax#1\relax
 		\let\@env@enumthm@label\@env@currentlabel
 	\else
-		\def\@env@enumthm@label{#1}
+		\let\@env@enumthm@label#1
 	\fi
 	\StrBefore{\@env@enumthm@label}{:}[\@mathematics@theoremproof@env]
 	\ifx\@mathematics@theoremproof@env\@env@theorem@label
@@ -190,8 +188,8 @@
 		\let\@mathematics@theoremproof@title\@env@remark@title
 	\fi
 	\begin{enumthm_list}[
-		label={\@mathematics@theoremproof@title~\ref{\@env@enumthm@label}\alph*}, 
-		ref={\ref{\@env@enumthm@label}\alph*},
+		label={\@mathematics@theoremproof@title~\ref*{\@env@enumthm@label}\alph*}, 
+		ref={\ref*{\@env@enumthm@label}\alph*},
 	]
 }{
 	\end{enumthm_list}

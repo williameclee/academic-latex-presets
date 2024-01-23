@@ -29,7 +29,7 @@
 %% Table settings
 \RequirePackage{multicol, multirow, array, tabularx, longtable, makecell, arydshln, algorithm, algpseudocode}
 \setlength{\arrayrulewidth}{\@document@linewidth@thick}
-\BeforeBeginEnvironment{table}{\renewcommand{\arraystretch}{\@document@linestretch}}
+\BeforeBeginEnvironment{tabular}{\renewcommand{\arraystretch}{\@document@linestretch}}
 
 %% Figure settings
 \RequirePackage{ifthen}
@@ -38,7 +38,7 @@
 \RequirePackage[labelfont={sf,bf}]{caption, subcaption}
 \captionsetup{labelsep=quad}
 \captionsetup[subfigure]{format=hang}
-\input{plot.def}
+\input{plotting.def}
 
 %% List settings
 \RequirePackage[inline]{enumitem}
@@ -73,26 +73,20 @@
 %% Header & footer settings
 \input{headerfooter.def}
 
-\let\hl\undefined
 \newcommand{\alert}[1]{{\color{\accentcolour}#1}}
 \newcommand{\fillsolution}[1]{{\color{\accentcolour}#1}}
-\newcommand{\hl}[1]{{\alert{#1}}}
 \newcommand{\prob}[1]{{\color{myred}#1}}
 
 % footnote references
 \newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
 
 % Custom appearances
+\RequirePackage{amsmath, amsthm, amsfonts, cancel, mathtools}
 \input{typography.def}
 \RequirePackage{mathematics}
 
-%% Math settings
-\let\openbox\relax
-\RequirePackage{amsmath, amsthm, amsfonts, cancel, mathtools}
-%\usepackage{amssymb}
-
 %% Boxed environments
-\RequirePackage{environment}
+\RequirePackage{environments}
 
 
 %% Cross-referencing

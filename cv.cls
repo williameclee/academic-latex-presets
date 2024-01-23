@@ -3,7 +3,7 @@
 \RequirePackage{cvtheme}
 
 %% Class options
-\input{option.def}
+\input{options.def}
 \ExecuteOptions{sans-serif}
 \ExecuteOptions{10pt}
 % Pass on options
@@ -22,7 +22,7 @@
 %% Geometry
 \input{layout.def}
 \RequirePackage{geometry, setspace, titlesec}
-\setstretch{1.3}
+\setstretch{1.4}
 \renewcommand{\arraystretch}{1.6}
 
 \usepackage{floatrow, placeins}

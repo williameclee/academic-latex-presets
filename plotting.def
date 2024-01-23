@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesFile{plot.def}[2023/12/18]
+\ProvidesFile{plotting.def}[2023/12/18]
 
 \RequirePackage{tikz, pgfplots}
 \RequirePackage{tikz-3dplot, tikz-qtree, circuitikz}
@@ -52,4 +52,36 @@
 			\draw #2 -- +(-{0.5*#3},-{0.5*#3});
 			\draw #2 -- +({0.5*#3},-{0.5*#3});
 		}
+}
+
+
+\RequirePackage{xkeyval, xparse, xstring, etoolbox}
+\newenvironment{complex plane}[1][]{
+	\begin{tikzpicture}
+	\begin{axis}[
+		axis lines=center,
+		axis line style={thick},
+		clip mode=individual,
+		xlabel={$\Re$}, ylabel={$\Im$},
+		axis equal,
+		#1
+	]
+}{
+	\end{axis}
+	\end{tikzpicture}
+}
+\newenvironment{complex plane*}[1][]{
+	\begin{tikzpicture}
+	\begin{axis}[
+		axis lines=center,
+		axis line style={thick},
+		clip mode=individual,
+		xtick=\empty, ytick=\empty,
+		xlabel={$\Re$}, ylabel={$\Im$},
+		axis equal,
+		#1
+	]
+}{
+	\end{axis}
+	\end{tikzpicture}
 }

@@ -2,7 +2,7 @@
 \ProvidesClass{note}[2023/12/18]
 
 %% Declare options
-\input{option.def}
+\input{options.def}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 \LoadClassWithOptions{article}

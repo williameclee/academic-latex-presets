@@ -4,13 +4,13 @@
 
 %% Class Options
 % Language
-\gdef\@posterLanguage{english}
-\DeclareOption{chinese}{\gdef\@posterLanguage{chinese}}
+\def\@posterLanguage{english}
+\DeclareOption{chinese}{\def\@posterLanguage{chinese}}
 % Typography
-% \gdef\@document@fontfamily{sans-serif}
-% \DeclareOption{serif}{\gdef\@document@fontfamily{serif}}
-% \DeclareOption{sans-serif}{\gdef\@document@fontfamily{sans-serif}}
-% \DeclareOption{font}{\gdef\@document@fontfamily{external}}
+% \def\@document@fontfamily{sans-serif}
+% \DeclareOption{serif}{\def\@document@fontfamily{serif}}
+% \DeclareOption{sans-serif}{\def\@document@fontfamily{sans-serif}}
+% \DeclareOption{font}{\def\@document@fontfamily{external}}
 \newif\if@document@sansserif
 \@document@sansseriftrue
 \DeclareOption{serif}{\@document@sansseriffalse}
