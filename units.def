@@ -1,92 +1,193 @@
-\ProvidesFile{units.def}[2023/11/28]
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{units.def}[2024/01/16]
+
 \RequirePackage{amsmath}
+\RequirePackage{gensymb} % for \degree command
 
-\DeclareMathOperator{\km}{km}
-\DeclareMathOperator{\m}{m}
-\DeclareMathOperator{\cm}{cm}
-\DeclareMathOperator{\mm}{mm}
-\DeclareMathOperator{\mum}{\mu m}
-\DeclareMathOperator{\nm}{nm}
+% Length
+\DeclareMathOperator{\@unit@kilometre}{km}
+\newcommand{\km}[1][]{\@unit@kilometre\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@metre}{m}
+\newcommand{\m}[1][]{\@unit@metre\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@centimetre}{cm}
+\newcommand{\cm}[1][]{\@unit@centimetre\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@millimetre}{mm}
+\newcommand{\mm}[1][]{\@unit@millimetre\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@micrometre}{\mu m}
+\newcommand{\um}[1][]{\@unit@micrometre\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@nanometre}{nm}
+\newcommand{\nm}[1][]{\@unit@nanometre\ifx\relax#1\relax\else^{#1}\fi}
+% picometre (pm) is skipped because it conflicts with the plus-minus sign
+\DeclareMathOperator{\@unit@femtometre}{fm}
+\newcommand{\fm}[1][]{\@unit@femtometre\ifx\relax#1\relax\else^{#1}\fi}
 
-\let\L\undefined
-\DeclareMathOperator{\L}{L}
-\DeclareMathOperator{\mL}{mL}
+% Volume
+\let\L\undefined%
+\DeclareMathOperator{\@unit@L}{L}
+\newcommand{\L}[1][]{\@unit@L\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@mL}{mL}
+\newcommand{\mL}[1][]{\@unit@mL\ifx\relax#1\relax\else^{#1}\fi}
 
-\DeclareMathOperator{\kg}{kg}
-\DeclareMathOperator{\g}{g}
+% Mass
+\DeclareMathOperator{\@unit@kg}{kg}
+\newcommand{\kg}[1][]{\@unit@kg\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@g}{g}
+\newcommand{\g}[1][]{\@unit@g\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@mg}{mg}
+\newcommand{\mg}[1][]{\@unit@mg\ifx\relax#1\relax\else^{#1}\fi}
 
-\DeclareMathOperator{\kgw}{kgw}
+% Weight
+\DeclareMathOperator{\@unit@kgw}{kgw}
+\newcommand{\kgw}[1][]{\@unit@kgw\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@gw}{gw}
+\newcommand{\gw}[1][]{\@unit@gw\ifx\relax#1\relax\else^{#1}\fi}
 
-\DeclareMathOperator{\By}{By}
-\DeclareMathOperator{\My}{My}
-\DeclareMathOperator{\ky}{ky}
-\DeclareMathOperator{\yr}{yr}
-\DeclareMathOperator{\mnth}{month}
-\DeclareMathOperator{\mday}{day}
-\DeclareMathOperator{\hr}{hr}
-\DeclareMathOperator{\s}{s}
-\DeclareMathOperator{\ms}{ms}
-\DeclareMathOperator{\Ba}{Ba}
-\DeclareMathOperator{\Ma}{Ma}
-\DeclareMathOperator{\ka}{ka}
+% Time
+\DeclareMathOperator{\@unit@gigayear}{Gyr}
+\newcommand{\Gyr}[1][]{\@unit@gigayear\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@megayear}{Myr}
+\newcommand{\Myr}[1][]{\@unit@megayear\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@kiloyear}{kyr}
+\newcommand{\kyr}[1][]{\@unit@kiloyear\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@year}{yr}
+\newcommand{\yr}[1][]{\@unit@year\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@month}{mo}
+\newcommand{\mo}[1][]{\@unit@month\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@day}{d}
+\newcommand{\dday}[1][]{\@unit@day\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@hour}{hr}
+\newcommand{\hr}[1][]{\@unit@hour\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@second}{s}
+\newcommand{\s}[1][]{\@unit@second\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@millisecond}{ms}
+\newcommand{\ms}[1][]{\@unit@millisecond\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@gigayearago}{Ga}
+\newcommand{\Ga}[1][]{\@unit@gigayearago\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@megayearago}{Ma}
+\newcommand{\Ma}[1][]{\@unit@megayearago\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@kiloyearago}{ka}
+\newcommand{\ka}[1][]{\@unit@kiloyearago\ifx\relax#1\relax\else^{#1}\fi}
 
-\DeclareMathOperator{\mph}{mph}
-\DeclareMathOperator{\rev}{rev}
-\def\mps{{\m\s^{-1}}}
-\def\mpss{{\m\s^{-2}}}
+% Temperature
+\def\@unit@degreeCelsius{\text{\degree{}C}}
+\newcommand{\degC}[1][]{\@unit@degreeCelsius\ifx\relax#1\relax\else^{#1}\fi}
+\def\@unit@degreeFahrenheit{\text{\degree{}F}}
+\newcommand{\degF}[1][]{\@unit@degreeFahrenheit\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@kelvin}{K}
+\newcommand{\K}[1][]{\@unit@kelvin\ifx\relax#1\relax\else^{#1}\fi}
 
+% geographic coordinates
+\newcommand{\degN}{\text{\degree{}N}}
+\newcommand{\degS}{\text{\degree{}S}}
+\newcommand{\degE}{\text{\degree{}E}}
+\newcommand{\degW}{\text{\degree{}W}}
 
-\DeclareMathOperator{\K}{K}
-\usepackage{gensymb}
-%\def\degree{\text{°}}
-\def\degC{\text{\degree C}}
-\def\degN{\text{\degree N}}
-\def\degS{\text{\degree S}}
-\def\degE{\text{\degree E}}
-\def\degW{\text{\degree W}}
+% Sound level
+\DeclareMathOperator{\@unit@decibel}{dB}
+\newcommand{\dB}[1][]{\@unit@decibel\ifx\relax#1\relax\else^{#1}\fi}
 
-\DeclareMathOperator{\dB}{dB}
-
-\DeclareMathOperator{\GPa}{GPa}
-\DeclareMathOperator{\MPa}{MPa}
-\DeclareMathOperator{\kPa}{kPa}
-\DeclareMathOperator{\hPa}{hPa}
-\DeclareMathOperator{\Pa}{Pa}
-\DeclareMathOperator{\mb}{mb}
-\DeclareMathOperator{\db}{db}
-\DeclareMathOperator{\dbar}{dbar}
-\DeclareMathOperator{\pbar}{bar}
-\DeclareMathOperator{\atm}{atm}
-\DeclareMathOperator{\torr}{torr}
+% Pressure
+\DeclareMathOperator{\@unit@gigapascal}{GPa}
+\newcommand{\GPa}[1][]{\@unit@gigapascal\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@megapascal}{MPa}
+\newcommand{\MPa}[1][]{\@unit@megapascal\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@kilopascal}{kPa}
+\newcommand{\kPa}[1][]{\@unit@kilopascal\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@hectopascal}{hPa}
+\newcommand{\hPa}[1][]{\@unit@hectopascal\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@pascal}{Pa}
+\newcommand{\Pa}[1][]{\@unit@pascal\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@decibar}{db}
+\newcommand{\db}[1][]{\@unit@decibar\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@millibar}{mb}
+\newcommand{\mb}[1][]{\@unit@millibar\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@decibar@var}{dbar}
+\newcommand{\dbar}[1][]{\@unit@decibar@var\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@bar}{bar}
+\newcommand{\bbar}[1][]{\@unit@bar\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@millibar@var}{mbar}
+\newcommand{\mbar}[1][]{\@unit@millibar@var\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@atmosphere}{atm}
+\newcommand{\atm}[1][]{\@unit@atmosphere\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@torr}{torr}
+\newcommand{\torr}[1][]{\@unit@torr\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@millimetreofmercury}{mmHg}
+\newcommand{\mmHg}[1][]{\@unit@millimetreofmercury\ifx\relax#1\relax\else^{#1}\fi}
 
 \DeclareMathOperator{\PVU}{PVU}
 
-\DeclareMathOperator{\N}{N}
-\DeclareMathOperator{\kN}{kN}
+% Force
+\DeclareMathOperator{\@unit@kkilonewtonN}{kN}
+\newcommand{\kN}[1][]{\@unit@kilonewton\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@newton}{N}
+\newcommand{\N}[1][]{\@unit@newton\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@dyne}{dyn}
+\newcommand{\dyn}[1][]{\@unit@dyne\ifx\relax#1\relax\else^{#1}\fi}
 
-\DeclareMathOperator{\A}{A}
-\DeclareMathOperator{\C}{C}
-\DeclareMathOperator{\V}{V}
-\DeclareMathOperator{\Ohm}{\Omega}
-\DeclareMathOperator{\eV}{eV}
-\DeclareMathOperator{\F}{F}
-\DeclareMathOperator{\T}{T}
-\DeclareMathOperator{\nT}{nT}
-\DeclareMathOperator{\Gauss}{Gauss}
-\DeclareMathOperator{\Wb}{Wb}
-\DeclareMathOperator{\Henry}{H}
+% Acceleration
+\def\mpss{\m\s[-2]}
+\def\cmpss{\cm\s[-2]}
+\DeclareMathOperator{\@unit@galileo}{Gal}
+\newcommand{\gal}[1][]{\@unit@galileo\ifx\relax#1\relax\else^{#1}\fi}
 
-\DeclareMathOperator{\kJ}{kJ}
-\DeclareMathOperator{\J}{J}
-\DeclareMathOperator{\calorie}{cal}
-\DeclareMathOperator{\W}{W}
+% Velocity
+\def\kmph{\km\hr[-1]}
+\def\kmps{\km\s[-1]}
+\def\mps{\m\s[-1]}
+\def\cmps{\cm\s[-1]}
+\def\mmps{\km\s[-1]}
+
+% Energy
+\DeclareMathOperator{\@unit@kilojoule}{kJ}
+\newcommand{\kJ}[1][]{\@unit@kilojoule\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@joule}{J}
+\newcommand{\J}[1][]{\@unit@joule\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@kilocalorie}{kcal}
+\newcommand{\kcal}[1][]{\@unit@kilocalorie\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@calorie}{cal}
+\newcommand{\ccal}[1][]{\@unit@calorie\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@electronvolt}{eV}
+\newcommand{\eV}[1][]{\@unit@electronvolt\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@watt}{W}
+\newcommand{\W}[1][]{\@unit@watt\ifx\relax#1\relax\else^{#1}\fi}
+
+% Frequency
+\DeclareMathOperator{\mph}{mph}
+\DeclareMathOperator{\rev}{rev}
+\DeclareMathOperator{\@unit@GHz}{GHz}
+\newcommand{\GHz}[1][]{\@unit@GHz\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@MHz}{MHz}
+\newcommand{\MHz}[1][]{\@unit@MHz\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@kHz}{kHz}
+\newcommand{\kHz}[1][]{\@unit@kHz\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@Hz}{Hz}
+\newcommand{\Hz}[1][]{\@unit@Hz\ifx\relax#1\relax\else^{#1}\fi}
+
+\DeclareMathOperator{\@unit@A}{A}
+\newcommand{\A}[1][]{\@unit@A\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@mA}{mA}
+\newcommand{\mA}[1][]{\@unit@mA\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@C}{C}
+\newcommand{\C}[1][]{\@unit@C\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@V}{V}
+\newcommand{\V}[1][]{\@unit@V\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@Ohm}{\Omega}
+\newcommand{\Ohm}[1][]{\@unit@Ohm\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@F}{F}
+\newcommand{\F}[1][]{\@unit@F\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@T}{T}
+\newcommand{\T}[1][]{\@unit@T\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@nT}{nT}
+\newcommand{\nT}[1][]{\@unit@nT\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@Gauss}{Gauss}
+\newcommand{\Gauss}[1][]{\@unit@Gauss\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@Wb}{Wb}
+\newcommand{\Wb}[1][]{\@unit@Wb\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@Henry}{H}
+\newcommand{\Henry}[1][]{\@unit@Henry\ifx\relax#1\relax\else^{#1}\fi}
 
 \DeclareMathOperator{\mol}{mol}
 \DeclareMathOperator{\molecule}{molecule}
 \DeclareMathOperator{\M}{M}
 
-\DeclareMathOperator{\dyne}{dyne}
-\DeclareMathOperator{\MHz}{MHz}
-\DeclareMathOperator{\kHz}{kHz}
-\DeclareMathOperator{\Hz}{Hz}
 \DeclareMathOperator{\pt}{pt}
