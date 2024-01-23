@@ -1,7 +1,0 @@
-\ProvidesFile{glossaries-atmosphericsciences_chinese.def}
-
-\makeglossaries
-	
-\newacronym[description={},]{PGF}{PGF}{pressure gradient force}
-\newacronym[description={},]{SWE}{SWE}{shallow water equation}
-\newacronym[description={}, parent=geopotential]{GPH}{GPH}{geopotential height}

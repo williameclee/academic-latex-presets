@@ -215,6 +215,10 @@
 	parent={invertibility},
 	description=
 }
+\newglossaryentry{split}{
+	name=split,
+	description=
+}
 \newglossaryentry{basis}{
 	name=basis,
 	plural=bases,
@@ -289,6 +293,20 @@
 	name=orthonormal basis,
 	plural=orthonormal bases,
 	parent={basis},
+	description=
+}
+\newglossaryentry{multiplicity}{
+	name=multiplicity,
+	description=
+}
+\newglossaryentry{algebraic multiplicity}{
+	name=algebraic multiplicity,
+	parent={multiplicity},
+	description=
+}
+\newglossaryentry{geometric multiplicity}{
+	name=geometric multiplicity,
+	parent={multiplicity},
 	description=
 }
 \newglossaryentry{critical point}{

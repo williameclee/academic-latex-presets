@@ -77,8 +77,8 @@
 	name=Coriolis force,
 	description=
 }
-\newglossaryentry{Coriolis coefficient}{
-	name=Coriolis coefficient,
+\newglossaryentry{Coriolis parameter}{
+	name=Coriolis parameter,
 	symbol={\ensuremath{f}},
 	description=
 }
@@ -94,6 +94,7 @@
 \newglossaryentry{kinematic viscosity coefficient}{
 	name=kinematic viscosity coefficient,
 	parent={viscosity coefficient},
+	symbol={\ensuremath{\nu}},
 	description=
 }
 \newglossaryentry{scale height}{
@@ -185,3 +186,4 @@
 \newacronym[description={},]{SWE}{SWE}{shallow water equation}
 \newacronym[description={}, parent=geopotential, symbol={\ensuremath{Z}}]{GPH}{GPH}{geopotential height}
 \newacronym[description={}, parent=vorticity]{PV}{PV}{potential vorticity}
+\newacronym[description={}, parent=pressure]{MSLP}{MSLP}{mean sea-level pressure}

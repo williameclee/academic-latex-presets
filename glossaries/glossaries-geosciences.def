@@ -479,3 +479,5 @@
 \newacronym[description={}, plural={coordination polyhedra}]{CP}{CP}{coordination polyhedron}
 \newacronym[description={}, parent={polarised light}]{PPL}{PPL}{plane polarised light}
 \newacronym[description={}, parent={polarised light}]{XPL}{XPL}{cross polarised light}
+
+\newacronym[description={},]{LAB}{LAB}{lithosphere-asthenosphere boundary}
