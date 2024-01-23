@@ -60,37 +60,37 @@
 
 % title
 \let\title\undefined 
-\gdef\@info@title{Title} 
-\gdef\@info@title@short{Title}
+\def\@info@title{Title} 
+\def\@info@title@short{Title}
 \newcommand{\title}[2][]{
     \def\@info@title{#2}
 	\ifx\relax#1\relax 
-		\gdef\@info@title@short{#2} 
+		\def\@info@title@short{#2} 
 	\else
-		\gdef\@info@title@short{#1}
+		\def\@info@title@short{#1}
 	\fi
 }
 
 % subtitle
 \let\subtitle\undefined
-\gdef\@info@subtitle@default{Subtitle}
-\gdef\@info@subtitle{\@info@subtitle@default}
+\def\@info@subtitle@default{Subtitle}
+\def\@info@subtitle{\@info@subtitle@default}
 \newcommand{\subtitle}[1]{
-	\gdef\@info@subtitle{#1}
+	\def\@info@subtitle{#1}
 }
 
 % author
 \let\author\undefined
-\gdef\@info@author@default{Author}
-\gdef\@info@author{\@info@author@default}
-\gdef\@info@author@short{\@info@author@default}
-\gdef\@info@author@title{author}
+\def\@info@author@default{Author}
+\def\@info@author{\@info@author@default}
+\def\@info@author@short{\@info@author@default}
+\def\@info@author@title{author}
 \newcommand{\author}[2][]{
 	\setsepchar{;}
 	\ignoreemptyitems
 	\readlist*\@info@author{#2}
 	\ifx\relax#1\relax
-		\gdef\@info@author@short{%
+		\def\@info@author@short{%
 			\foreachitem\@info@author@item\in\@info@author{%
 				\ifnum\@info@author@itemcnt=1
 					\initials{\@info@author@item}%
@@ -104,7 +104,7 @@
 			}%
 		}
 	\else
-		\gdef\@info@author@short{#1}
+		\def\@info@author@short{#1}
 	\fi
 }
 
@@ -137,16 +137,16 @@
 
 % update note
 \let\updatenote\undefined
-\gdef\@info@updatenote@title{updated}
-\gdef\@info@updatenote@default{\today}
-\gdef\@info@updatenote{\@info@updatenote@default}
-\gdef\@info@updatenote@short{\@info@updatenote@default}
+\def\@info@updatenote@title{updated}
+\def\@info@updatenote@default{\today}
+\def\@info@updatenote{\@info@updatenote@default}
+\def\@info@updatenote@short{\@info@updatenote@default}
 \newcommand{\updatenote}[2][]{
-	\gdef\@info@updatenote{#2} 
+	\def\@info@updatenote{#2} 
 	\ifx\relax#1\relax
-        \gdef\@info@updatenote@short{#2}
+        \def\@info@updatenote@short{#2}
 	\else
-		\gdef\@info@updatenote@short{#1}
+		\def\@info@updatenote@short{#1}
 	\fi
 }
 
