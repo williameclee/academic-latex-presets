@@ -3,23 +3,58 @@
 
 \RequirePackage{xstring, etoolbox}
 
-\if@document@sansserif
-	\renewcommand{\familydefault}{\sfdefault}
-\fi
-
-\RequirePackage{kpfonts}
-\RequirePackage[scale=0.95]{FiraSans}
-
+\RequirePackage[narrowiints, partialup]{kpfonts}
 \if@document@draft
+	\RequirePackage[scale=0.95]{FiraSans}
 	\RequirePackage[scale=0.85]{FiraMono}
 \else
 	\RequirePackage{fontspec}
-	\setmonofont[Scale=0.9]{Fira Code}
-	\newfontfamily\textttsmbf{Fira Code Medium}
+	\RequirePackage[narrowiints, partialup]{kpfonts}
+	\RequirePackage[scale=0.95]{FiraSans}
+	% \setmonofont[scale=0.9]{Fira Code}
+	\setmonofont{Fira Code}
 	\if@document@sansserif
-		\RequirePackage{fontspec}
+		% final, sans-serif
 		\RequirePackage{unicode-math}
 		\setmathfont{Fira Math}
 		\unimathsetup{mathrm=sym, mathbf=sym}
+	\else
+		\RequirePackage{unicode-math}
+		\setmathfont{KpMath-Regular.otf}
+		\unimathsetup{mathrm=sym, mathbf=sym}
 	\fi
 \fi
+
+\if@document@sansserif
+	\renewcommand{\familydefault}{\sfdefault}
+\else
+	\renewcommand{\familydefault}{\rmdefault}
+\fi
+
+
+% \RequirePackage{newpxtext}
+% % \RequirePackage[narrowiints, partialup]{kpfonts}
+% \RequirePackage[scale=0.95]{FiraSans}
+
+
+% \if@document@draft
+% 	% \RequirePackage{newpxmath}
+% 	\RequirePackage[scale=0.85]{FiraMono}
+% \else
+% 	\RequirePackage{fontspec}
+% 	\setmonofont[Scale=0.9]{Fira Code}
+% 	\newfontfamily\textttsmbf{Fira Code Medium}
+% 	\if@document@sansserif
+% 		\RequirePackage{unicode-math}
+% 		\setmathfont{Fira Math}
+% 		\unimathsetup{mathrm=sym, mathbf=sym}
+% 	\else
+% 		\RequirePackage{newpxmath}
+% 	\fi
+% \fi
+
+% \RequirePackage[narrowiints, partialup]{kpfonts}
+
+% \if@document@sansserif
+% 	\renewcommand{\familydefault}{\sfdefault}
+% \fi
