@@ -1,0 +1,125 @@
+{
+	// Most fundamental commands
+	"text": {
+		"prefix": ["\\text{}"],
+		"body": [
+			"\\text{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "normal text"
+	},
+	"emph": {
+		"prefix": ["\\emph{}", "\\textit{}"],
+		"body": [
+			"\\emph{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "emphasised text"
+	},
+	"textit": {
+		"prefix": ["\\textit{}"],
+		"body": [
+			"\\textit{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "italic text"
+	},
+	"textbf": {
+		"prefix": ["\\textbf{}"],
+		"body": [
+			"\\textbf{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "italic text"
+	},
+	"texttt": {
+		"prefix": ["\\texttt{}"],
+		"body": [
+			"\\texttt{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "typewriter text"
+	},
+	// Coloured text
+	"alert:var": {
+		"prefix": ["\\alert{}"],
+		"body": [
+			"\\\\${1|alert,prob|}{${2:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "highlight text"
+	},
+	"alert": {
+		"prefix": ["\\alert{}", "\\highlight{}"],
+		"body": [
+			"\\alert{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "highlight text"
+	},
+	"prob": {
+		"prefix": ["\\prob{}", "\\alert{}", "\\highlight{}"],
+		"body": [
+			"\\prob{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "highlight text (warning)"
+	},
+	// Document structure
+    "RequirePackage": {
+		"prefix": ["\\RequirePackage{}", "\\usepackage{}"],
+		"body": [
+			"\\RequirePackage{${TM_SELECTED_TEXT}}",
+			"",
+		],
+		"description": "insert package"
+	},
+	"NeedsTeXFormat": {
+		"prefix": "\\NeedsTeXFormat{}",
+		"body": ["\\NeedsTeXFormat{LaTeX2e}"],
+		"description": "NeedsTeXFormat"
+	},
+	"ProvidesClass": {
+		"prefix": "\\ProvidesClass",
+		"body": [
+			"\\ProvidesClass{$TM_FILENAME_BASE}[$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE]",
+			"",
+		],
+		"description": "ProvidesClass"
+	},
+	"ProvidesClass:NeedsTeXFormat": {
+		"prefix": "\\ProvidesClass{}",
+		"body": [
+			"\\NeedsTeXFormat{LaTeX2e}",
+			"\\ProvidesClass{$TM_FILENAME_BASE}[$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE]",
+			"",
+		],
+		"description": "ProvidesClass with NeedsTeXFormat"
+	},
+	"ProvidesPackage": {
+		"prefix": "\\ProvidesPackage{}",
+		"body": [
+			"\\ProvidesPackage{$TM_FILENAME_BASE}[$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE]",
+			"",
+		],
+		"description": "ProvidesPackage"
+	},
+	"ProvidesPackage:NeedsTeXFormat": {
+		"prefix": "\\ProvidesPackage{}",
+		"body": [
+			"\\NeedsTeXFormat{LaTeX2e}",
+			"\\ProvidesPackage{$TM_FILENAME_BASE}[$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE]",
+			"",
+		],
+		"description": "ProvidesPackage with NeedsTeXFormat"
+	},
+	"ProvidesFile": {
+		"prefix": "\\ProvidesFile{}",
+		"body": [
+			"\\ProvidesFile{$TM_FILENAME}[$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE]",
+			"",
+		],
+		"description": "ProvidesFile"
+	},
+	"ProvidesFile:NeedsTeXFormat": {
+		"prefix": "\\ProvidesFile{}",
+		"body": [
+			"\\NeedsTeXFormat{LaTeX2e}",
+			"\\ProvidesFile{$TM_FILENAME}[$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE]",
+			"",
+		],
+		"description": "ProvidesFile with NeedsTeXFormat"
+	},
+}

@@ -1,0 +1,86 @@
+{
+	"left arrow": {
+		"prefix": "\\<-",
+		"body": [
+			"\\leftarrow",
+		],
+		"description": "insert left arrow (\\leftarrow)"
+	},
+	"right arrow": {
+		"prefix": "\\->",
+		"body": [
+			"\\rightarrow",
+		],
+		"description": "insert right arrow (\\rightarrow)"
+	},
+	"left-right arrow": {
+		"prefix": "\\<->",
+		"body": [
+			"\\leftrightarrow",
+		],
+		"description": "insert left-right arrow (\\leftrightarrow)"
+	},
+	"long left arrow": {
+		"prefix": ["\\<--", "\\<-"],
+		"body": [
+			"\\longleftarrow",
+		],
+		"description": "insert long left arrow (\\longleftarrow)"
+	},
+	"long right arrow": {
+		"prefix": ["\\-->", "\\->"],
+		"body": [
+			"\\longrightarrow",
+		],
+		"description": "insert long right arrow (\\longrightarrow)"
+	},
+	"long left-right arrow": {
+		"prefix": ["\\<-->", "\\<->"],
+		"body": [
+			"\\longleftrightarrow",
+		],
+		"description": "insert long left-right arrow (\\longleftrightarrow)"
+	},
+	"doubled left arrow": {
+		"prefix": "\\<=",
+		"body": [
+			"\\Leftarrow",
+		],
+		"description": "insert doubled left arrow (\\Leftarrow)"
+	},
+	"doubled right arrow": {
+		"prefix": "\\=>",
+		"body": [
+			"\\Rightarrow",
+		],
+		"description": "insert doubled right arrow (\\Rightarrow)"
+	},
+	"doubled left-right arrow": {
+		"prefix": "\\<=>",
+		"body": [
+			"\\Leftrightarrow",
+		],
+		"description": "insert doubled left-right arrow (\\Leftrightarrow)"
+	},
+	"long doubled left arrow": {
+		"prefix": ["\\<==", "\\<="],
+		"body": [
+			"\\Longleftarrow",
+		],
+		"description": "insert long doubled left arrow (\\Longleftarrow)"
+	},
+	"long doubled right arrow": {
+		"prefix": ["\\==>", "\\=>"],
+		"body": [
+			"\\Longrightarrow",
+		],
+		"description": "insert long doubled right arrow (\\Longrightarrow)"
+	},
+	"long doubled left-right arrow": {
+		"prefix": ["\\<==>", "\\<=>"],
+		"body": [
+			"\\Longleftrightarrow",
+		],
+		"description": "insert long doubled left-right arrow (\\Longleftrightarrow)"
+	},
+}

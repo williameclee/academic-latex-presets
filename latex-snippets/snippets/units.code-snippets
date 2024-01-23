@@ -1,0 +1,879 @@
+{
+    // Length
+	"kilometre (km)": {
+		"prefix": ["\\km", "\\kilometre", "\\kilometer"],
+		"body": [
+			"\\km"
+		],
+		"description": "kilometre (km) unit"
+	},
+	"kilometre (km) with power": {
+		"prefix": ["\\km[]", "\\kilometre[]", "\\kilometer[]"],
+		"body": [
+			"\\km[$1]"
+		],
+		"description": "kilometre (km) unit with power"
+	},
+    "metre (m)": {
+		"prefix": ["\\m", "\\metre", "\\meter"],
+		"body": [
+			"\\m"
+		],
+		"description": "metre (m) unit"
+	},
+	"metre (m) with power": {
+		"prefix": ["\\m[]", "\\metre[]", "\\meter[]"],
+		"body": [
+			"\\m[$1]"
+		],
+		"description": "metre (m) unit with power"
+	},
+    "centimetre (cm)": {
+        "prefix": ["\\cm", "\\centimetre", "\\centimeter"],
+        "body": [
+            "\\cm"
+        ],
+        "description": "centimetre (cm) unit"
+    },
+    "centimetre (cm) with power": {
+        "prefix": ["\\cm[]", "\\centimetre[]", "\\centimeter[]"],
+        "body": [
+            "\\cm[$1]"
+        ],
+        "description": "centimetre (cm) unit with power"
+    },
+    "millimetre (mm)": {
+        "prefix": ["\\mm", "\\millimetre", "\\millimeter"],
+        "body": [
+            "\\mm"
+        ],
+        "description": "millimetre (mm) unit"
+    },
+    "millimetre (mm) with power": {
+        "prefix": ["\\mm[]", "\\millimetre[]", "\\millimeter[]"],
+        "body": [
+            "\\mm[$1]"
+        ],
+        "description": "millimetre (mm) unit with power"
+    },
+    "micrometre (µm)": {
+        "prefix": ["\\mum", "\\um", "\\micrometre", "\\micrometer"],
+        "body": [
+            "\\um"
+        ],
+        "description": "micrometre (µm) unit"
+    },
+    "micrometre (µm) with power": {
+        "prefix": ["\\mum[]", "\\um[]", "\\micrometre[]", "\\micrometer[]"],
+        "body": [
+            "\\um[$1]"
+        ],
+        "description": "micrometre (µm) unit with power"
+    },
+    "nanometre (nm)": {
+        "prefix": ["\\nm", "\\nanometre", "\\nanometer"],
+        "body": [
+            "\\nm"
+        ],
+        "description": "nanometre (nm) unit"
+    },
+    "nanometre (nm) with power": {
+        "prefix": ["\\nm[]", "\\nanometre[]", "\\nanometer[]"],
+        "body": [
+            "\\nm[$1]"
+        ],
+        "description": "nanometre (nm) unit with power"
+    },
+    "femtometre (fm)": {
+        "prefix": ["\\fm", "\\femtometre", "\\femtometer"],
+        "body": [
+            "\\fm"
+        ],
+        "description": "femtometre (fm) unit"
+    },
+    "femtometre (fm) with power": {
+        "prefix": ["\\fm[]", "\\femtometre[]", "\\femtometer[]"],
+        "body": [
+            "\\fm[$1]"
+        ],
+        "description": "femtometre (fm) unit with power"
+    },
+
+    // Volume
+    "litre (L)": {
+        "prefix": ["\\L", "\\litre", "\\liter"],
+        "body": [
+            "\\L"
+        ],
+        "description": "litre (L) unit"
+    },
+    "litre (L) with power": {
+        "prefix": ["\\L[]", "\\litre[]", "\\liter[]"],
+        "body": [
+            "\\L[$1]"
+        ],
+        "description": "litre (L) unit with power"
+    },
+    "millilitre (mL)": {
+        "prefix": ["\\mL", "\\millilitre", "\\milliliter"],
+        "body": [
+            "\\mL"
+        ],
+        "description": "millilitre (mL) unit"
+    },
+    "millilitre (mL) with power": {
+        "prefix": ["\\mL[]", "\\millilitre[]", "\\milliliter[]"],
+        "body": [
+            "\\mL[$1]"
+        ],
+        "description": "millilitre (mL) unit with power"
+    },
+    // Mass
+    "kilogram (kg)": {
+        "prefix": ["\\kg", "\\kilogram"],
+        "body": [
+            "\\kg"
+        ],
+        "description": "kilogram (kg) unit"
+    },
+    "kilogram (kg) with power": {
+        "prefix": ["\\kg[]", "\\kilogram[]"],
+        "body": [
+            "\\kg[$1]"
+        ],
+        "description": "kilogram (kg) unit with power"
+    },
+    "gram (g)": {
+        "prefix": ["\\g", "\\gram"],
+        "body": [
+            "\\g"
+        ],
+        "description": "gram (g) unit"
+    },
+    "gram (g) with power": {
+        "prefix": ["\\g[]", "\\gram[]"],
+        "body": [
+            "\\g[$1]"
+        ],
+        "description": "gram (g) unit with power"
+    },
+    "milligram (mg)": {
+        "prefix": ["\\mg", "\\milligram"],
+        "body": [
+            "\\mg"
+        ],
+        "description": "milligram (mg) unit"
+    },
+    "milligram (mg) with power": {
+        "prefix": ["\\mg[]", "\\milligram[]"],
+        "body": [
+            "\\mg[$1]"
+        ],
+        "description": "milligram (mg) unit with power"
+    },
+    // Weight
+    "kilogram-weight (kgw)": {
+        "prefix": ["\\kgw", "\\kilogram-weight"],
+        "body": [
+            "\\kgw"
+        ],
+        "description": "kilogram-weight (kgw) unit"
+    },
+    "kilogram-weight (kgw) with power": {
+        "prefix": ["\\kgw[]", "\\kilogram-weight[]"],
+        "body": [
+            "\\kgw[$1]"
+        ],
+        "description": "kilogram-weight (kgw) unit with power"
+    },
+    "gram-weight (gw)": {
+        "prefix": ["\\gw", "\\gram-weight"],
+        "body": [
+            "\\gw"
+        ],
+        "description": "gram-weight (gw) unit"
+    },
+    "gram-weight (gw) with power": {
+        "prefix": ["\\gw[]", "\\gram-weight[]"],
+        "body": [
+            "\\gw[$1]"
+        ],
+        "description": "gram-weight (gw) unit with power"
+    },
+    // Time
+    "gigayear (Gyr)": {
+        "prefix": ["\\Gyr", "\\Gy", "\\gigayear"],
+        "body": [
+            "\\Gyr"
+        ],
+        "description": "gigayear (Gyr) unit"
+    },
+    "gigayear (Gyr) with power": {
+        "prefix": ["\\Gyr[]", "\\Gy[]", "\\gigayear[]"],
+        "body": [
+            "\\Gyr[$1]"
+        ],
+        "description": "gigayear (Gyr) unit with power"
+    },
+    "megayear (Myr)": {
+        "prefix": ["\\Myr", "\\My", "\\megayear"],
+        "body": [
+            "\\Myr"
+        ],
+        "description": "megayear (Myr) unit"
+    },
+    "megayear (Myr) with power": {
+        "prefix": ["\\Myr[]", "\\My[]", "\\megayear[]"],
+        "body": [
+            "\\Myr[$1]"
+        ],
+        "description": "megayear (Myr) unit with power"
+    },
+    "kiloyear (kyr)": {
+        "prefix": ["\\kyr", "\\ky", "\\kiloyear"],
+        "body": [
+            "\\kyr"
+        ],
+        "description": "kiloyear (kyr) unit"
+    },
+    "kiloyear (kyr) with power": {
+        "prefix": ["\\kyr[]", "\\ky[]", "\\kiloyear[]"],
+        "body": [
+            "\\kyr[$1]"
+        ],
+        "description": "kiloyear (kyr) unit with power"
+    },
+    "year (yr)": {
+        "prefix": ["\\yr", "\\year"],
+        "body": [
+            "\\yr"
+        ],
+        "description": "year (yr) unit"
+    },
+    "year (yr) with power": {
+        "prefix": ["\\yr[]", "\\year[]"],
+        "body": [
+            "\\yr[$1]"
+        ],
+        "description": "year (yr) unit with power"
+    },
+    "month (mo)": {
+        "prefix": ["\\mo", "\\month"],
+        "body": [
+            "\\mo"
+        ],
+        "description": "month (mo) unit"
+    },
+    "month (mo) with power": {
+        "prefix": ["\\mo[]", "\\month[]"],
+        "body": [
+            "\\mo[$1]"
+        ],
+        "description": "month (mo) unit with power"
+    },
+    "day (d)": {
+        "prefix": ["\\dday", "\\mday", "\\day"],
+        "body": [
+            "\\dday"
+        ],
+        "description": "day (d) unit"
+    },
+    "day (d) with power": {
+        "prefix": ["\\dday[]", "\\mday[]", "\\day[]"],
+        "body": [
+            "\\dday[$1]"
+        ],
+        "description": "day (d) unit with power"
+    },
+    "hour (hr)": {
+        "prefix": ["\\hr", "\\h", "\\hour"],
+        "body": [
+            "\\hr"
+        ],
+        "description": "hour (hr) unit"
+    },
+    "hour (hr) with power": {
+        "prefix": ["\\hr[]", "\\h[]", "\\hour[]"],
+        "body": [
+            "\\hr[$1]"
+        ],
+        "description": "hour (hr) unit with power"
+    },
+    "second (s)": {
+        "prefix": ["\\s", "\\sec", "\\second"],
+        "body": [
+            "\\s"
+        ],
+        "description": "second (s) unit"
+    },
+    "second (s) with power": {
+        "prefix": ["\\s[]", "\\sec[]", "\\second[]"],
+        "body": [
+            "\\s[$1]"
+        ],
+        "description": "second (s) unit with power"
+    },
+    "millisecond (ms)": {
+        "prefix": ["\\ms", "\\millisecond"],
+        "body": [
+            "\\ms"
+        ],
+        "description": "millisecond (ms) unit"
+    },
+    "millisecond (ms) with power": {
+        "prefix": ["\\ms[]", "\\millisecond[]"],
+        "body": [
+            "\\ms[$1]"
+        ],
+        "description": "millisecond (ms) unit with power"
+    },
+    "gigayear-ago (Ga)": {
+        "prefix": ["\\Ga", "\\Gya", "\\gigayear-ago"],
+        "body": [
+            "\\Ga"
+        ],
+        "description": "gigayear-ago (Ga) unit"
+    },
+    "megayear-ago (Ma)": {
+        "prefix": ["\\Ma", "\\Mya", "\\megayear-ago"],
+        "body": [
+            "\\Ma"
+        ],
+        "description": "megayear-ago (Ma) unit"
+    },
+    "kiloyear-ago (ka)": {
+        "prefix": ["\\ka", "\\kya", "\\kiloyear-ago"],
+        "body": [
+            "\\ka"
+        ],
+        "description": "kiloyear-ago (ka) unit"
+    },
+    // Temperature
+    "degree Celsius (°C)": {
+        "prefix": ["\\degC", "\\degreeCelsius", "\\degreeC", "\\Celsius"],
+        "body": [
+            "\\degC"
+        ],
+        "description": "degree Celsius (°C) unit"
+    },
+    "degree Celsius (°C) with power": {
+        "prefix": ["\\degC[]", "\\degreeCelsius[]", "\\degreeC[]", "\\Celsius[]" ],
+        "body": [
+            "\\degC[$1]"
+        ],
+        "description": "degree Celsius (°C) unit with power"
+    },
+    "degree Fahrenheit (°F)": {
+        "prefix": ["\\degF", "\\degreeFahrenheit", "\\degreeF", "\\Fahrenheit"],
+        "body": [
+            "\\degF"
+        ],
+        "description": "degree Fahrenheit (°F) unit"
+    },
+    "degree Fahrenheit (°F) with power": {
+        "prefix": ["\\degF[]" , "\\degreeFahrenheit[]", "\\degreeF[]", "\\Fahrenheit[]" ],
+        "body": [
+            "\\degF[$1]"
+        ],
+        "description": "degree Fahrenheit (°F) unit with power"
+    },
+    "kelvin (K)": {
+        "prefix": ["\\K", "\\kelvin"],
+        "body": [
+            "\\K"
+        ],
+        "description": "kelvin (K) unit"
+    },
+    "kelvin (K) with power": {
+        "prefix": ["\\K[]" , "\\kelvin[]"],
+        "body": [
+            "\\K[$1]"
+        ],
+        "description": "kelvin (K) unit with power"
+    },
+    // Geographic coordinate
+    "north latitude (°N)": {
+        "prefix": ["\\degN", "\\degreeN", "\\degreeNorth"],
+        "body": [
+            "\\degN"
+        ],
+        "description": "north latitude (°N) unit"
+    },
+    "south latitude (°S)": {
+        "prefix": ["\\degS", "\\degreeS", "\\degreeSouth"],
+        "body": [
+            "\\degS"
+        ],
+        "description": "south latitude (°S) unit"
+    },
+    "east longitude (°E)": {
+        "prefix": ["\\degE", "\\degreeE", "\\degreeEast"],
+        "body": [
+            "\\degE"
+        ],
+        "description": "east longitude (°E) unit"
+    },
+    "west longitude (°W)": {
+        "prefix": ["\\degW", "\\degreeW", "\\degreeWest"],
+        "body": [
+            "\\degW"
+        ],
+        "description": "west longitude (°W) unit"
+    },
+    // Sound level
+    "decibel (dB)": {
+        "prefix": ["\\dB", "\\decibel"],
+        "body": [
+            "\\dB"
+        ],
+        "description": "decibel (dB) unit"
+    },
+    "decibel (dB) with power": {
+        "prefix": ["\\dB[]" , "\\decibel[]"],
+        "body": [
+            "\\dB[$1]"
+        ],
+        "description": "decibel (dB) unit with power"
+    },
+    // Pressure
+    "Gigapascal (GPa)": {
+        "prefix": ["\\GPa", "\\gigapascal"],
+        "body": [
+            "\\GPa"
+        ],
+        "description": "Gigapascal (GPa) unit"
+    },
+    "Gigapascal (GPa) with power": {
+        "prefix": ["\\GPa[]", "\\gigapascal[]"],
+        "body": [
+            "\\GPa[$1]"
+        ],
+        "description": "Gigapascal (GPa) unit with power"
+    },
+    "Megapascal (MPa)": {
+        "prefix": ["\\MPa", "\\megapascal"],
+        "body": [
+            "\\MPa"
+        ],
+        "description": "Megapascal (MPa) unit"
+    },
+    "Megapascal (MPa) with power": {
+        "prefix": ["\\MPa[]" , "\\megapascal[]"],
+        "body": [
+            "\\MPa[$1]"
+        ],
+        "description": "Megapascal (MPa) unit with power"
+    },
+    "kilopascal (kPa)": {
+        "prefix": ["\\kPa", "\\kilopascal"],
+        "body": [
+            "\\kPa"
+        ],
+        "description": "kilopascal (kPa) unit"
+    },
+    "kilopascal (kPa) with power": {
+        "prefix": ["\\kPa[]" , "\\kilopascal[]"],
+        "body": [
+            "\\kPa[$1]"
+        ],
+        "description": "kilopascal (kPa) unit with power"
+    },
+    "hectopascal (hPa)": {
+        "prefix": ["\\hPa", "\\hectopascal"],
+        "body": [
+            "\\hPa"
+        ],
+        "description": "hectopascal (hPa) unit"
+    },
+    "hectopascal (hPa) with power": {
+        "prefix": ["\\hPa[]" , "\\hectopascal[]"],
+        "body": [
+            "\\hPa[$1]"
+        ],
+        "description": "hectopascal (hPa) unit with power"
+    },
+    "pascal (Pa)": {
+        "prefix": ["\\Pa", "\\pascal"],
+        "body": [
+            "\\Pa"
+        ],
+        "description": "pascal (Pa) unit"
+    },
+    "pascal (Pa) with power": {
+        "prefix": ["\\Pa[]" , "\\pascal[]"],
+        "body": [
+            "\\Pa[$1]"
+        ],
+        "description": "pascal (Pa) unit with power"
+    },
+    "millibar (mb)": {
+        "prefix": ["\\mb", "\\mbar", "\\millibar"],
+        "body": [
+            "\\mb"
+        ],
+        "description": "millibar (mb) unit"
+    },
+    "millibar (mb) with power": {
+        "prefix": ["\\mb[]" , "\\mbar[]", "\\millibar[]"],
+        "body": [
+            "\\mb[$1]"
+        ],
+        "description": "millibar (mb) unit with power"
+    },
+    "decibar (db)": {
+        "prefix": ["\\db", "\\dbar", "\\decibar"],
+        "body": [
+            "\\db"
+        ],
+        "description": "decibar (db) unit"
+    },
+    "decibar (db) with power": {
+        "prefix": ["\\db[]", "\\dbar[]", "\\decibar[]"],
+        "body": [
+            "\\db[$1]"
+        ],
+        "description": "decibar (db) unit with power"
+    },
+    "millibar (mb) with power": {
+        "prefix": ["\\mb[]", "\\mbar[]", "\\millibar[]"],
+        "body": [
+            "\\mb[$1]"
+        ],
+        "description": "millibar (mb) unit with power"
+    },
+    "decibar (dbar)": {
+        "prefix": ["\\dbar", "\\db", "\\decibar"],
+        "body": [
+            "\\dbar"
+        ],
+        "description": "decibar (dbar) unit"
+    },
+    "decibar (dbar) with power": {
+        "prefix": ["\\dbar[]", "\\db[]", "\\decibar[]"],
+        "body": [
+            "\\dbar[$1]"
+        ],
+        "description": "decibar (dbar) unit with power"
+    },
+    "bar (bar)": {
+        "prefix": "\\bar",
+        "body": [
+            "\\bbar"
+        ],
+        "description": "bar (bar) unit"
+    },
+    "bar (bar) with power": {
+        "prefix": "\\bar[]",
+        "body": [
+            "\\bbar[$1]"
+        ],
+        "description": "bar (bar) unit with power"
+    },
+    "millibar (mbar)": {
+        "prefix": ["\\mbar", "\\mb", "\\millibar"],
+        "body": [
+            "\\mbar"
+        ],
+        "description": "millibar (mbar) unit"
+    },
+    "millibar (mbar) with power": {
+        "prefix": ["\\mbar[]", "\\mb[]", "\\millibar[]"],
+        "body": [
+            "\\mbar[$1]"
+        ],
+        "description": "millibar (mbar) unit with power"
+    },
+    "atmosphere (atm)": {
+        "prefix": ["\\atm", "\\atmosphere"],
+        "body": [
+            "\\atm"
+        ],
+        "description": "atmosphere (atm) unit"
+    },
+    "atmosphere (atm) with power": {
+        "prefix": ["\\atm[]", "\\atmosphere[]"],
+        "body": [
+            "\\atm[$1]"
+        ],
+        "description": "atmosphere (atm) unit with power"
+    },
+    "torr (torr)": {
+        "prefix": "\\torr",
+        "body": [
+            "\\torr"
+        ],
+        "description": "torr (torr) unit"
+    },
+    "torr (torr) with power": {
+        "prefix": "\\torr[]",
+        "body": [
+            "\\torr[$1]"
+        ],
+        "description": "torr (torr) unit with power"
+    },
+    "millimetre of mercury (mmHg)": {
+        "prefix": ["\\mmHg", "\\millimetreofmercury"],
+        "body": [
+            "\\mmHg"
+        ],
+        "description": "millimetre of mercury (mmHg) unit"
+    },
+    "millimetre of mercury (mmHg) with power": {
+        "prefix": ["\\mmHg[]", "\\millimetreofmercury[]"],
+        "body": [
+            "\\mmHg[$1]"
+        ],
+        "description": "millimetre of mercury (mmHg) unit with power"
+    },
+    // Force
+    "kilonewton (kN)": {
+        "prefix": ["\\kN", "\\kilonewton"],
+        "body": [
+            "\\kN"
+        ],
+        "description": "kilonewton (kN) unit"
+    },
+    "kilonewton (kN) with power": {
+        "prefix": ["\\kN[]", "\\kilonewton[]"],
+        "body": [
+            "\\kN[$1]"
+        ],
+        "description": "kilonewton (kN) unit with power"
+    },
+    "newton (N)": {
+        "prefix": ["\\N", "\\newton"],
+        "body": [
+            "\\N"
+        ],
+        "description": "newton (N) unit"
+    },
+    "newton (N) with power": {
+        "prefix": ["\\N[]", "\\newton[]"],
+        "body": [
+            "\\N[$1]"
+        ],
+        "description": "newton (N) unit with power"
+    },
+    "dyne (dyn)": {
+        "prefix": ["\\dyne", "\\dyn"],
+        "body": [
+            "\\dyne"
+        ],
+        "description": "dyne (dyn) unit"
+    },
+    "dyne (dyn) with power": {
+        "prefix": ["\\dyn[]", "\\dyne[]"],
+        "body": [
+            "\\dyn[$1]"
+        ],
+        "description": "dyne (dyn) unit with power"
+    },
+    // Acceleration
+    "metre per second squared (m/s²)": {
+        "prefix": ["\\msq", "\\mpss", "\\metrepersecondsquared"],
+        "body": [
+            "\\mpss"
+        ],
+        "description": "metre per second squared (m/s²) unit"
+    },
+    "centimetre per second squared (cm/s²)": {
+        "prefix": ["\\cmsq", "\\cmpss", "\\centimetrepersecondsquared"],
+        "body": [
+            "\\cmpss"
+        ],
+        "description": "centimetre per second squared (cm/s²) unit"
+    },
+    "galileo (gal)": {
+        "prefix": ["\\gal"],
+        "body": [
+            "\\gal"
+        ],
+        "description": "galileo (gal) unit"
+    },
+    "galileo (gal) with power": {
+        "prefix": ["\\gal[]"],
+        "body": [
+            "\\gal[$1]"
+        ],
+        "description": "galileo (gal) unit with power"
+    },
+    // Velocity
+    "kilometre per hour (km/hr)": {
+        "prefix": ["\\kmph", "\\kilometreperhour"],
+        "body": [
+            "\\kmh"
+        ],
+        "description": "kilometre per hour (km/h) unit"
+    },
+    "kilometre per second (km/s)": {
+        "prefix": ["\\kms", "\\kmph", "\\kilometrepersecond"],
+        "body": [
+            "\\kms"
+        ],
+        "description": "kilometre per second (km/s) unit"
+    },
+    "metre per second (m/s)": {
+        "prefix": ["\\mps", "\\metrepersecond"],
+        "body": [
+            "\\mps"
+        ],
+        "description": "metre per second (m/s) unit"
+    },
+    "centimetre per second (cm/s)": {
+        "prefix": ["\\cmps", "\\centimetrepersecond"],
+        "body": [
+            "\\cmps"
+        ],
+        "description": "centimetre per second (cm/s) unit"
+    },
+    "millimetre per second (mm/s)": {
+        "prefix": ["\\mmps", "\\millimetrepersecond"],
+        "body": [
+            "\\mmps"
+        ],
+        "description": "millimetre per second (mm/s) unit"
+    },
+    // Energy
+    "kilojoule (kJ)": {
+        "prefix": ["\\kJ", "\\kilojoule"],
+        "body": [
+            "\\kJ"
+        ],
+        "description": "kilojoule (kJ) unit"
+    },
+    "kilojoule (kJ) with power": {
+        "prefix": ["\\kJ[]", "\\kilojoule[]"],
+        "body": [
+            "\\kJ[$1]"
+        ],
+        "description": "kilojoule (kJ) unit with power"
+    },
+    "joule (J)": {
+        "prefix": ["\\J", "\\joule"],
+        "body": [
+            "\\J"
+        ],
+        "description": "joule (J) unit"
+    },
+    "joule (J) with power": {
+        "prefix": ["\\J[]", "\\joule[]"],
+        "body": [
+            "\\J[$1]"
+        ],
+        "description": "joule (J) unit with power"
+    },
+    "kilocalorie (kcal)": {
+        "prefix": ["\\kcal", "\\kilocalorie"],
+        "body": [
+            "\\kcal"
+        ],
+        "description": "kilocalorie (kcal) unit"
+    },
+    "kilocalorie (kcal) with power": {
+        "prefix": ["\\kcal[]", "\\kilocalorie[]"],
+        "body": [
+            "\\kcal[$1]"
+        ],
+        "description": "kilocalorie (kcal) unit with power"
+    },
+    "calorie (cal)": {
+        "prefix": ["\\ccal", "\\cal", "\\calorie"],
+        "body": [
+            "\\ccal"
+        ],
+        "description": "calorie (cal) unit"
+    },
+    "calorie (cal) with power": {
+        "prefix": ["\\cal[]", "\\calorie[]"],
+        "body": [
+            "\\cal[$1]"
+        ],
+        "description": "calorie (cal) unit with power"
+    },
+    "electronvolt (eV)": {
+        "prefix": ["\\eV", "\\electronvolt"],
+        "body": [
+            "\\eV"
+        ],
+        "description": "electronvolt (eV) unit"
+    },
+    "electronvolt (eV) with power": {
+        "prefix": ["\\eV[]", "\\electronvolt[]"],
+        "body": [
+            "\\eV[$1]"
+        ],
+        "description": "electronvolt (eV) unit with power"
+    },
+    "watt (W)": {
+        "prefix": ["\\W", "\\watt"],
+        "body": [
+            "\\W"
+        ],
+        "description": "watt (W) unit"
+    },
+    "watt (W) with power": {
+        "prefix": ["\\W[]", "\\watt[]"],
+        "body": [
+            "\\W[$1]"
+        ],
+        "description": "watt (W) unit with power"
+    },
+    // Frequency
+    "gigahertz (GHz)": {
+        "prefix": ["\\GHz", "\\gigahertz"],
+        "body": [
+            "\\GHz"
+        ],
+        "description": "gigahertz (GHz) unit"
+    },
+    "gigahertz (GHz) with power": {
+        "prefix": ["\\GHz[]", "\\gigahertz[]"],
+        "body": [
+            "\\GHz[$1]"
+        ],
+        "description": "gigahertz (GHz) unit with power"
+    },
+    "megahertz (MHz)": {
+        "prefix": ["\\MHz", "\\megahertz"],
+        "body": [
+            "\\MHz"
+        ],
+        "description": "megahertz (MHz) unit"
+    },
+    "megahertz (MHz) with power": {
+        "prefix": ["\\MHz[]", "\\megahertz[]"],
+        "body": [
+            "\\MHz[$1]"
+        ],
+        "description": "megahertz (MHz) unit with power"
+    },
+    "kilohertz (kHz)": {
+        "prefix": ["\\kHz", "\\kilohertz"],
+        "body": [
+            "\\kHz"
+        ],
+        "description": "kilohertz (kHz) unit"
+    },
+    "kilohertz (kHz) with power": {
+        "prefix": ["\\kHz[]", "\\kilohertz[]"],
+        "body": [
+            "\\kHz[$1]"
+        ],
+        "description": "kilohertz (kHz) unit with power"
+    },
+    "hertz (Hz)": {
+        "prefix": ["\\Hz", "\\hertz"],
+        "body": [
+            "\\Hz"
+        ],
+        "description": "hertz (Hz) unit"
+    },
+    "hertz (Hz) with power": {
+        "prefix": ["\\Hz[]", "\\hertz[]"],
+        "body": [
+            "\\Hz[$1]"
+        ],
+        "description": "hertz (Hz) unit with power"
+    },
+
+}

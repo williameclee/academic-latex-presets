@@ -1,0 +1,504 @@
+{
+    // Environments
+    "equation:var": {
+		"prefix": ["\\begin{align}", "\\align", "align"],
+		"body": [
+			"\\begin{${1|align*,align,equation,equation*|}}",
+			"	${2:${TM_SELECTED_TEXT}}",
+			"\\end{${1|align*,align,equation,equation*|}}",
+            ""
+		],
+		"description": "equation environment with variants"
+	},
+    "align environment": {
+		"prefix": ["\\begin{align}", "\\align", "align"],
+		"body": [
+			"\\begin{align}",
+			"	${1:${TM_SELECTED_TEXT}}",
+			"\\end{align}",
+            ""
+		],
+		"description": "align environment"
+	},
+	"align* environment": {
+		"prefix": ["\\begin{align*}", "\\align*", "align*", "align"],
+		"body": [
+			"\\begin{align*}",
+			"	${1:${TM_SELECTED_TEXT}}",
+			"\\end{align*}",
+            ""
+		],
+		"description": "align* environment"
+	},
+	"equation environment": {
+		"prefix": ["\\begin{equation}", "\\equation"],
+		"body": [
+			"\\begin{equation}",
+			"	${1:${TM_SELECTED_TEXT}}",
+			"\\end{equation}",
+            ""
+		],
+		"description": "equation environment"
+	},
+    "equation environment with split": {
+		"prefix": ["\\begin{equation}", "\\equation", "\\equation:split"],
+		"body": [
+			"\\begin{equation}",
+            "   \\begin{split}",
+			"	    ${1:${TM_SELECTED_TEXT}}",
+			"   \\end{split}",
+            "\\end{equation}",
+            ""
+		],
+		"description": "equation environment with split"
+	},
+	"split environment": {
+		"prefix": ["\\begin{split}", "\\split"],
+		"body": [
+			"\\begin{split}",
+			"	${1:${TM_SELECTED_TEXT}}",
+			"\\end{split}",
+            ""
+		],
+		"description": "equation environment"
+	},
+	"cases environment": {
+		"prefix": ["\\begin{cases}", "\\cases"],
+		"body": [
+			"\\begin{cases}",
+			"	${1:${TM_SELECTED_TEXT}} & $2 \\\\\\",
+			"	$3 & $4",
+			"\\end{cases}",
+            ""
+		],
+		"description": "cases environment"
+	},
+	"subequations environment": {
+		"prefix": ["\\begin{subequations}", "\\subequations"],
+		"body": [
+			"\\begin{subequations}",
+			"	${1:${TM_SELECTED_TEXT}}",
+			"\\end{subequations}",
+            ""
+		],
+		"description": "subequations environment"
+	},
+	"subequations environment with align": {
+		"prefix": ["\\begin{subequations}", "\\subequations", "\\subequations:align"],
+		"body": [
+			"\\begin{subequations}",
+			"\\begin{align}",
+			"	${1:${TM_SELECTED_TEXT}}",
+			"\\end{align}"
+			"\\end{subequations}",
+            ""
+		],
+		"description": "subequations environment with align"
+	},
+
+    // Basic commands
+    "linebreak": {
+		"prefix": "\\\\",
+		"body": [
+			"\\\\\\",
+			""
+		],
+		"description": "absolute value"
+	},
+    "bracket:var": {
+		"prefix": ["\\left(", "("],
+		"body": [
+			"\\left${1|(,[,\\{|}${3:${TM_SELECTED_TEXT}}\\right${2|),],\\\\}|}"
+		],
+		"description": "brackets"
+	},
+	"bracket": {
+		"prefix": ["\\left(", "("],
+		"body": [
+			"\\left(${1:${TM_SELECTED_TEXT}}\\right)"
+		],
+		"description": "brackets"
+	},
+	"intertext": {
+		"prefix": "\\intertext{}",
+		"body": [
+			"\\intertext{${1:${TM_SELECTED_TEXT}}}",
+			""
+		],
+		"description": "inter-line text"
+	},
+	"fraction (variants)": {
+		"prefix": "\\frac{}{}",
+		"body": [
+			"\\\\${1|frac,hfrac,dfrac|}{${2:${TM_SELECTED_TEXT}}}{$3}",
+		],
+		"description": "a fraction with variants"
+	},
+	"fraction": {
+		"prefix": "\\frac{}{}",
+		"body": [
+			"\\frac{${1:${TM_SELECTED_TEXT}}}{$2}",
+		],
+		"description": "a fraction"
+	},
+	"fraction (horizontal)": {
+		"prefix": ["\\hfrac{}{}"],
+		"body": [
+			"\\hfrac{${1:${TM_SELECTED_TEXT}}}{$2}",
+		],
+		"description": "a horizontal fraction"
+	},
+	"fraction (display)": {
+		"prefix": ["\\dfrac{}{}"],
+		"body": [
+			"\\dfrac{${1:${TM_SELECTED_TEXT}}}{$2}",
+		],
+		"description": "a display-style fraction"
+	},
+	"qedhere": {
+		"prefix": "\\qedhere",
+		"body": [
+			"\\qedhere"
+		],
+		"description": "QED symbol"
+	},
+    // Typographic commands
+    "calligraphic text in maths environment": {
+		"prefix": ["\\mathcal{}"],
+		"body": [
+			"\\mathcal{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "calligraphic text in maths environment"
+	},
+    "subscript in maths environment": {
+		"prefix": ["\\mathss{}{}"],
+		"body": [
+			"\\mathss{${1:${TM_SELECTED_TEXT}}}{$2}"
+		],
+		"description": "upright subscript in maths environment"
+	},
+    // Basic maths functions
+    "absolute value": {
+		"prefix": "\\abs{}",
+		"body": [
+			"\\abs{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "absolute value brackets"
+	},
+	"set": {
+		"prefix": "\\set{}",
+		"body": [
+			"\\set{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "set"
+	},
+	"set:condition": {
+		"prefix": "\\set{}[]",
+		"body": [
+			"\\set{${1:${TM_SELECTED_TEXT}}}[$2]"
+		],
+		"description": "set"
+	},
+    // Linear algebra
+    "determinant": {
+        "prefix": "\\det",
+        "body": [
+            "\\det"
+        ],
+        "description": "determinant symbol"
+    },
+    "determinant:bracket": {
+        "prefix": "\\det()",
+        "body": [
+            "\\det\\left(${1:${TM_SELECTED_TEXT}}\\right)"
+        ],
+        "description": "determinant symbol with brackets"
+    },
+    "transpose": {
+        "prefix": ["Tr", "\\transpose"],
+        "body": [
+            "\\Tr"
+        ],
+        "description": "transpose symbol",
+    },
+    "transpose:brackets": {
+        "prefix": ["Tr()", "\\transpose()"],
+        "body": [
+            "\\Tr\\left(${1:${TM_SELECTED_TEXT}}\\right)"
+        ],
+        "description": "transpose symbol with brackets",
+    },
+    "vector": {
+		"prefix": ["\\vec{}", "\\vector{}", "\\vb{}"],
+		"body": [
+			"\\vec{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "use vector typeface"
+	},
+	"matrix": {
+		"prefix": ["\\vec{}", "\\mx{}", "\\matrix{}"],
+		"body": [
+			"\\mx{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "use matrix typeface"
+	},
+	"vector:brackets": {
+		"prefix": ["\\avec{}", "\\langle", "\\left\\langle"],
+		"body": [
+			"\\avec{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "angled vector brackets"
+	},
+    "matrix:brackets": {
+		"prefix": ["\\begin{bmatrix}", "\\bmatrix", "\\matrix"],
+		"body": [
+			"\\begin{bmatrix}",
+			"	${1:${TM_SELECTED_TEXT}}",
+			"\\end{bmatrix}"
+		],
+		"description": "bmatrix environment with brackets"
+	},
+	// Transforms
+	"Laplace transform": {
+		"prefix": ["\\lt{}"],
+		"body": [
+			"\\lt{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "Laplace transform"
+	},
+	"Laplace transform (domain)": {
+		"prefix": ["\\lt{}[]"],
+		"body": [
+			"\\lt{${1:${TM_SELECTED_TEXT}}}[${2:domain}]"
+		],
+		"description": "Laplace transform with domain specified"
+	},
+	"inverse Laplace transform": {
+		"prefix": ["\\ilt{}"],
+		"body": [
+			"\\ilt{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "inverse Laplace transform"
+	},
+	"inverse Laplace transform (domain)": {
+		"prefix": ["\\ilt{}[]"],
+		"body": [
+			"\\ilt{${1:${TM_SELECTED_TEXT}}}[${2:domain}]"
+		],
+		"description": "inverse Laplace transform with domain specified"
+	},
+	"Fourier transform": {
+		"prefix": ["\\ft{}"],
+		"body": [
+			"\\ft{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "Fourier transform"
+	},
+	"Fourier transform (domain)": {
+		"prefix": ["\\ft{}[]"],
+		"body": [
+			"\\ft{${1:${TM_SELECTED_TEXT}}}[${2:domain}]"
+		],
+		"description": "Fourier transform with domain specified"
+	},
+	"inverse Fourier transform": {
+		"prefix": ["\\ift{}"],
+		"body": [
+			"\\ift{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "inverse Fourier transform"
+	},
+	"inverse Fourier transform (domain)": {
+		"prefix": ["\\ift{}[]"],
+		"body": [
+			"\\ift{${1:${TM_SELECTED_TEXT}}}[${2:domain}]"
+		],
+		"description": "inverse Fourier transform with domain specified"
+	},
+	// Integrals and limits
+	"limits": {
+		"prefix": ["\\limits_{}^{}"],
+		"body": [
+			"\\limits_{${1:${TM_SELECTED_TEXT}}}^{$2}"
+		],
+		"description": "limit bounds"
+	},
+	"integral with limits": {
+		"prefix": ["\\int\\limits_{}^{}"],
+		"body": [
+			"\\int\\limits_{${1:${TM_SELECTED_TEXT}}}^{$2}"
+		],
+		"description": "integral with limits"
+	},
+	// "intlims{}{}": {
+	// 	"prefix": ["\\intlims", "\\int"],
+	// 	"body": [
+	// 		"\\intlims{${1:lower limit}}{${2:upper limit}}"
+	// 	],
+	// 	"description": "integral with limits"
+	// },
+	"limit of function": {
+		"prefix": ["\\fxnlims"],
+		"body": [
+			"\\fxnlims{${1:function}}{${2:lower limit}}{${3:upper limit}}"
+		],
+		"description": "function evaluated with limits"
+	},
+	// Differential operators
+	"difffrac": {
+		"prefix": ["\\difffrac{}{}"],
+		"body": ["\\difffrac{$1}{$2}"],
+		"description": "differential fraction"
+	},
+	"difffrac:h": {
+		"prefix": ["\\difffrac*{}{}"],
+		"body": ["\\difffrac*{$1}{$2}"],
+		"description": "differential fraction (horizontal)"
+	},
+	"difffrac:2": {
+		"prefix": ["\\difffrac[2]{}{}"],
+		"body": ["\\difffrac[2]{$1}{$2}"],
+		"description": "second-order differential fraction"
+	},
+	"difffrac:2/h": {
+		"prefix": ["\\hdifffracs[2]{}{}"],
+		"body": ["\\hdifffracs[2]{$1}{$2}"],
+		"description": "second-order differential fraction (horizontal)"
+	},
+    "difffrac:n": {
+		"prefix": ["\\difffracs[]{}{}"],
+		"body": ["\\difffracs[$1]{$2}{$3}"],
+		"description": "higher order differential fraction"
+	},
+    "difffrac:n/h": {
+        "prefix": ["\\hdifffracs*[]{}{}"],
+        "body": ["\\hdifffracs*[$1]{$2}{$3}"],
+        "description": "higher order differential fraction (horizontal)"
+    },
+	"Difffrac": {
+		"prefix": "\\Difffrac{}{}",
+		"body": ["\\Difffrac{$1}{$2}"],
+		"description": "total differential fraction"
+	},
+	"Difffrac:h": {
+		"prefix": "\\Difffrac*{}{}",
+		"body": ["\\Difffrac*{$1}{$2}"],
+		"description": "total differential fraction (horizontal)"
+	},
+	"Difffrac:2": {
+		"prefix": "\\Difffrac[2]{}{}",
+		"body": ["\\Difffrac[2]{$1}{$2}"],
+		"description": "second-order total differential fraction"
+	},
+	"Difffrac:2/h": {
+		"prefix": "\\Difffrac*[2]{}{}",
+		"body": ["\\Difffrac*[2]{$1}{$2}"],
+		"description": "second-order total differential fraction (horizontal)"
+	},
+    "Difffrac:n": {
+        "prefix": "\\hDifffracs[]{}{}",
+        "body": ["\\hDifffracs[$1]{$2}{$3}"],
+        "description": "higher order horizontal total differential fraction"
+    },
+	"Difffrac:n/h": {
+        "prefix": "\\hDifffracs*[]{}{}",
+        "body": ["\\hDifffracs*[$1]{$2}{$3}"],
+        "description": "higher order total differential fraction (horizontal)"
+    },
+	"partfrac": {
+		"prefix": "\\partfrac{}{}",
+		"body": ["\\partfrac{$1}{$2}"],
+		"description": "partial differential fraction"
+	},
+	"partfrac:h": {
+		"prefix": "\\partfrac*{}{}",
+		"body": ["\\partfrac*{$1}{$2}"],
+		"description": "partial differential fraction (horizontal)"
+	},
+	"partfrac:2": {
+		"prefix": "\\partfrac[2]{}{}",
+		"body": ["\\partfrac[2]{$1}{$2}"],
+		"description": "second-order partial differential fraction"
+	},
+	"partfrac:2/h": {
+		"prefix": "\\partfrac*[2]{}{}",
+		"body": ["\\partfrac*[2]{$1}{$2}"],
+		"description": "second-order partial differential fraction (horizontal)"
+	},
+	"partfrac:n": {
+		"prefix": "\\partfracs[]{}{}",
+		"body": ["\\partfracs[$1]{$2}{$3}"],
+		"description": "higher order partial differential fraction"
+	},
+	"partfrac:n/h": {
+		"prefix": "\\partfracs*[]{}{}",
+		"body": ["\\partfracs*[$1]{$2}{$3}"],
+		"description": "higher order partial differential fraction (horizontal)"
+	},
+	"Deltafrac": {
+		"prefix": "\\Deltafrac{}{}",
+		"body": ["\\Deltafrac{$1}{$2}"],
+		"description": "infitesimal element fraction"
+	},
+	"Deltafrac:h": {
+		"prefix": "\\Deltafrac*{}{}",
+		"body": ["\\Deltafrac*{$1}{$2}"],
+		"description": "infitesimal element fraction (horizontal)"
+	},
+	"Deltafrac:2": {
+		"prefix": "\\Deltafrac[2]{}{}",
+		"body": ["\\Deltafrac[2]{$1}{$2}"],
+		"description": "second-order infitesimal element fraction"
+	},
+	"Deltafrac:2/h": {
+		"prefix": "\\Deltafrac*[2]{}{}",
+		"body": ["\\Deltafrac*[2]{$1}{$2}"],
+		"description": "second-order infitesimal element fraction (horizontal)"
+	},
+	// Coloured text
+	"des:var": {
+		"prefix": ["\\des{}"],
+		"body": ["\\\\${1|des,desmath|}{${2:${TM_SELECTED_TEXT}}}"],
+		"description": "coloured description text with variants"
+	},
+	"des": {
+		"prefix": "\\des{}",
+		"body": ["\\des{${1:${TM_SELECTED_TEXT}}}"],
+		"description": "coloured description text"
+	},
+	"des (maths mode)": {
+		"prefix": "\\desmath{}",
+		"body": ["\\desmath{${1:${TM_SELECTED_TEXT}}}"],
+		"description": "coloured description text (math mode)"
+	},
+	"ccancel": {
+		"prefix": "\\ccancel{}",
+		"body": ["\\ccancel{${1:${TM_SELECTED_TEXT}}}"],
+		"description": "coloured cancelling annotation"
+	},
+	"ccancelto": {
+		"prefix": "\\ccancelto{}{}",
+		"body": ["\\ccancelto{$2}{${1:${TM_SELECTED_TEXT}}}"],
+		"description": "coloured cancelling to annotation"
+	},
+	"cunderbrace": {
+		"prefix": "\\cunderbrace{}{}",
+		"body": ["\\cunderbrace{$2}{${1:${TM_SELECTED_TEXT}}}"],
+		"description": "coloured underbrace annotation"
+	},
+	"cunserset": {
+		"prefix": "\\cunserset{}{}",
+		"body": ["\\cunserset{$2}{${1:${TM_SELECTED_TEXT}}}"],
+		"description": "coloured underset annotation"
+	},
+	"coverbrace": {
+		"prefix": "\\coverbrace{}{}",
+		"body": ["\\coverbrace{$2}{${1:${TM_SELECTED_TEXT}}}"],
+		"description": "coloured overbrace annotation"
+	},
+	"coverset": {
+		"prefix": "\\coverset{}{}",
+		"body": ["\\coverset{$2}{${1:${TM_SELECTED_TEXT}}}"],
+		"description": "coloured overset annotation"
+	},
+}

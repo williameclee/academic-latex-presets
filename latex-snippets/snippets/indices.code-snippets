@@ -1,0 +1,88 @@
+{
+    // Glossary
+    "glossary:var": {
+		"prefix": ["\\gls{}"],
+		"body": [
+			"${1|\\gls,\\Gls,\\glspl,\\Glspl,\\glssymbol|}{${2:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert glossary with options of variants"
+	},
+    "glossary": {
+		"prefix": ["\\gls{}"],
+		"body": [
+			"\\gls{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert glossary"
+	},
+    "glossary (plural)": {
+		"prefix": ["\\glspl{}"],
+		"body": [
+			"\\glspl{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert glossary (plural)"
+	},
+    "glossary (capitalised)": {
+		"prefix": ["\\Gls{}"],
+		"body": [
+			"\\Gls{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert glossary (capitalised)"
+	},
+    "glossary (plural and capitalised)": {
+		"prefix": ["\\Gls{}"],
+		"body": [
+			"\\Glspl{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert glossary (plural and capitalised)"
+	},
+    "glossary (symbol)": {
+		"prefix": ["\\glssymbol{}", "\\symbol{}"],
+		"body": [
+			"\\glssymbol{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert glossary (symbol)"
+	},
+	// Cross referencing
+	"reference (variants)": {
+		"prefix": ["\\ref{}"],
+		"body": [
+			"\\\\${1|ref,eqref,figref,tblref,secref|}{${2:label}}"
+		],
+		"description": "insert a reference label"
+	},
+	"reference label": {
+		"prefix": ["\\ref{}"],
+		"body": [
+			"\\ref{${1:label}}"
+		],
+		"description": "insert a reference label"
+	},
+	"reference equation": {
+		"prefix": ["\\eqref{}"],
+		"body": [
+			"\\eqref{${1:label}}"
+		],
+		"description": "insert a reference to equation"
+	},
+	"reference figure": {
+		"prefix": ["\\figref{}"],
+		"body": [
+			"\\figref{${1:label}}"
+		],
+		"description": "insert a reference to figure"
+	},
+	"reference table": {
+		"prefix": ["\\tblref{}"],
+		"body": [
+			"\\tblref{${1:label}}"
+		],
+		"description": "insert a reference to table"
+	},
+	"reference section": {
+		"prefix": ["\\secref{}"],
+		"body": [
+			"\\secref{${1:label}}"
+		],
+		"description": "insert a reference to section"
+	},
+}

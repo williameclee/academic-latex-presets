@@ -1,0 +1,41 @@
+{
+    "figure": {
+		"prefix": ["\\begin{figure}", "\\fig", "\\figure"],
+		"body": [
+			"\\begin{figure}[${5:hbt}]\\centering",
+			"	\\includegraphics[width=${2:0.9}\\linewidth]{${1:figure path}}",
+			"	\\captionsetup{width=${2:0.9}\\linewidth}",
+			"	\\caption{${4:caption}}",
+			"	\\label{${3:label}}",
+			"\\end{figure}"
+		],
+		"description": "insert figure environment"
+	},
+	"figure:subfigure": {
+		"prefix": ["\\begin{figure}", "\\fig", "\\figure", "\\subfigure", "\\subfig"],
+		"body": [
+			"\\begin{figure}[${9:hbt}]\\centering",
+			"	\\begin{subfigure}[t]{0.475\\linewidth}\\centering",
+			"		\\includegraphics[width=$10\\linewidth]{${1:figure path}}",
+			"		\\caption{${6:caption}$7}",
+			"		\\label{${3:label}$4}",
+			"	\\end{subfigure}",
+			"	\\begin{subfigure}[t]{0.475\\linewidth}\\centering",
+			"		\\includegraphics[width=$10\\linewidth]{${2:figure path}}",
+			"		\\caption{${6:caption}$8}",
+			"		\\label{${3:label}$5}",
+			"	\\end{subfigure}",
+			"	\\caption{${6:caption}}",
+			"	\\label{${3:label}}",
+			"\\end{figure}",
+		],
+		"description": "insert figure environment with subfigures"
+	},
+	"captionsetup": {
+		"prefix": ["\\captionsetup"],
+		"body": [
+			"\\captionsetup{${1:caption setup}}"
+		],
+		"description": "captionsetup"
+	},
+}

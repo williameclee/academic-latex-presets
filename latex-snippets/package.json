@@ -1,0 +1,183 @@
+{
+  "name": "latex-snippets",
+  "displayName": "LaTeX Snippets",
+  "description": "A collection of LaTeX snippets for VS Code.",
+  "publisher": "En-Chi (William) Lee",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "latex",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "latex",
+        "path": "./snippets/latex.code-snippets"
+      },
+      {
+        "language": "latex",
+        "path": "./snippets/indices.code-snippets"
+      },
+      {
+        "language": "latex",
+        "path": "./snippets/environments.code-snippets"
+      },
+      {
+        "language": "latex",
+        "path": "./snippets/mathematics.code-snippets"
+      },
+      {
+        "language": "latex",
+        "path": "./snippets/mathematics-symbols.code-snippets"
+      },
+      {
+        "language": "latex",
+        "path": "./snippets/units.code-snippets"
+      },
+      {
+        "language": "latex",
+        "path": "./snippets/floats.code-snippets"
+      },
+      {
+        "language": "latex",
+        "path": "./snippets/ligature.code-snippets"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "ctrl+shift+x",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "text" 
+        }
+      },
+      {
+        "key": "ctrl+shift+i",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "emph" 
+        }
+      },
+      {
+        "key": "ctrl+shift+b",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "textbf" 
+        }
+      },
+      {
+        "key": "ctrl+shift+h",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "alert:var" 
+        }
+      },
+      {
+        "key": "ctrl+shift+t",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "texttt" 
+        }
+      },
+      {
+        "key": "ctrl+shift+f",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "figure" 
+        }
+      },
+      {
+        "key": "ctrl+shift+u",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "figure:subfigure" 
+        }
+      },
+      {
+        "key": "ctrl+shift+a",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "equation:var" 
+        }
+      },
+      {
+        "key": "ctrl+shift+p",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "proof:var" 
+        }
+      },
+      {
+        "key": "ctrl+shift+g",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "glossary:var" 
+        }
+      },
+      {
+        "key": "ctrl+shift+s",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "subscript in maths environment" 
+        }
+      },
+      {
+        "key": "ctrl+shift+k",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "mathcal" 
+        }
+      },
+      {
+        "key": "ctrl+shift+v",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "vector" 
+        }
+      },
+      {
+        "key": "ctrl+shift+r",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "bracket:var" 
+        }
+      },
+      {
+        "key": "ctrl+shift+m",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "matrix with brackets" 
+        }
+      },
+      {
+        "key": "ctrl+shift+c",
+        "command": "editor.action.insertSnippet",
+        "args": { 
+          "langId": "latex",
+          "name": "ccancel" 
+        }
+      }
+    ]
+  }
+}
