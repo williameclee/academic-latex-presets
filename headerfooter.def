@@ -43,6 +43,12 @@
 			\sffamily\footnotesize\thepage
 		\fi
 	}
+	\fancyfoot[C]{
+		\ifdefined\@info@link
+		\else
+			\sffamily\footnotesize\thepage
+		\fi
+	}
 	% \fancyfoot[C]{
 	% 	\ifdefined\@info@link
 	% 		hello

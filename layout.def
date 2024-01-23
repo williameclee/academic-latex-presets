@@ -16,10 +16,11 @@
 % line stretches
 \let\ssetstretch\setstretch
 \renewcommand{\setstretch}[1]{
-	\gdef\@document@linestretch{#1}
+	\def\@document@linestretch{#1}
 	\ssetstretch{#1}
 }
-\gdef\@document@arraystretch{1}
+\setstretch{1.5}
+\def\@document@arraystretch{\@document@linestretch}
 \renewcommand{\arraystretch}{\@document@arraystretch}
 
 % line width

@@ -83,11 +83,11 @@
 		\setstretch{0.9}
 		{\ifdefstring{\@info@subtitle}{\@info@subtitle@default}
 			{\ifdefined\@info@course
-				\noindent\small\@info@course \linebreak
+				\noindent\sffamily\small\@info@course \linebreak
 			\fi}{
-				{\noindent\small\@info@subtitle}\linebreak
+				{\noindent\sffamily\small\@info@subtitle}\linebreak
 			} 
-		\LARGE\bfseries\@info@title
+		\LARGE\sffamily\bfseries\@info@title
 		}
 		& 
 		\setstretch{0.9}
