@@ -159,7 +159,7 @@
 \renewcommand{\tabcolsep}{0.5\gap}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
-\newcolumntype{T}[1]{R{\lmarginwidth}}
+\newcolumntype{T}[1]{P{\lmarginwidth}}
 \newcolumntype{C}[1]{P{\linewidth - \lmarginwidth - \rmarginwidth - 2\gap}}
 \newcolumntype{I}[1]{P{\rmarginwidth}}
 \newcolumntype{A}[1]{P{\linewidth - \lmarginwidth - \gap}}
@@ -175,7 +175,7 @@
 		\ifnum\listlen\timelist[]=1 %
 			\timelist[1]%
 		\else
-			\timelist[1] - \timelist[2]%
+			\timelist[1] -- \timelist[2]%
 		\fi% date
 		& \textbf{#2}% position
 		\ifx\relax#3\relax\else, #3 \fi% event

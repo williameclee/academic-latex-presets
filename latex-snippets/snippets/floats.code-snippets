@@ -1,40 +1,76 @@
 {
-    "figure": {
+    "graphicspath": {
+		"prefix": "\\graphicspath{}",
+		"body": [
+			"\\graphicspath{{${1:$TM_SELECTED_TEXT}}}",
+		],
+		"description": "graphicspath"
+	},
+	"figure": {
 		"prefix": ["\\begin{figure}", "\\fig", "\\figure"],
 		"body": [
-			"\\begin{figure}[${5:hbt}]\\centering",
-			"	\\includegraphics[width=${2:0.9}\\linewidth]{${1:figure path}}",
-			"	\\captionsetup{width=${2:0.9}\\linewidth}",
-			"	\\caption{${4:caption}}",
-			"	\\label{${3:label}}",
+			"\\begin{figure}[${1|hbt,h!|}]\\centering",
+			"\t${2|\\includegraphics[width=\\linewidth],\\input|}{$3}",
+			"\t\\captionsetup{width=\\linewidth}",
+			"\t\\caption{$5}",
+			"\t\\label{$4}",
 			"\\end{figure}"
 		],
-		"description": "insert figure environment"
+		"description": "figure environment"
+	},
+	"subfigure": {
+		"prefix": ["\\begin{figure}", "\\subfigure", "\\subfig"],
+		"body": [
+			"\\begin{subfigure}[t]{0.475\\linewidth}\\centering",
+			"\t\\includegraphics[width=\\linewidth]{$1}",
+			"\t\\caption{$7}",
+			"\t\\label{$4}",
+			"\\end{subfigure}",
+		],
+		"description": "subfigure environment"
 	},
 	"figure:subfigure": {
-		"prefix": ["\\begin{figure}", "\\fig", "\\figure", "\\subfigure", "\\subfig"],
+		"prefix": ["\\begin{figure}", "\\subfigure", "\\subfig"],
 		"body": [
-			"\\begin{figure}[${9:hbt}]\\centering",
-			"	\\begin{subfigure}[t]{0.475\\linewidth}\\centering",
-			"		\\includegraphics[width=$10\\linewidth]{${1:figure path}}",
-			"		\\caption{${6:caption}$7}",
-			"		\\label{${3:label}$4}",
-			"	\\end{subfigure}",
-			"	\\begin{subfigure}[t]{0.475\\linewidth}\\centering",
-			"		\\includegraphics[width=$10\\linewidth]{${2:figure path}}",
-			"		\\caption{${6:caption}$8}",
-			"		\\label{${3:label}$5}",
-			"	\\end{subfigure}",
-			"	\\caption{${6:caption}}",
-			"	\\label{${3:label}}",
+			"\\begin{figure}[${1:hbt}]\\centering",
+			"\t\\begin{subfigure}[t]{0.4\\linewidth}\\centering",
+			"\t\t\\includegraphics[width=\\linewidth]{$2}",
+			"\t\t\\caption{}",
+			"\t\t\\label{}",
+			"\t\\end{subfigure}",
+			"\t\\begin{subfigure}[t]{0.4\\linewidth}\\centering",
+			"\t\t\\includegraphics[width=\\linewidth]{$3}",
+			"\t\t\\caption{}",
+			"\t\t\\label{}",
+			"\t\\end{subfigure}",
+			"\t\\caption{}",
+			"\t\\label{}",
 			"\\end{figure}",
 		],
-		"description": "insert figure environment with subfigures"
+		"description": "figure environment with subfigures"
+	},
+	"table": {
+		"prefix": ["\\begin{table}", "\\tbl", "\\tab", "\\table"],
+		"body": [
+			"\\begin{table}[${1|hbt,h!|}]\\centering",
+			"\t\\begin{tabular}{ccc}",
+			"\t\t\\hline",
+			"\t\t${4:header} \\\\\\",
+			"\t\t\\hline",
+			"\t\t$5 \\\\\\",
+			"\t\t\\hline",
+			"\t\\end{tabular}",
+			"\t\\captionsetup{width=\\linewidth}",
+			"\t\\caption{$3}",
+			"\t\\label{$2}",
+			"\\end{table}"
+		],
+		"description": "figure environment"
 	},
 	"captionsetup": {
 		"prefix": ["\\captionsetup"],
 		"body": [
-			"\\captionsetup{${1:caption setup}}"
+			"\\captionsetup{${1:$TM_SELECTED_TEXT}}"
 		],
 		"description": "captionsetup"
 	},

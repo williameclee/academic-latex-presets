@@ -42,11 +42,40 @@
 		],
 		"description": "insert glossary (symbol)"
 	},
+	"glossary (user 1)": {
+		"prefix": ["\\glsuseri{}", "\\glsuser1{}"],
+		"body": [
+			"\\glsuseri{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert glossary (user 1)"
+	},
+	// Bibliography
+	"parencite": {
+		"prefix": ["\\parencite{}", "\\cite{}"],
+		"body": [
+			"\\parencite{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert citation in parentheses" 
+	},
+	"parencite:decorations": {
+		"prefix": ["\\parencite[][]{}", "\\cite[][]{}"],
+		"body": [
+			"\\parencite[$2][$3]{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert citation in parentheses with decorating strings" 
+	},
+	"textcite": {
+		"prefix": ["\\textcite{}", "\\citeA{}"],
+		"body": [
+			"\\textcite{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert citation in text" 
+	},
 	// Cross referencing
 	"reference (variants)": {
 		"prefix": ["\\ref{}"],
 		"body": [
-			"\\\\${1|ref,eqref,figref,tblref,secref|}{${2:label}}"
+			"\\\\${1|ref,eqref,figref,tblref,secref,thmref|}{${2:label}}"
 		],
 		"description": "insert a reference label"
 	},
@@ -84,5 +113,12 @@
 			"\\secref{${1:label}}"
 		],
 		"description": "insert a reference to section"
+	},
+	"reference theorems": {
+		"prefix": ["\\thmref{}"],
+		"body": [
+			"\\thmref{${1:label}}"
+		],
+		"description": "insert a reference to variants of theorem"
 	},
 }

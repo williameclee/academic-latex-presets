@@ -1,0 +1,107 @@
+{
+    "title": {
+		"prefix": "\\title{}",
+		"body": [
+			"\\title{${1:${TM_SELECTED_TEXT}}}",
+		],
+		"description": "title"
+	},
+    "title:var": {
+		"prefix": "\\title[]{}",
+		"body": [
+			"\\title[$2]{${1:${TM_SELECTED_TEXT}}}",
+		],
+		"description": "title and short title"
+	},
+    "subtitle": {
+        "prefix": "\\subtitle{}",
+        "body": [
+            "\\subtitle{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "subtitle"
+    },
+    "author": {
+		"prefix": "\\author{}",
+		"body": [
+			"\\author{${1:${TM_SELECTED_TEXT}}}",
+		],
+		"description": "author"
+	},
+    "author:var": {
+        "prefix": "\\author[]{}",
+        "body": [
+            "\\author[$2]{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "author and short author"
+    },
+    "institute": {
+        "prefix": "\\institute{}",
+        "body": [
+            "\\institute{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "institute"
+    },
+    "mail": {
+        "prefix": "\\mail{}",
+        "body": [
+            "\\mail{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "mail"
+    },
+    "information": {
+        "prefix": "\\information{}",
+        "body": [
+            "\\information{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "additional information"
+    },
+    "update": {
+        "prefix": "\\updatenote{}",
+        "body": [
+            "\\updatenote{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "update note"
+    },
+    "address": {
+        "prefix": "\\address{}",
+        "body": [
+            "\\address{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "address"
+    },
+    "citizenship": {
+        "prefix": "\\citizenship{}",
+        "body": [
+            "\\citizenship{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "citizenship"
+    },
+    "course": {
+        "prefix": "\\course{}",
+        "body": [
+            "\\course{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "course"
+    },
+    "project": {
+        "prefix": "\\project{}",
+        "body": [
+            "\\project{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "project"
+    },
+    "textbook": {
+        "prefix": "\\textbook{}",
+        "body": [
+            "\\textbook{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "textbook"
+    },
+    "link": {
+        "prefix": "\\documentlink{}",
+        "body": [
+            "\\documentlink{${1:${TM_SELECTED_TEXT}}}",
+        ],
+        "description": "document link"
+    },
+}

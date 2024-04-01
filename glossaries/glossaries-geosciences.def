@@ -1,4 +1,8 @@
-\ProvidesFile{glossaries-geosciences.def}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{glossaries-geosciences.def}[2024/02/20]
+
+
+\RequirePackage{glossaries}
 \makeglossaries
 
 \newglossaryentry{amorphous}{
@@ -473,11 +477,237 @@
 	parent={silicate},
 	description=
 }
+\newglossaryentry{eutectic}{
+	name=eutectic,
+	description=
+}
+\newglossaryentry{ophiolite}{
+	name=ophiolite,
+	description=
+}
+\newglossaryentry{tholeiitic magma}{
+	name=tholeiitic magma,
+	description=,
+	user1=tholeiitic,
+}
+\newglossaryentry{alkaline magma}{
+	name=alkaline magma,
+	description=,
+	user1=alkaline,
+}
+\newglossaryentry{subalkaline magma}{
+	name=subalkaline magma,
+	parent={alkaline magma},
+	description=,
+	user1=subalkaline,
+}
+\newglossaryentry{calc-alkaline magma}{
+	name=calc-alkaline magma,
+	parent={alkaline magma},
+	description=,
+	user1=calc-alkaline,
+}
+\newglossaryentry{concordia diagram}{
+	name=concordia diagram,
+	description=
+}
+\newglossaryentry{cumulus}{
+	name=cumulus,
+	description=
+}
+\newglossaryentry{intercumulus}{
+	name=intercumulus,
+	parent={cumulus},
+	description=
+}
+\newglossaryentry{post-cumulus}{
+	name=post-cumulus,
+	parent={cumulus},
+	description=
+}
+\newglossaryentry{cumulate}{
+	name=cumulate,
+	description=
+}
+\newglossaryentry{orthocumulate}{
+	name=orthocumulate,
+	parent={cumulate},
+	description=
+}
+\newglossaryentry{mesocumulate}{
+	name=mesocumulate,
+	parent={cumulate},
+	description=
+}
+\newglossaryentry{adcumulate}{
+	name=adcumulate,
+	parent={cumulate},
+	description=
+}
+\newglossaryentry{lopolith}{
+	name=lopolith,
+	description=
+}
+\newglossaryentry{phenocryst}{
+	name=phenocryst,
+	description=
+}
+
+% Igneous textures
+\newglossaryentry{texture}{
+	name=texture,
+	description=
+}
+\newglossaryentry{glassy texture}{
+	name=glassy texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{phaneritic texture}{
+	name=phaneritic texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{aphanitic texture}{
+	name=aphanitic texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{spinifex texture}{
+	name=spinifex texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{porphyritic texture}{
+	name=porphyritic texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{glommeroporphyritic texture}{
+	name=glommeroporphyritic texture,
+	parent={porphyritic texture},
+	description=
+}
+\newglossaryentry{aphyric texture}{
+	name=aphyric texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{vesicular texture}{
+	name=vesicular texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{amygdular texture}{
+	name=amygdular texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{amygdule}{
+	name=amygdule,
+	description=
+}
+\newglossaryentry{pumiceous texture}{
+	name=pumiceous texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{scoriaceous texture}{
+	name=scoriaceous texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{trachytic texture}{
+	name=trachytic texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{spherulitic texture}{
+	name=spherulitic texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{ocellar texture}{
+	name=ocellar texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{ocelli}{
+	name=ocelli,
+	description=
+}
+\newglossaryentry{graphic texture}{
+	name=graphic texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{equigranular texture}{
+	name=equigranular texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{inequigranular texture}{
+	name=inequigranular texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{poikilitic texture}{
+	name=poikilitic texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{subpoikilitic texture}{
+	name=subpoikilitic texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{ophitic texture}{
+	name=ophitic texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{subpophitic texture}{
+	name=subpophitic texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{intergranular texture}{
+	name=intergranular texture,
+	parent={texture},
+	description=
+}
+\newglossaryentry{intersertal texture}{
+	name=intersertal texture,
+	parent={texture},
+	description=
+}
+
 	
 	
 \newacronym[description={},]{CN}{CN}{coordination number}
 \newacronym[description={}, plural={coordination polyhedra}]{CP}{CP}{coordination polyhedron}
+\newacronym[description={},]{CSD}{CSD}{crystal size distribution}
+\newacronym[description={},]{CTS}{CTS}{climbing translatent surface}
+\newacronym[description={},]{ENSO}{ENSO}{El Ni\~no Southern Oscillation}
+\newacronym[description={},]{LAB}{LAB}{lithosphere-asthenosphere boundary}
+\newacronym[description={},]{GIA}{GIA}{glacial isostatic adjustment}
+\newacronym[description={},]{LIP}{LIP}{large igneous province}
+\newacronym[description={},]{LLVP}{LLVP}{large low-velocity province}
+\newacronym[description={}, parent={LLVP}]{LLSVP}{LLSVP}{large low-shear-velocity province}
+\newacronym[description={},]{MO}{MO}{magma ocean}
+\newacronym[description={},]{MOR}{MOR}{mid-ocean ridge}
+\newacronym[description={},]{MORB}{MORB}{mid-ocean ridge basalt}
+\newacronym[description={}, parent={MORB}]{EMORB}{EMORB}{enriched mid-ocean ridge basalt}
+\newacronym[description={}, parent={MORB}]{NMORB}{NMORB}{normal mid-ocean ridge basalt}
 \newacronym[description={}, parent={polarised light}]{PPL}{PPL}{plane polarised light}
 \newacronym[description={}, parent={polarised light}]{XPL}{XPL}{cross polarised light}
+\newacronym[description={},]{REE}{REE}{rare earth element}
+\newacronym[description={},]{VEI}{VEI}{vlocanic explosivity index}
 
-\newacronym[description={},]{LAB}{LAB}{lithosphere-asthenosphere boundary}
+% Locations and features
+\newacronym[description={},]{EPR}{EPR}{East Pacific Rise}
+\newacronym[description={},]{MAR}{MAR}{Mid-Atlantic Ridge}
+
+% Satellites and missions
+\newacronym[description={},]{GRACE}{GRACE}{Gravity Recovery And Climate Experiment}
+\newacronym[description={}, parent={GRACE}]{GRACE-FO}{GRACE-FO}{GRACE Follow-On}

@@ -16,23 +16,28 @@
 \RequirePackage{amsmath, amsthm, amsfonts, cancel, mathtools}
 
 %% Maths alignment
-\newcommand{\mathleft}{\@fleqntrue\@mathmargin\parindent}
-\newcommand{\mathcenter}{\@fleqnfalse}
+\newcommand{\mathleft}{\@fleqntrue\@mathematics@fleqntrue\@mathmargin\parindent}
+\newcommand{\mathcenter}{\@fleqnfalse\@mathematics@fleqnfalse}
 
 %% Units
 \input{units.def}
 
+%% Matrices
+\newenvironment{amatrix}{\left\langle\begin{matrix}}{\end{matrix}\right\rangle}
+\BeforeBeginEnvironment{matrix}{\renewcommand{\arraystretch}{0.8}}
 \BeforeBeginEnvironment{bmatrix}{\renewcommand{\arraystretch}{0.8}}
+\BeforeBeginEnvironment{vmatrix}{\renewcommand{\arraystretch}{0.8}}
+\BeforeBeginEnvironment{array}{\ifmmode\renewcommand{\arraystretch}{0.8}\fi}
 	
 %% Proof and solution
 \renewcommand\qedsymbol{\textcolor{\accentcolour}{$\square$}}
 % proof
-\renewenvironment{proof}[1][\proofname]{\par
-\pushQED{\qed}%
-\normalfont \topsep6\p@\@plus6\p@\relax
-\trivlist
-\item\relax{\sffamily
-	\color{\accentcolour}#1\@addpunct{.}}\hspace\labelsep\ignorespaces
+\def\@mathematics@proof@title{Proof}
+\renewenvironment{proof}[1][\@mathematics@proof@title]{\par
+	\pushQED{\qed}%
+	\normalfont\topsep6\p@\@plus6\p@\relax
+	\trivlist%
+	\item\relax{\sffamily\color{\accentcolour}#1\@addpunct{.}}\hspace\labelsep\ignorespaces%
 }{%
 	\popQED\endtrivlist\@endpefalse
 }
@@ -62,12 +67,12 @@
 			\let\@mathematics@theoremproof@title\@env@remark@title
 		\fi
 		\ifx\@mathematics@theoremproof@env\@env@equation@label
-			\begin{proof}[\proofname~\@mathematics@theoremproof@conjunction~\eqref{\@mathematics@theoremproof@label}.]
+			\begin{proof}[\@mathematics@proof@title~\@mathematics@theoremproof@conjunction~\eqref{\@mathematics@theoremproof@label}.]
 		\else
-			\begin{proof}[\proofname~\@mathematics@theoremproof@conjunction~\@mathematics@theoremproof@title~\ref{\@mathematics@theoremproof@label}.]
+			\begin{proof}[\@mathematics@proof@title~\@mathematics@theoremproof@conjunction~\@mathematics@theoremproof@title~\ref{\@mathematics@theoremproof@label}.]
 		\fi
 	\else
-		\begin{proof}[\proofname~\@mathematics@theoremproof@conjunction~{\MakeUppercase#2}~\ref{#1}.]
+		\begin{proof}[\@mathematics@proof@title~\@mathematics@theoremproof@conjunction~{\MakeUppercase#2}~\ref{#1}.]
 	\fi
 }{
 	\end{proof}
@@ -83,25 +88,40 @@
 }
 
 %% Upright math
-\newcommand{\e}[1][]{{\mathop{\mathrm{e}^{#1}}}}
+\DeclareMathOperator{\@mathematics@e}{e}
+\newcommand{\e}[1][]{\@mathematics@e\ifx\relax#1\relax\else^{#1}\fi}
 \let\ii\i
-\def\i{{\mathop{\mathrm{i}}}}
+\DeclareMathOperator{\@mathematics@i}{i}
+\renewcommand{\i}{\ifmmode\@mathematics@i\else\ii\fi}
 
 \def\diff{\mathop{}\!\mathrm{d}}
 \def\Diff{\mathop{}\!\mathrm{D}}
 
 %% Differentiation
-\newcommand{\hfrac}[2]{{#1}/{#2}}
-\NewDocumentCommand{\difffrac}{s O{1} mm}{% #1: starred (horizontal), #2: order, #3: numerator, #4: denominator
-	\ifnum#2=1
-		\IfBooleanTF#1%
-		{{\diff{#3}/\mathrm{d}{#4}}}%
-		{\frac{\mathrm{d}{#3}}{\mathrm{d}{#4}}}%
+\RequirePackage{suffix}
+\WithSuffix\newcommand\frac*[2]{{{#1}/{#2}}} 
+\newcommand{\hfrac}[2]{\frac*{#1}{#2}} % legacy command
+
+\NewDocumentCommand{\Ifnum}{m O{1} mm}{% #1: number 1, #2: number 2, #3: if true, #4: if false
+	% Used to compare if the order of derivative is (a number and is) 1
+	\if!\ifnum9<1#1!\fi{}\ifnum#1=#2%
+		#3%
 	\else
-	\IfBooleanTF#1%
-		{{\diff^{#2}{#3}/\mathrm{d}{#4}^{#2}}}%
-		{\frac{\mathrm{d}^{#2}{#3}}{\mathrm{d}{#4}^{#2}}}%
+		#4%
+	\fi\else 
+		#4%
 	\fi
+}
+\NewDocumentCommand{\difffrac}{s O{1} mm}{% #1: starred (horizontal), #2: order, #3: numerator, #4: denominator
+	\Ifnum{#2}{%
+		\IfBooleanTF#1%
+			{{\diff{#3}/\mathrm{d}{#4}}}%
+			{\frac{\mathrm{d}{#3}}{\mathrm{d}{#4}}}%
+	}{%
+		\IfBooleanTF#1%
+			{{\diff^{#2}{#3}/\mathrm{d}{#4}^{#2}}}%
+			{\frac{\mathrm{d}^{#2}{#3}}{\mathrm{d}{#4}^{#2}}}%
+	}%
 }
 \newcommand{\hdifffrac}[2]{\difffrac*{#1}{#2}} % legacy command
 \NewDocumentCommand{\difffracs}{s O{2}mm}{% legacy command
@@ -110,15 +130,15 @@
 }
 \newcommand{\hdifffracs}[3][2]{\difffracs*[#1]{#2}{#3}} % legacy command
 \NewDocumentCommand{\Difffrac}{s O{1} mm}{% #1: starred (horizontal), #2: order, #3: numerator, #4: denominator
-	\ifnum#2=1
+	\Ifnum{#2}{%
 		\IfBooleanTF#1%
-		{\Diff{#3}/\mathrm{D}{#4}}%
-		{\frac{\mathrm{D}{#3}}{\mathrm{D}{#4}}}%
-	\else
-	\IfBooleanTF#1%
-		{\Diff^{#2}{#3}/\mathrm{D}{#4}^{#2}}%
-		{\frac{\mathrm{D}^{#2}{#3}}{\mathrm{D}{#4}^{#2}}}%
-	\fi
+			{\Diff{#3}/\mathrm{D}{#4}}%
+			{\frac{\mathrm{D}{#3}}{\mathrm{D}{#4}}}%
+	}{%
+		\IfBooleanTF#1%
+			{\Diff^{#2}{#3}/\mathrm{D}{#4}^{#2}}%
+			{\frac{\mathrm{D}^{#2}{#3}}{\mathrm{D}{#4}^{#2}}}%
+	}%
 }
 \newcommand{\hDifffrac}[2]{\Difffrac*{#1}{#2}} % legacy command
 \NewDocumentCommand{\Difffracs}{s O{2}mm}{% legacy command
@@ -126,34 +146,37 @@
 	{\Difffrac*[#2]{#3}{#4}}{\Difffrac[#2]{#3}{#4}}%
 }
 \newcommand{\hDifffracs}[3][2]{\Difffracs*[#1]{#2}{#3}} % legacy command
-\NewDocumentCommand{\partfrac}{s O{1}mm}{%
-	\ifnum#2=1
+\NewDocumentCommand{\partfrac}{s O{1}mm}{% #1: starred (horizontal), #2: order, #3: numerator, #4: denominator
+	\Ifnum{#2}{%
 		\IfBooleanTF#1%
 			{\partial{#3}/\partial{#4}}%
 			{\frac{\partial{#3}}{\partial{#4}}}%
-	\else
+	}{%
 		\IfBooleanTF#1%
 			{{\partial^{#2}{#3}/\partial{#4}^{#2}}}%
 			{\frac{\partial^{#2}{#3}}{\partial{#4}^{#2}}}%
-	\fi
+	}%
 }
 \newcommand{\hpartfrac}[2]{\partfrac*{#1}{#2}} % legacy command
-\NewDocumentCommand{\partfracs}{s O{2}mm}{% legacy command
-	\IfBooleanTF#1%
-	{{\partial^{#2}{#3}/\partial{#4}^{#2}}}%
-	{\frac{\partial^{#2}{#3}}{\partial{#4}^{#2}}}%
+\newcommand{\partfracs}[3]{%
+	\frac{\partial^2#1}{\partial#2\partial#3}%
 }
+% \NewDocumentCommand{\partfracs}{s O{2}mm}{% legacy command
+% 	\IfBooleanTF#1%
+% 	{{\partial^{#2}{#3}/\partial{#4}^{#2}}}%
+% 	{\frac{\partial^{#2}{#3}}{\partial{#4}^{#2}}}%
+% }
 \newcommand{\hpartfracs}[3][2]{\partfracs*[#1]{#2}{#3}} % legacy command
 \NewDocumentCommand{\Deltafrac}{s O{1}mm}{%
-	\ifnum#2=1
+	\Ifnum{#2}{%
 		\IfBooleanTF#1%
 			{\Delta{#3}/\Delta{#4}}%
 			{\frac{\Delta{#3}}{\Delta{#4}}}%
-	\else
+	}{%
 		\IfBooleanTF#1%
 			{{\Delta^{#2}{#3}/\Delta{#4}^{#2}}}%
 			{\frac{\Delta^{#2}{#3}}{\Delta{#4}^{#2}}}%
-	\fi
+	}%
 }
 \newcommand{\hDeltafrac}[2]{\Deltafrac*{#1}{#2}} % legacy command
 \NewDocumentCommand{\Deltafracs}{s O{2}mm}{% legacy command
@@ -164,7 +187,12 @@
 \newcommand{\hDeltafracs}[3][2]{\Deltafracs*[#1]{#2}{#3}} % legacy command
 
 %% Integrals
-\newcommand{\intlims}[2]{\int\limits_{#1}^{#2}}
+\NewDocumentCommand{\intlims}{m O{}}{\int\limits_{#1}^{#2}}
+\NewDocumentCommand{\intlimspm}{s m}{%
+		\IfBooleanTF#1%
+			{\int\limits_{-#2}^{+#2}}%
+			{\int\limits_{-#2}^{#2}}%
+}
 \newcommand{\fxnlims}[3]{{\left[#1\right]_{#2}^{#3}}}
 
 %% Transforms
@@ -197,9 +225,12 @@
 \let\Span\undefined
 \let\O\undefined
 \newcommand{\abs}[1]{{\left|#1\right|}}
-\newcommand{\norm}[2][]{{\left\lVert#2\right\rVert^{#1}}}
+\NewDocumentCommand{\norm}{O{}mO{}}{%
+	{{\left\lVert{#2}\right\rVert_{#3}}^{#1}}
+}
 \newcommand{\inv}[1]{{{#1}^{-1}}}
 \newcommand{\trans}[1]{{{#1}^{\mathrm{T}}}}
+\newcommand{\ctrans}[1]{{{#1}^{\mathrm{H}}}} % conjugate transpose
 \newcommand{\comp}[1]{{{#1}^{\mathrm{C}}}}
 \NewDocumentCommand{\set}{m O{}}{% #1: set, #2: condition
 	\left\{#1\ifx\relax#2\relax\else{}\middle|{}#2\fi\right\} %
@@ -236,6 +267,12 @@
 	\color{\@mathematics@accentcolor}%
 	#2%
 }}
+\newcommand{\descell}[2][]{{{}%
+	\def\@mathematics@accentcolor{\accentcolour}%
+	\setkeys{mathematics}{#1}%
+	\color{\@mathematics@accentcolor}%
+	\text{\setstretch{1}\footnotesize\alert{\makecell{#2}}}%
+{}}}
 \newcommand{\cunderset}[3][\accentcolour]{{}{\color{#1}%
 	\underset{#2}{{\color{black}#3}}
 }{}}
@@ -256,15 +293,27 @@
 }{}}
 
 %% Vector
+\RequirePackage{iftex}
 \RequirePackage{contour}
 \let\vvec\vec
-\newcommand{\vb}[1]{{%
-	\mathbf{#1}%
-}}
-\newcommand{\mx}[1]{\vec{#1}}
+\newcommand{\vb}[1]{%
+	\ifXeTeX
+		\mathbfup{#1}%
+	\else
+		\boldsymbol{#1}%
+	\fi
+}
+\newcommand{\mxb}[1]{%
+	\ifXeTeX
+		\mathbfit{#1}%
+	\else
+		\boldsymbol{#1}%
+	\fi
+}
+\newcommand{\mx}[1]{\mxb{#1}}
 
 \let\nnabla\nabla
-% \renewcommand{\nabla}{{\vec{\nnabla}}}
+\renewcommand{\nabla}{\vb{\nnabla}}
 
 \contourlength{\@document@linewidth@thin}
 
@@ -330,12 +379,13 @@
 \def\@mathematics@update@vector{
 	\ifx\@mathematics@vector\@mathematics@vector@bold
 		\renewcommand{\vec}[1]{\vb{##1}}
-		\renewcommand{\nabla}{{\boldsymbol{\nnabla}}}
+		\renewcommand{\mx}[1]{\mxb{##1}}
+		\renewcommand{\nabla}{\vb{\nnabla}}
 	\fi
 	\ifx\@mathematics@vector\@mathematics@vector@arrow
 		\let\vec\vvec
 		\renewcommand{\mx}[1]{##1}
-		\renewcommand{\nabla}{{\vvec{\nnabla}}}
+		\renewcommand{\nabla}{\vvec{\nnabla}}
 	\fi
 	\ifx\@mathematics@vector\@mathematics@vector@underline
 		% \let\vvec\vec

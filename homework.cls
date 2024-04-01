@@ -1,12 +1,14 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{homework}[2022/12/28 initial commit]
+\ProvidesClass{homework}[2024/02/20]
+
 
 %% Declare options
 \input{options.def}
 % Reports and title page
 \def\@document@reporttype{false}
 \DeclareOption{report}{\def\@document@reporttype{true}}
-\DeclareOption{mla}{\def\@document@reporttype{mla}}
+\DeclareOption{mla}{\def\@document@reporttype{mla}\def\@document@citation{mla}}
+\DeclareOption{engl}{\def\@document@reporttype{english}\PassOptionsToClass{12pt}{article}}
 % Pass on options to article class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -20,10 +22,12 @@
 \mail{williameclee@arizona.edu}
 \information{\today}
 \def\accentcolour{black}
-%\renewcommand{\thesubsection}{\arabic{subsection}}
-% Title page
 
-% title
+% Header and footer settings
+\f@nch@setoffs
+\pagestyle{homework@plain}
+
+% Title
 \input{maketitle.def}
 \IfEqCase{\@document@reporttype}{
 	{false}{\let\maketitle\maketitle@homework@short}
@@ -35,14 +39,21 @@
 		\titlespacing*{\section}{0em}{\baselineskip}{0.25\baselineskip}
 		\setlength{\@document@margin@horizontal}{1in}
 		\setlength{\@document@margin@vertical}{1in}
-		\raggedright
+		\raggedright%
 		\setlength\parindent{2\@document@fontsize}
 	}
+	{english}{
+		\let\maketitle\maketitle@homework@english
+		\setstretch{2}
+		\raggedright
+		\setlength\parindent{0.5in}
+		\setlength{\@document@margin@horizontal}{2\parindent}
+		\setlength{\@document@margin@vertical}{2\parindent}
+		\@document@geometry
+		\f@nch@setoffs
+		\pagestyle{homework@english}
+	}
 }
-
-
-% Header and footer settings
-\pagestyle{homework@plain}
 
 
 %% Language settings

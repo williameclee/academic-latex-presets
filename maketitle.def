@@ -1,5 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesFile{maketitle.def}[2023/12/17]
+\ProvidesFile{maketitle.def}[2024/02/20]
+
 
 \RequirePackage{listofitems}
 \RequirePackage{geometry}
@@ -102,7 +103,7 @@
 	\end{tabular}
 	\linebreak%
 	\vspace{0.5\baselineskip}%
-	\normalfont\noindent%
+	\normalfont\sloppy%
 }
 
 % homework title page
@@ -178,18 +179,43 @@
 	\vspace{0.5\baselineskip}
 }
 
+% homework title English
+\newcommand{\maketitle@homework@english}{
+	\thispagestyle{empty}
+	{\footnotesize\setstretch{1.5}
+		\noindent
+		\ifdefined\@info@mail
+			\href{mailto:\@info@mail}{\@info@author} \\
+		\else
+			\@info@author \\
+		\fi
+		\ifdefined\@info@additionalinfo
+			\noindent\@info@additionalinfo \\
+		\fi
+		\noindent
+		\ifdefined\@info@course
+			\@info@course \\
+		\else
+			\ifdefined\@info@subtitle
+				\@info@subtitle \\
+			\fi
+		\fi
+		\noindent
+		\today
+		\par
+	}{\centering\LARGE\setstretch{1}
+		\@info@title
+		\par
+	}
+	\vspace{0.5\baselineskip}
+	\sloppy
+}
+
 % CV title
 \newcommand{\maketitle@cv}{
 	\noindent
 	\thispagestyle{cv@titlepage}
-	\begin{tabular}{@{}
-			% >{\raggedright\arraybackslash}b{0.8\linewidth-\gap}
-			% >{\raggedleft\arraybackslash\setlength{\baselineskip}{0.6\baselineskip}}b{0.2\linewidth}
-			ll
-		@{}}
-		{\Huge\bfseries \@info@author}
-		& \alert{\Huge Curriculum Vitae}
-	\end{tabular} 
+	{\Huge\bfseries \@info@author}
 	\par\vspace{0.5\baselineskip}
 	\sectionline
 	\noindent{

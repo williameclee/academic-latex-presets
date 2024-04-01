@@ -1,4 +1,6 @@
-\ProvidesFile{mathematics-symbols.def}[2023/11/29]
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{mathematics-symbols.def}[2024/02/20]
+
 
 % Unit vectors
 \newcommand{\xhat}{
@@ -101,23 +103,24 @@
 }
 
 % Differential operators
-\newcommand{\Dx}{{\Delta x}}
-\newcommand{\Dy}{{\Delta y}}
-\newcommand{\Dz}{{\Delta z}}
-\newcommand{\Dt}{{\Delta t}}
-\newcommand{\dx}{{\diff x}}
-\newcommand{\dy}{{\diff y}}
-\newcommand{\dz}{{\diff z}}
-\newcommand{\dt}{{\diff t}}
-\newcommand{\dk}{{\diff k}}
-\newcommand{\dr}{{\diff r}}
-\newcommand{\du}{{\diff u}}
-\newcommand{\dv}{{\diff v}}
-\newcommand{\dV}{{\diff V}}
-\newcommand{\dm}{{\diff m}}
-\newcommand{\dtau}{{\diff\tau}}
-\newcommand{\dphi}{{\diff\phi}}
-\newcommand{\dtheta}{{\diff\theta}}
+\newcommand{\Dx}{\Delta x}
+\newcommand{\Dy}{\Delta y}
+\newcommand{\Dz}{\Delta z}
+\newcommand{\Dt}{\Delta t}
+\newcommand{\dx}{\diff x}
+\newcommand{\dy}{\diff y}
+\newcommand{\dz}{\diff z}
+\newcommand{\dt}{\diff t}
+\newcommand{\dk}{\diff k}
+\newcommand{\dr}{\diff r}
+\newcommand{\du}{\diff u}
+\newcommand{\dv}{\diff v}
+\newcommand{\dV}{\diff V}
+\newcommand{\dm}{\diff m}
+\newcommand{\domega}{\diff\omega}
+\newcommand{\dtau}{\diff\tau}
+\newcommand{\dphi}{\diff\phi}
+\newcommand{\dtheta}{\diff\theta}
 
 % trigonometry
 \newcommand{\asin}{\sin^{-1}}

@@ -1,7 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{default}[2023/12/15]
+\ProvidesPackage{default}[2024/02/20]
+
 
 %% Document information
+\RequirePackage{ifthen, etoolbox, xstring, listofitems}
+
 \input{documentinformation.def}
 
 
@@ -15,12 +18,13 @@
 	}
 \else
 \fi
+\AtBeginDocument{\sloppy}
 \RequirePackage{floatrow, placeins}
-\RequirePackage{etoolbox, xstring, listofitems}
 
 %% Link settings
 \RequirePackage[hyphens]{url, xurl}
 \RequirePackage[hidelinks]{hyperref}
+\urlstyle{tt}
 
 %% Colour settings
 \RequirePackage{color, xcolor}
@@ -32,7 +36,6 @@
 \BeforeBeginEnvironment{tabular}{\renewcommand{\arraystretch}{\@document@linestretch}}
 
 %% Figure settings
-\RequirePackage{ifthen}
 \RequirePackage{graphicx, pdfpages, wrapfig, mdframed}
 \RequirePackage{tikz, pgfplots}
 \RequirePackage[labelfont={sf,bf}]{caption, subcaption}
@@ -45,30 +48,25 @@
 \setlist{leftmargin=\parindent}
 \newlist{enumerateI}{enumerate*}{1}
 \setlist[enumerateI]{itemjoin={{, }}, itemjoin*={{, and }}}
-\setlist[enumerateI,1]{label=(\arabic*)}
+\setlist[enumerateI,1]{label= (\arabic*)}
 % \newlist{enumthm}{enumerate}{1}
 % \setlist[enumthm]{leftmargin=1\parindent, labelindent=*, itemindent=*, align=left,
 % 	font=\sffamily\color{\accentcolour}}
 \newlist{itemizeM}{itemize}{1}
 \setlist[itemizeM]{align=left, labelindent=0pt, labelwidth=*, labelsep=0.25\parindent}
-% Annotated bibliography
-\RequirePackage{scrextend}
-\newenvironment{abibliography}{%
-	\begin{addmargin}[\@document@indent]{0pt}
-		\newcommand*{\abitem}[1]{
-			\setlength{\parindent}{-\@document@indent}
-			\par\noindent\indent\relax##1\quad
-		}
-}{%
-	\end{addmargin}
-}
-\BeforeBeginEnvironment{enumerate}{\setlength{\parindent}{\@document@indent}}
-\BeforeBeginEnvironment{itemize}{\setlength{\parindent}{\@document@indent}}
 
 %% Citation settings
-\RequirePackage[tocbib]{apacite}
-\bibliographystyle{apacite}
-\newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{#1}}}
+\PassOptionsToPackage{style=\@document@citation, 
+	autocite=inline, hyperref=true
+}{biblatex}
+\RequirePackage{biblatex}
+% \usepackage[style=\@document@citation, autocite=inline, hyperref=true]{biblatex}
+\DeclareFieldFormat{doi}{%
+	doi: \ifhyperref{\href{https://doi.org/#1}{\texttt{#1}}}{\texttt{#1}}%
+}
+\DeclareFieldFormat{url}{%
+	\ifhyperref{\href{#1}{\texttt{#1}}}{\texttt{#1}}%
+}
 
 %% Header & footer settings
 \input{headerfooter.def}
@@ -88,9 +86,13 @@
 %% Boxed environments
 \RequirePackage{environments}
 
-
 %% Cross-referencing
 \input{crossref.def}
+
+%% Subject-specific glossaries and variables
+\if@subjects@active
+	\RequirePackageWithOptions{subjects}
+\fi
 
 %% Language settings
 \ifdefstring{\@document@language}{chinese}{

@@ -1,4 +1,10 @@
-\ProvidesFile{glossaries-oceanography.def}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{glossaries-oceanography.def}[2024/01/23]
+
+\RequirePackage{glossaries}
 \makeglossaries
 
 \newacronym[description={},]{OA}{OA}{ocean acidification}
+\newacronym[description={},]{MSL}{MSL}{mean sea level}
+\newacronym[description={},parent={MSL}]{GMSL}{GMSL}{global mean sea level}
+\newacronym[description={}]{GMOM}{GMOM}{global mean ocean mass}

@@ -1,5 +1,8 @@
-\ProvidesFile{glossaries-mathematics.def}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{glossaries-mathematics.def}[2024/02/20]
 
+
+\RequirePackage{glossaries}
 \makeglossaries
 
 \newglossaryentry{domain}{
@@ -12,15 +15,18 @@
 }
 \newglossaryentry{Kronecker delta}{
 	name=Kronecker delta,
+	symbol={\ensuremath{\delta}},
 	description=
 }
 \newglossaryentry{Dirac delta function}{
 	name=Dirac delta function,
+	symbol={\ensuremath{\delta}},
 	description=
 }
 \newglossaryentry{orthogonality}{
 	name=orthogonality,
-	description=
+	description=,
+	user1={orthogonal},
 }
 \newglossaryentry{orthogonal}{
 	name=orthogonal,
@@ -33,7 +39,8 @@
 }
 \newglossaryentry{orthonormality}{
 	name=orthonormality,
-	description=
+	description=,
+	user1={orthonormal},
 }
 \newglossaryentry{orthonormal}{
 	name=orthonormal,
@@ -128,8 +135,8 @@
 	parent={stiffness},
 	description=
 }
-\newglossaryentry{communicative law}{
-	name=communicative law,
+\newglossaryentry{commutative law}{
+	name=commutative law,
 	description=
 }
 \newglossaryentry{associative law}{
@@ -515,6 +522,10 @@
 }
 \newglossaryentry{eigenvector}{
 	name=eigenvector,
+	description=
+}
+\newglossaryentry{eigenfunction}{
+	name=eigenfunction,
 	description=
 }
 \newglossaryentry{generalised eigenvector}{

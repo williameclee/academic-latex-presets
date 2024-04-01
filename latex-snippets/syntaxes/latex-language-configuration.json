@@ -1,0 +1,82 @@
+{
+    "comments": {
+        "lineComment": "%",
+    },
+    // symbols used as brackets
+    "brackets": [
+		// default brackets
+        ["(", ")"],
+		["{", "}"],
+        ["[", "]"],
+		["ll", "rr"],
+		// maths brackets
+		["\\{", "\\}"],
+		["\\langle", "\\rangle"],
+		["\\lfloor", "\\rfloor"],
+		["\\lceil", "\\rceil"],
+		// sized brackets
+		["\\left(", "\\right)"],
+		["\\left(", "\\right."],
+		["\\left.", "\\right)"],
+		["\\left[", "\\right]"],
+		["\\left[", "\\right."],
+		["\\left.", "\\right]"],
+		["\\left\\{", "\\right\\}"],
+		["\\left\\{", "\\right."],
+		["\\left.", "\\right\\}"],
+		["\\left\\langle", "\\right\\rangle"],
+		["\\left\\langle", "\\right."],
+		["\\left.", "\\right\\rangle"],
+		["\\left\\lfloor", "\\right\\rfloor"],
+		["\\left\\lfloor", "\\right."],
+		["\\left.", "\\right\\rfloor"],
+		["\\left\\lceil", "\\right\\rceil"],
+		["\\left\\lceil", "\\right."],
+		["\\left.", "\\right\\rceil"],
+    ],
+    // symbols that are auto closed when typing
+    "autoClosingPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["`", "'"],
+		["``", "''"],
+		// maths brackets
+		["\\{", "\\}"],
+		["\\langle", "\\rangle"],
+		["\\lfloor", "\\rfloor"],
+		["\\lceil", "\\rceil"],
+		// sized brackets
+		["\\left(", "\\right)"],
+		["\\left(", "\\right."],
+		["\\left.", "\\right)"],
+		["\\left[", "\\right]"],
+		["\\left[", "\\right."],
+		["\\left.", "\\right]"],
+		["\\left\\{", "\\right\\}"],
+		["\\left\\{", "\\right."],
+		["\\left.", "\\right\\}"],
+		["\\left\\langle", "\\right\\rangle"],
+		["\\left\\langle", "\\right."],
+		["\\left.", "\\right\\rangle"],
+		["\\left\\lfloor", "\\right\\rfloor"],
+		["\\left\\lfloor", "\\right."],
+		["\\left.", "\\right\\rfloor"],
+		["\\left\\lceil", "\\right\\rceil"],
+		["\\left\\lceil", "\\right."],
+		["\\left.", "\\right\\rceil"],
+		["ll", "rr"],
+    ],
+    // symbols that can be used to surround a selection
+    "surroundingPairs": [
+		["$", "$"],
+		["$$", "$$"],
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["|", "|"],
+        ["'", "'"],
+		["ll", "rr"],
+    ]
+}

@@ -1,0 +1,28 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{glossaries-planetaryscience.def}[2024/02/20]
+
+
+\RequirePackage{glossaries}
+\makeglossaries
+
+\newglossaryentry{chondrite}{
+	name=chondrite,
+	description=
+}
+
+\newacronym[description={},]{CDOD}{CDOD}{column dust optical depth}
+\newacronym[description={},]{GDS}{GDS}{gloal dust storm}
+\newacronym[description={},]{LHB}{LHB}{Late Heavy Bombardment}
+\newacronym[description={},]{MY}{MY}{Mars year}
+\newacronym[description={},]{PPO}{PPO}{planetary period oscillation}
+\newacronym[description={},]{RDS}{RDS}{regional dust storm}
+
+% Missions and instruments
+\newacronym[description={},]{ISS}{ISS}{Imaging Science Subsystem}
+\newacronym[description={},]{MCS}{MCS}{Mars Climate Sounder}
+\newacronym[description={},]{MGS}{MGS}{Mars Global Surveyor}
+\newacronym[description={},]{MRO}{MRO}{Mars Reconnaissance Orbiter}
+\newacronym[description={},]{OpenMARS}{OpenMARS}{Open access to Mars Assimilated Remote Soundings}
+\newacronym[description={},]{TES}{TES}{Thermal Emission Spectrometer}
+\newacronym[description={},]{THEMIS}{THEMIS}{Thermal Emission Imaging System}
+\newacronym[description={},]{VIMS}{VIMS}{Visual and Infrared Mapping Spectrometer}

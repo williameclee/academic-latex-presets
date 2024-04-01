@@ -11,17 +11,20 @@
 	\RequirePackage{fontspec}
 	\RequirePackage[narrowiints, partialup]{kpfonts}
 	\RequirePackage[scale=0.95]{FiraSans}
-	% \setmonofont[scale=0.9]{Fira Code}
-	\setmonofont{Fira Code}
+	\setmonofont[Scale=0.9]{Fira Code}
+	\RequirePackage{xeCJK}
+	\setCJKmainfont{Source Han Serif TC}
+	\setCJKsansfont{Source Han Sans TC}
+	% \setmonofont{Fira Code}
 	\if@document@sansserif
 		% final, sans-serif
 		\RequirePackage{unicode-math}
 		\setmathfont{Fira Math}
 		\unimathsetup{mathrm=sym, mathbf=sym}
-	\else
-		\RequirePackage{unicode-math}
-		\setmathfont{KpMath-Regular.otf}
-		\unimathsetup{mathrm=sym, mathbf=sym}
+	% \else
+	% 	\RequirePackage{unicode-math}
+	% 	\setmathfont{KpMath-Regular.otf}
+	% 	\unimathsetup{mathrm=sym, mathbf=sym}
 	\fi
 \fi
 

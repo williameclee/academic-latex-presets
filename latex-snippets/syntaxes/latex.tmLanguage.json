@@ -1,0 +1,83 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "LaTeX",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#optional-arg"
+		},
+		{
+			"include": "#label-wrapper"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.tex",
+				"match": "\\b(if|while|for|return|else|end)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.tex",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tex",
+					"match": "\\\\."
+				}
+			]
+		},
+		"label-wrapper": {
+			"name": "label-wrapper.tex",
+			"begin": "\\`",
+			"end": "\\'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tex",
+					"match": "\\\\."
+				}
+			]
+		},
+		"definition-label": {
+			"begin": "((\\\\)label)((?:\\[[^\\[]*?\\])*)(\\{)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.label.latex"
+				},
+				"2": {
+					"name": "punctuation.definition.keyword.latex"
+				},
+				"3": {
+					"patterns": [
+						{
+							"include": "#optional-arg"
+						}
+					]
+				},
+				"4": {
+					"name": "punctuation.definition.arguments.begin.latex"
+				}
+			},
+			"end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.arguments.end.latex"
+				}
+			},
+			"name": "meta.definition.label.latex",
+			"patterns": [
+				{
+					"match": "[\\p{Alphabetic}\\p{Number}\\.,:/*!^_-]",
+					"name": "variable.parameter.definition.label.latex"
+				}
+			]
+		}
+	},
+	"scopeName": "source.tex"
+}

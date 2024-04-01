@@ -1,5 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesFile{headerfooter.def}[2023/12/18]
+\ProvidesFile{headerfooter.def}[2024/02/20]
+
 
 \RequirePackage{fancyhdr, lastpage}
 
@@ -49,20 +50,20 @@
 			\sffamily\footnotesize\thepage
 		\fi
 	}
-	% \fancyfoot[C]{
-	% 	\ifdefined\@info@link
-	% 		hello
-	% 	\else
-	% 		\sffamily\footnotesize\thepage
-	% 	\fi
-	% }
-	% \fancyfoot[C]{}
-	% \fancyfoot[C]{
-	% 	\ifdefined\@info@link
-	% 		\sffamily\footnotesize\thepage
-	% 	\else
-	% 	\fi
-	% }
+}
+
+% homework: english
+\input{names.def}
+\fancypagestyle{homework@english}{
+	\fancyhf{}
+	\fancyhead[R]{\footnotesize
+		\ifdefined\@info@mail
+			\href{mailto:\@info@mail}{\lastname{\@info@author}}
+		\else
+			\lastname{\@info@author}
+		\fi
+		\thepage
+	}
 }
 
 % CV: title page

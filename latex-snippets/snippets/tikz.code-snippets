@@ -1,0 +1,58 @@
+{
+	"coordinate": {
+		"prefix": ["\\coordinate"],
+		"body": [
+			"\\coordinate ($1) at ($2);"
+		],
+		"description": "coordinate"
+	},
+	"node": {
+		"prefix": ["\\node"],
+		"body": [
+			"\\node[$2] ($1) at ($3) {$4};"
+		],
+		"description": "node"
+	},
+	"draw": {
+		"prefix": ["\\draw"],
+		"body": [
+			"\\draw[$3] ($1) -- ($2);"
+		],
+		"description": "draw"
+	},
+	"draw:node": {
+		"prefix": ["\\draw"],
+		"body": [
+			"\\draw[$3] ($1) -- ($2) node[${5|above,below,left,right,above left,above right,below left,below right|}] {$4};"
+		],
+		"description": "draw with node"
+	},
+	"fill": {
+		"prefix": ["\\fill"],
+		"body": [
+			"\\fill[$2] ($1) -- ($2) -- ($3) -- cycle;"
+		],
+		"description": "fill"
+	},
+	"fill:circle": {
+		"prefix": ["\\fill"],
+		"body": [
+			"\\fill[$2] ($1) circle (${3|1.5pt|});"
+		],
+		"description": "fill circle"
+	},
+	"fill:circle:node": {
+		"prefix": ["\\fill"],
+		"body": [
+			"\\fill[$2] ($1) circle (${3|1.5pt|}) node[${5|above,below,left,right,above left,above right,below left,below right|}] {$4};"
+		],
+		"description": "fill circle with node"
+	},
+	"filldraw": {
+		"prefix": ["\\filldraw"],
+		"body": [
+			"\\filldraw[$3] ($1) -- ($2) -- ($4) -- cycle;"
+		],
+		"description": "filldraw"
+	},
+}

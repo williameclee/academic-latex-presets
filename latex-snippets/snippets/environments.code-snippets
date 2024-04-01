@@ -1,93 +1,112 @@
 {
+	// Most basic environments
+	"itemize": {
+		"prefix": ["\\begin{itemize}", "\\itemize"],
+		"body": [
+			"\\begin{itemize}",
+			"\t\\item ${1:${TM_SELECTED_TEXT}}",
+			"\\end{itemize}"
+		],
+		"description": "bullet point environment"
+	},
+	"enumerate": {
+		"prefix": ["\\begin{enumerate}", "\\enumerate"],
+		"body": [
+			"\\begin{enumerate}",
+			"\t\\item ${1:${TM_SELECTED_TEXT}}",
+			"\\end{enumerate}"
+		],
+		"description": "enumerate environment"
+	},
+	"enumerate*": {
+		"prefix": ["\\begin{enumerate*}", "\\enumerate*"],
+		"body": [
+			"\\begin{enumerate*}",
+			"\t\\item ${1:${TM_SELECTED_TEXT}}",
+			"\\end{enumerate*}"
+		],
+		"description": "enumerate* environment"
+	},
     // Proof environments
     "proof:var": {
 		"prefix": ["\\begin{proof}", "\\proof"],
 		"body": [
 			"\\begin{${1|proof,theorem proof,solution|}}",
-			"	${2:${TM_SELECTED_TEXT}}",
+			"\t${2:${TM_SELECTED_TEXT}}",
 			"\\end{${1|proof,theorem proof,solution|}}",
-			""
 		],
-		"description": "insert proof environment with variants"
+		"description": "proof environment with variants"
 	},
     "proof environment": {
 		"prefix": ["\\begin{proof}", "\\proof"],
 		"body": [
 			"\\begin{proof}",
-			"	${1:${TM_SELECTED_TEXT}}",
+			"\t${1:${TM_SELECTED_TEXT}}",
 			"\\end{proof}",
-			""
 		],
-		"description": "insert proof environment"
+		"description": "proof environment"
 	},
 	"theorem proof environment": {
-		"prefix": ["\\begin{theorem proof}", "\\theoremproof", "\\begin{proof}", "\\proof"],
+		"prefix": ["\\begin{theorem proof}", "\\theoremproof"],
 		"body": [
 			"\\begin{theorem proof}${1:[${2:label}]}",
-			"	${3:${TM_SELECTED_TEXT}}",
+			"\t${3:${TM_SELECTED_TEXT}}",
 			"\\end{theorem proof}",
-			""
 		],
-		"description": "insert theorem proof environment"
+		"description": "theorem proof environment"
 	},
 	"solution environment": {
 		"prefix": ["\\begin{solution}", "\\solution"],
 		"body": [
 			"\\begin{solution}",
-			"	${1:${TM_SELECTED_TEXT}}",
+			"\t${1:${TM_SELECTED_TEXT}}",
 			"\\end{solution}",
-			""
 		],
-		"description": "insert solution environment"
+		"description": "solution environment"
 	},
     // Theorem environments
     "definition": {
 		"prefix": ["\\begin{definition}", "\\definition"],
 		"body": [
 			"\\begin{definition}${1:[${2:title}]}${3:[${4:label}]}",
-			"	${5:${TM_SELECTED_TEXT}}",
+			"\t${5:${TM_SELECTED_TEXT}}",
 			"\\end{definition}",
-			""
 		],
-		"description": "insert definition environment"
+		"description": "definition environment"
 	},
 	"theorem": {
 		"prefix": ["\\begin{theorem}", "\\theorem"],
 		"body": [
 			"\\begin{theorem}${1:[${2:title}]}${3:[${4:label}]}",
-			"	${5:${TM_SELECTED_TEXT}}",
+			"\t${5:${TM_SELECTED_TEXT}}",
 			"\\end{theorem}",
-			""
 		],
-		"description": "insert theorem environment"
+		"description": "theorem environment"
 	},
 	"lemma": {
 		"prefix": ["\\begin{lemma}", "\\lemma"],
 		"body": [
 			"\\begin{lemma}${1:[${2:title}]}${3:[${4:label}]}",
-			"	${5:${TM_SELECTED_TEXT}}",
+			"\t${5:${TM_SELECTED_TEXT}}",
 			"\\end{lemma}",
-			""
 		],
-		"description": "insert lemma environment"
+		"description": "lemma environment"
 	},
 	"corollary": {
 		"prefix": ["\\begin{corollary}", "\\corollary"],
 		"body": [
 			"\\begin{corollary}${1:[${2:title}]}${3:[${4:label}]}",
-			"	${5:${TM_SELECTED_TEXT}}",
+			"\t${5:${TM_SELECTED_TEXT}}",
 			"\\end{corollary}",
-			""
 		],
-		"description": "insert corollary environment"
+		"description": "corollary environment"
 	},
 	"remark": {
 		"prefix": ["\\begin{remark}", "\\remark"],
 		"body": [
 			"\\begin{remark}${1:[${2:title}]}${3:[${4:label}]}",
-			"	${5:${TM_SELECTED_TEXT}}",
+			"\t${5:${TM_SELECTED_TEXT}}",
 			"\\end{remark}",
-			""
 		],
 		"description": "remark environment"
 	},
@@ -95,20 +114,18 @@
 		"prefix": ["\\begin{example}", "\\example"],
 		"body": [
 			"\\begin{example}${1:[${2:title}]}",
-			"	${3:${TM_SELECTED_TEXT}}",
+			"\t${3:${TM_SELECTED_TEXT}}",
 			"\\end{example}",
-			""
 		],
-		"description": "insert example environment"
+		"description": "example environment"
 	},
 	"exercise": {
 		"prefix": ["\\begin{exercise}", "\\exercise"],
 		"body": [
 			"\\begin{exercise}${1:[${2:title}]}",
-			"	${3:${TM_SELECTED_TEXT}}",
+			"\t${3:${TM_SELECTED_TEXT}}",
 			"\\end{exercise}",
-			""
 		],
-		"description": "insert exercise environment"
+		"description": "exercise environment"
 	},
 }

@@ -1,4 +1,6 @@
-\ProvidesFile{variables-atmosphericsciences.def}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{variables-atmosphericsciences.def}[2024/02/20]
+
 
 \def\Tv{{\mathss{T}{v}}}
 \def\Td{{\mathss{T}{d}}}
@@ -18,7 +20,6 @@
 \def\es{{\mathss{e}{s}}}
 \def\ei{{\mathss{e}{i}}}
 \def\pd{{\mathss{e}{d}}}
-%\def\pm		{{p_\mathrm{m}}}
 \def\qv{{\mathss{q}{v}}}
 \def\qc{{\mathss{q}{c}}}
 \def\qt{{\mathss{q}{t}}}

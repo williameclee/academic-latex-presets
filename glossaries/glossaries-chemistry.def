@@ -1,5 +1,7 @@
-\ProvidesFile{glossaries-chemistry.def}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{glossaries-chemistry.def}[2024/01/23]
 
+\RequirePackage{glossaries}
 \makeglossaries
 
 \newglossaryentry{Rydberg constant}{

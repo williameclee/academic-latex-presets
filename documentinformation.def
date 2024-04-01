@@ -106,7 +106,7 @@
 	\def\@info@address{#1}
 }
 
-% document link
+% citizenship
 \let\citizenship\undefined
 \def\@info@citizenship@title{citizenship}
 \let\@info@citizenship\undefined

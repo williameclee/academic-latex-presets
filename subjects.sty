@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{subject}[2023/11/28]
+\ProvidesPackage{subjects}[2024/02/18]
 
 \RequirePackage{xkeyval}
 
@@ -48,6 +48,13 @@
 \DeclareOption{phys}{\@subject@physicstrue}
 \DeclareOption{phy}{\@subject@physicstrue}
 
+% Physics
+\newif\if@subject@planetaryscience
+\DeclareOption{planetary science}{\@subject@planetarysciencetrue}
+\DeclareOption{planet}{\@subject@planetarysciencetrue}
+\DeclareOption{ptys}{\@subject@planetarysciencetrue}
+\DeclareOption{lpl}{\@subject@planetarysciencetrue}
+
 
 \ProcessOptions\relax
 
@@ -83,4 +90,7 @@
 \if@subject@physics
 	\input{variables-physics.def}
 	\input{glossaries-physics.def}
+\fi
+\if@subject@planetaryscience
+	\input{glossaries-planetaryscience.def}
 \fi

@@ -25,6 +25,9 @@
 
 %% Custom commands
 \newcommand{\annL}[6][]{
+	% #1: position (t/b), 
+	% #2: start, #3: end, 
+	% #4: position, #5: shift, #6: text
 	\ifthenelse{\equal{#1}{t}}
 		{\def\annLanchor{south}\def\annLrot{-90}\def\annLshift{0.5pt}}
 		{\def\annLanchor{north}\def\annLrot{90}\def\annLshift{-0.5pt}}
@@ -84,4 +87,15 @@
 }{
 	\end{axis}
 	\end{tikzpicture}
+}
+
+% Get coordinates of a point
+\newcommand{\gettikzxy}[3]{%
+	\tikz@scan@one@point\pgfutil@firstofone#1\relax
+	\ifx\relax#2\relax
+		\def#2{0}%
+	\fi
+	\ifx\relax#3\relax
+		\def#3{0}%
+	\fi
 }

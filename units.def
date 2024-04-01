@@ -13,13 +13,15 @@
 \newcommand{\cm}[1][]{\@unit@centimetre\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@millimetre}{mm}
 \newcommand{\mm}[1][]{\@unit@millimetre\ifx\relax#1\relax\else^{#1}\fi}
-\DeclareMathOperator{\@unit@micrometre}{\mu m}
+\DeclareMathOperator{\@unit@micrometre}{{\mathnormal{\mu}}m}
 \newcommand{\um}[1][]{\@unit@micrometre\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@nanometre}{nm}
 \newcommand{\nm}[1][]{\@unit@nanometre\ifx\relax#1\relax\else^{#1}\fi}
 % picometre (pm) is skipped because it conflicts with the plus-minus sign
 \DeclareMathOperator{\@unit@femtometre}{fm}
 \newcommand{\fm}[1][]{\@unit@femtometre\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@astronomicalunit}{AU}
+\newcommand{\AU}[1][]{\@unit@astronomicalunit\ifx\relax#1\relax\else^{#1}\fi}
 
 % Volume
 \let\L\undefined%
@@ -27,6 +29,8 @@
 \newcommand{\L}[1][]{\@unit@L\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@mL}{mL}
 \newcommand{\mL}[1][]{\@unit@mL\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@ppmv}{ppmv}
+\newcommand{\ppmv}[1][]{\@unit@ppmv\ifx\relax#1\relax\else^{#1}\fi}
 
 % Mass
 \DeclareMathOperator{\@unit@kg}{kg}
@@ -35,12 +39,16 @@
 \newcommand{\g}[1][]{\@unit@g\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@mg}{mg}
 \newcommand{\mg}[1][]{\@unit@mg\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@ppm}{ppm}
+\newcommand{\ppm}[1][]{\@unit@ppm\ifx\relax#1\relax\else^{#1}\fi}
 
 % Weight
 \DeclareMathOperator{\@unit@kgw}{kgw}
 \newcommand{\kgw}[1][]{\@unit@kgw\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@gw}{gw}
 \newcommand{\gw}[1][]{\@unit@gw\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@weight}{wt}
+\newcommand{\wt}{\@unit@weight}
 
 % Time
 \DeclareMathOperator{\@unit@gigayear}{Gyr}
@@ -77,10 +85,10 @@
 \newcommand{\K}[1][]{\@unit@kelvin\ifx\relax#1\relax\else^{#1}\fi}
 
 % geographic coordinates
-\newcommand{\degN}{\text{\degree{}N}}
-\newcommand{\degS}{\text{\degree{}S}}
-\newcommand{\degE}{\text{\degree{}E}}
-\newcommand{\degW}{\text{\degree{}W}}
+\newcommand{\degN}{\text{\degree N}}
+\newcommand{\degS}{\text{\degree S}}
+\newcommand{\degE}{\text{\degree E}}
+\newcommand{\degW}{\text{\degree W}}
 
 % Sound level
 \DeclareMathOperator{\@unit@decibel}{dB}
@@ -125,17 +133,16 @@
 \newcommand{\dyn}[1][]{\@unit@dyne\ifx\relax#1\relax\else^{#1}\fi}
 
 % Acceleration
-\def\mpss{\m\s[-2]}
-\def\cmpss{\cm\s[-2]}
 \DeclareMathOperator{\@unit@galileo}{Gal}
 \newcommand{\gal}[1][]{\@unit@galileo\ifx\relax#1\relax\else^{#1}\fi}
+\let\Gal\gal
+\DeclareMathOperator{\@unit@milligalileo}{mGal}
+\newcommand{\mgal}[1][]{\@unit@milligalileo\ifx\relax#1\relax\else^{#1}\fi}
+\let\mGal\mgal
 
 % Velocity
-\def\kmph{\km\hr[-1]}
-\def\kmps{\km\s[-1]}
-\def\mps{\m\s[-1]}
-\def\cmps{\cm\s[-1]}
-\def\mmps{\km\s[-1]}
+\DeclareMathOperator{\@unit@knot}{kt}
+\newcommand{\kt}[1][]{\@unit@knot\ifx\relax#1\relax\else^{#1}\fi}
 
 % Energy
 \DeclareMathOperator{\@unit@kilojoule}{kJ}
@@ -191,3 +198,12 @@
 \DeclareMathOperator{\M}{M}
 
 \DeclareMathOperator{\pt}{pt}
+
+% Compound units
+\def\kmph{\km\hr[-1]}
+\def\kmps{\km\s[-1]}
+\def\mps{\m\s[-1]}
+\def\cmps{\cm\s[-1]}
+\def\mmps{\km\s[-1]}
+\def\mpss{\m\s[-2]}
+\def\cmpss{\cm\s[-2]}

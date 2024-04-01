@@ -1,33 +1,46 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesFile{options.def}[2023/12/17]
+\ProvidesFile{options.def}[2024/02/18]
 
-% language
+% Language
 \def\@document@language{english}
 \DeclareOption{chinese}{\def\@document@language{chinese}}
 
-% typography
+% Typography
 \newif\if@document@sansserif
 \@document@sansseriffalse
 \DeclareOption{serif}{\@document@sansseriffalse}
 \DeclareOption{sans-serif}{\@document@sansseriftrue}
 
-% margin
+% Margin
 \newif\if@document@margin
 \DeclareOption{margin}{\@document@margintrue}
 
-% typeset speed
+% Typeset speed
 \newif\if@document@draft
 \@document@draftfalse
 \DeclareOption{draft}{\@document@drafttrue}
 
+% Citation
+\def\@document@citation{apa}
 
-%% default options
-% font size
+% Subject-specific glossaries and variables
+\newif\if@subjects@active
+\@subjects@activefalse
+\DeclareOption{geos}{\@subjects@activetrue\PassOptionsToPackage{geos}{subjects}}
+\DeclareOption{atmo}{\@subjects@activetrue\PassOptionsToPackage{atmo}{subjects}}
+\DeclareOption{ptys}{\@subjects@activetrue\PassOptionsToPackage{ptys}{subjects}}
+\DeclareOption{math}{\@subjects@activetrue\PassOptionsToPackage{math}{subjects}}
+\DeclareOption{phys}{\@subjects@activetrue\PassOptionsToPackage{phys}{subjects}}
+\DeclareOption{chem}{\@subjects@activetrue\PassOptionsToPackage{chem}{subjects}}
+
+
+%% Default options
+% Font size
 \DeclareOption{10pt}{\PassOptionsToClass{10pt}{article}}
 \DeclareOption{11pt}{\PassOptionsToClass{11pt}{article}}
 \DeclareOption{12pt}{\PassOptionsToClass{12pt}{article}}
 \ExecuteOptions{11pt}
 
-% paper size
+% Paper size
 \DeclareOption{a4paper}{\PassOptionsToClass{a4paper}{article}}
 \ExecuteOptions{a4paper}

@@ -1,0 +1,29 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{names.def}[2024/02/17]
+
+\NewDocumentCommand{\@names@parselastname}{m m O{}}{
+	% #1: full name
+	% #2: last name output
+	% #3: (optional) first name output
+	\setsepchar{,}
+	\ignoreemptyitems
+	\readlist*\fullname{#1}
+	\ifnum\fullnamelen=1 % last name at the end
+		\setsepchar{ }
+		\ignoreemptyitems
+		\readlist*\fullname{#1}
+		\def#2{\fullname[\fullnamelen]}
+	\else % last name separated by a comma
+		\def\namefirstnameoutput{#3}
+		\def#2{\fullname[1]}
+		\if\relax\namefirstnameoutput\relax\else % output given name
+			\def{#3}{\fullname[2]}
+		\fi
+	\fi
+}
+\newcommand{\lastname}[1]{%
+	\let\@names@lastname\undefined
+	\newcommand{\@names@lastname}{}%
+	\@names@parselastname{#1}{\@names@lastname}%
+	\@names@lastname%
+}

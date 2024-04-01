@@ -1,11 +1,19 @@
-\ProvidesFile{glossaries-atmosphericsciences.def}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{glossaries-atmosphericsciences.def}[2024/02/20]
 
+
+\RequirePackage{glossaries}
 \makeglossaries
-
 
 \newglossaryentry{temperature}{
 	name=temperature,
 	symbol={\ensuremath{T}},
+	description=
+}
+\newglossaryentry{potential temperature}{
+	name=potential temperature,
+	parent={temperature},
+	symbol={\ensuremath{\theta}},
 	description=
 }
 \newglossaryentry{pressure}{
@@ -51,8 +59,21 @@
 	name=equation of state,
 	description=
 }
+\newglossaryentry{height tendency}{
+	name=height tendency,
+	symbol={\ensuremath{\chi}},
+	description=
+}
+\newglossaryentry{tendency equation}{
+	name=tendency equation,
+	description=
+}
 \newglossaryentry{hydrostatic equilibrium}{
 	name=hydrostatic equilibrium,
+	description=
+}
+\newglossaryentry{hydrostatic approximation}{
+	name=hydrostatic approximation,
 	description=
 }
 \newglossaryentry{buoyancy temperature}{
@@ -130,6 +151,10 @@
 	name=vorticity,
 	description=
 }
+\newglossaryentry{vorticity equation}{
+	name=vorticity equation,
+	description=
+}
 \newglossaryentry{absolute vorticity}{
 	name=absolute vorticity,
 	parent={vorticity},
@@ -181,9 +206,49 @@
 	name=barotropic,
 	description=
 }
-	
-\newacronym[description={},]{PGF}{PGF}{pressure gradient force}
-\newacronym[description={},]{SWE}{SWE}{shallow water equation}
+\newglossaryentry{hypsometric equation}{
+	name=hypsometric equation,
+	description=
+}
+\newglossaryentry{geostrophic approximation}{
+	name=geostrophic approximation,
+	description=
+}
+\newglossaryentry{geostrophic wind}{
+	name=geostrophic wind,
+	description=
+}
+\newglossaryentry{ageostrophic wind}{
+	name=ageostrophic wind,
+	parent={geostrophic wind},
+	description=
+}
+\newglossaryentry{lapse rate}{
+	name=lapse rate,
+	symbol={\ensuremath{\gamma}},
+	description=
+}
+\newglossaryentry{DALR}{
+	name=dry adiabatic lapse rate,
+	parent={lapse rate},
+	symbol={\ensuremath{\mathss{\Gamma}{d}}},
+	description=
+}
+\newglossaryentry{MALR}{
+	name=moist adiabatic lapse rate,
+	parent={lapse rate},
+	symbol={\ensuremath{\mathss{\Gamma}{m}}},
+	description=
+}
+
+\newacronym[description={},]{GCM}{GCM}{general circulation model}
 \newacronym[description={}, parent=geopotential, symbol={\ensuremath{Z}}]{GPH}{GPH}{geopotential height}
-\newacronym[description={}, parent=vorticity]{PV}{PV}{potential vorticity}
+\newacronym[description={}]{LND}{LND}{level of non-divergence}
 \newacronym[description={}, parent=pressure]{MSLP}{MSLP}{mean sea-level pressure}
+\newacronym[description={},]{PGF}{PGF}{pressure gradient force}
+\newacronym[description={}]{PV}{PV}{potential vorticity}
+\newacronym[description={}, parent={PV}, symbol={\ensuremath{\mathss{q}{p}}},]{QG-PV}{QG-PV}{quasi-geostrophic potential vorticity}
+\newacronym[description={}]{QG}{QG}{quasi-geostrophic}
+\newacronym[description={},]{SWE}{SWE}{shallow water equation}
+\newacronym[description={}]{CAA}{CAA}{cold air advection}
+\newacronym[description={}]{WAA}{WAA}{warm air advection}

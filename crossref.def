@@ -14,12 +14,12 @@
 }
 \newcommand{\multiref}[1]{%
 	\foreachitem\x\in#1[]{%
-		\ifnum\xcnt=1\else\ifnum\xcnt=\listlen#1[]\@crossref@sepfinal\else\@crossref@sep\fi\@crossref@sepspace\fi\ref{\x}%
+		\ifnum\xcnt=1\else\ifnum\xcnt=\listlen#1[]\@crossref@sepfinal\else\@crossref@sep\fi\@crossref@sepspace\fi\protect\ref{\x}%
 	}%
 }
 \newcommand{\multieqref}[1]{%
 	\foreachitem\x\in#1[]{%
-		\ifnum\xcnt=1\else\ifnum\xcnt=\listlen#1[]\@crossref@sepfinal\else\@crossref@sep\fi\@crossref@sepspace\fi(\ref{\x})%
+		\ifnum\xcnt=1\else\ifnum\xcnt=\listlen#1[]\@crossref@sepfinal\else\@crossref@sep\fi\@crossref@sepspace\fi(\protect\ref{\x})%
 	}%
 }
 % Equations
@@ -60,9 +60,20 @@
 \def\@crossref@secprfxpl{Secs.}
 \newcommand{\secref}[1]{%
 	\readreflist{#1}%
-	\ifnum\listlen\reflist[]=1 %
+	\ifnum\listlen\reflist[]=1%
 		\@crossref@secprfx\@crossref@sepspace%
-	\else %
+	\else%
 		\@crossref@secprfxpl\@crossref@sepspace%
+	\fi\multiref{\reflist}%
+}
+% Theorems
+\newcommand{\thmref}[1]{%
+	\readreflist{#1}%
+	\@env@title{\reflist[1]}{\@crossref@ref@title}%
+	\ifnum\listlen\reflist[]=1%
+		\@crossref@ref@title\@crossref@sepspace%
+	\else%
+		\@crossref@ref@title%
+		s\@crossref@sepspace%
 	\fi\multiref{\reflist}%
 }

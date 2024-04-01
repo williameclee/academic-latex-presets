@@ -1,5 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{environments}[2023/12/15]
+\ProvidesFile{environments.sty}[2024/02/20]
+
 
 \RequirePackage{xparse}
 
@@ -35,18 +36,21 @@
 
 % Theorem environments
 \def\@env@theorem@title{Theorem}
-\def\@env@definition@title{Definition}
+\def\@env@proposition@title{Proposition}
 \def\@env@lemma@title{Lemma}
+\def\@env@definition@title{Definition}
 \def\@env@corollary@title{Corollary}
 \def\@env@remark@title{Remark}
 \def\@env@example@title{Example}
 \def\@env@exercise@title{Exercise}
 \def\@env@theorem@label{THM}
+\def\@env@proposition@label{PRP}
 \def\@env@lemma@label{LMA}
 \def\@env@definition@label{DEF}
 \def\@env@corollary@label{COR}
 \def\@env@remark@label{RMK}
 \def\@env@equation@label{EQ}
+\def\@env@equation@label@alt{EQN}
 
 % theorem
 \newtheorem{mytheorem}{\@env@theorem@title}[section]
@@ -68,9 +72,7 @@
 
 % definition
 \newtheorem{mydefinition}[mytheorem]{\@env@definition@title}
-\NewDocumentEnvironment{definition}{O{} O{}}{
-	% #1: definition title
-	% #2: definition label
+\NewDocumentEnvironment{definition}{O{} O{}}{% #1: definition title, #2: definition label
 	\begin{mdframed}[style=leftmargin]
 	\begin{mydefinition}[#1]
 	\if\relax#2\relax
@@ -105,6 +107,24 @@
 	\end{mdframed}
 }
 
+% proposition
+\newtheorem{myproposition}[mytheorem]{\@env@proposition@title}
+\NewDocumentEnvironment{proposition}{O{} O{}}{
+	\begin{mdframed}[style=leftmargin]
+	\begin{myproposition}[#1]
+	\if\relax#2\relax
+		\addtocounter{defaultlabelcounter}{1}
+		\label{\@env@proposition@label:\thedefaultlabelcounter}
+		\gdef\@env@currentlabel{\@env@proposition@label:\thedefaultlabelcounter}
+	\else
+		\label{#2}
+		\gdef\@env@currentlabel{#2}
+	\fi
+}{
+	\end{myproposition}
+	\end{mdframed}
+}
+
 % corollary
 \newtheorem{mycorollary}{\@env@corollary@title}[mytheorem]
 \NewDocumentEnvironment{corollary}{O{} O{}}{
@@ -126,7 +146,7 @@
 % remark
 \newtheorem{myremark}[mytheorem]{\@env@remark@title}
 \NewDocumentEnvironment{remark}{O{} O{}}{
-	\begin{mdframed}[style=leftmargin]
+	\begin{mdframed}[style=leftmargin]$\displaystyle$
 	\begin{myremark}[#1]
 	\if\relax#2\relax
 		\addtocounter{defaultlabelcounter}{1}
@@ -164,29 +184,36 @@
 \newlist{enumthm_list}{enumerate}{1}
 \setlist[enumthm_list]{leftmargin=\parindent, labelindent=*, itemindent=*, align=left,
 	font=\sffamily\color{\accentcolour}}
-\newenvironment{enumthm}[1][]{
-	% #1: theorem label
+
+\newcommand{\@env@title}[2]{%
+	\StrBefore{#1}{:}[\@env@title@env]%
+	\ifx\@env@title@env\@env@theorem@label%
+		\let#2\@env@theorem@title%
+	\fi%
+	\ifx\@env@title@env\@env@proposition@label%
+		\let#2\@env@proposition@title%
+	\fi%
+	\ifx\@env@title@env\@env@lemma@label%
+		\let#2\@env@lemma@title%
+	\fi%
+	\ifx\@env@title@env\@env@definition@label%
+		\let#2\@env@definition@title%
+	\fi%
+	\ifx\@env@title@env\@env@corollary@label%
+		\let#2\@env@corollary@title%
+	\fi%
+	\ifx\@env@title@env\@env@remark@label%
+		\let#2\@env@remark@title%
+	\fi%
+}
+
+\newenvironment{enumthm}[1][]{% #1: theorem label
 	\if\relax#1\relax
 		\let\@env@enumthm@label\@env@currentlabel
 	\else
 		\let\@env@enumthm@label#1
 	\fi
-	\StrBefore{\@env@enumthm@label}{:}[\@mathematics@theoremproof@env]
-	\ifx\@mathematics@theoremproof@env\@env@theorem@label
-		\let\@mathematics@theoremproof@title\@env@theorem@title
-	\fi
-	\ifx\@mathematics@theoremproof@env\@env@lemma@label
-		\let\@mathematics@theoremproof@title\@env@lemma@title
-	\fi
-	\ifx\@mathematics@theoremproof@env\@env@definition@label
-		\let\@mathematics@theoremproof@title\@env@definition@title
-	\fi
-	\ifx\@mathematics@theoremproof@env\@env@corollary@label
-		\let\@mathematics@theoremproof@title\@env@corollary@title
-	\fi
-	\ifx\@mathematics@theoremproof@env\@env@remark@label
-		\let\@mathematics@theoremproof@title\@env@remark@title
-	\fi
+	\@env@title{\@env@enumthm@label}{\@mathematics@theoremproof@title}
 	\begin{enumthm_list}[
 		label={\@mathematics@theoremproof@title~\ref*{\@env@enumthm@label}\alph*}, 
 		ref={\ref*{\@env@enumthm@label}\alph*},
@@ -247,3 +274,20 @@
 		{}{}%
 	}[{{\sffamily\bfseries\color{\accentcolour}{#1}}}]}%
 {\end{mdframed}}
+
+% Annotated bibliography
+\RequirePackage{enumitem}
+\newenvironment{annotated bibliography}[1][\parindent]{
+	\let\iitem\item
+	\newlength{\parindentt}
+	\setlength{\parindentt}{#1}
+	\renewcommand{\item}[1][]{
+		\par
+		\setlength{\leftskip}{0pt}
+		\iitem[\normalfont\protect##1]$\displaystyle$\par
+		\setlength{\leftskip}{\parindentt}
+	}
+	\begin{description}[style=unboxed, leftmargin=\parindentt]
+}{
+	\end{description}
+}

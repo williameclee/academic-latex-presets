@@ -197,6 +197,16 @@
 		"body": ["\\dv"],
 		"description": "differential element dv"
 	},
+    "dk": {
+        "prefix": ["\\dk"],
+        "body": ["\\dk"],
+        "description": "differential element dk"
+    },
+    "domega": {
+		"prefix": ["\\domega"],
+		"body": ["\\domega"],
+		"description": "differential element dω"
+	},
 	"Dx": {
 		"prefix": ["\\Dx"],
 		"body": ["\\Dx"],

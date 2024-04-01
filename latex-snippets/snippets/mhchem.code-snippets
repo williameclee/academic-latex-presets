@@ -1,0 +1,16 @@
+{
+    "ce": {
+		"prefix": ["\\ce{}"],
+		"body": [
+			"\\ce{${1:$TM_SELECTED_TEXT}}",
+		],
+		"description": "chemical formula"
+	},
+    "cee": {
+		"prefix": ["\\cee{}"],
+		"body": [
+			"\\cee{ ${1:$TM_SELECTED_TEXT} }",
+		],
+		"description": "chemical formula equation"
+	},
+}
