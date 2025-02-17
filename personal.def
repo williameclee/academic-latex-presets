@@ -1,8 +1,0 @@
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesFile{personal.def}[2023/12/15]
-
-\author{En-Chi (William) Lee}
-\mail{williameclee@arizona.edu}
-\institute{University of Arizona}
-\phone{+1\,(623)\,920-9079}
-% \website{williameclee.github.io}

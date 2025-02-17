@@ -14,6 +14,8 @@
 
 %% Maths
 \RequirePackage{amsmath, amsthm, amsfonts, cancel, mathtools}
+\RequirePackage{wasysym} % additional symbols
+% \RequirePackage{bbding} % for \Checkmark
 
 %% Maths alignment
 \newcommand{\mathleft}{\@fleqntrue\@mathematics@fleqntrue\@mathmargin\parindent}
@@ -22,12 +24,18 @@
 %% Units
 \input{units.def}
 
+%% 10^x notation
+\newcommand{\order}[2][10]{\cdot {#1}^{#2}}
+
 %% Matrices
 \newenvironment{amatrix}{\left\langle\begin{matrix}}{\end{matrix}\right\rangle}
 \BeforeBeginEnvironment{matrix}{\renewcommand{\arraystretch}{0.8}}
 \BeforeBeginEnvironment{bmatrix}{\renewcommand{\arraystretch}{0.8}}
 \BeforeBeginEnvironment{vmatrix}{\renewcommand{\arraystretch}{0.8}}
 \BeforeBeginEnvironment{array}{\ifmmode\renewcommand{\arraystretch}{0.8}\fi}
+
+\newcommand{\sbmatrix}[1]{\left[#1\right]}
+% \newcommand{\sbmatrix}[1]{\begin{bmatrix}\displaystyle#1\end{bmatrix}}
 	
 %% Proof and solution
 \renewcommand\qedsymbol{\textcolor{\accentcolour}{$\square$}}
@@ -90,11 +98,12 @@
 %% Upright math
 \DeclareMathOperator{\@mathematics@e}{e}
 \newcommand{\e}[1][]{\@mathematics@e\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\Texp}{\mathcal{T}\!exp}
 \let\ii\i
 \DeclareMathOperator{\@mathematics@i}{i}
 \renewcommand{\i}{\ifmmode\@mathematics@i\else\ii\fi}
 
-\def\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\diff}[1][]{\mathop{\mathrm{d}#1}}
 \def\Diff{\mathop{}\!\mathrm{D}}
 
 %% Differentiation
@@ -115,11 +124,11 @@
 \NewDocumentCommand{\difffrac}{s O{1} mm}{% #1: starred (horizontal), #2: order, #3: numerator, #4: denominator
 	\Ifnum{#2}{%
 		\IfBooleanTF#1%
-			{{\diff{#3}/\mathrm{d}{#4}}}%
+			{{\mathrm{d}#3/\mathrm{d}{#4}}}%
 			{\frac{\mathrm{d}{#3}}{\mathrm{d}{#4}}}%
 	}{%
 		\IfBooleanTF#1%
-			{{\diff^{#2}{#3}/\mathrm{d}{#4}^{#2}}}%
+			{{\mathrm{d}^{#2}{#3}/\mathrm{d}{#4}^{#2}}}%
 			{\frac{\mathrm{d}^{#2}{#3}}{\mathrm{d}{#4}^{#2}}}%
 	}%
 }
@@ -208,8 +217,24 @@
 \NewDocumentCommand{\ift}{m O{}}{% #1: function, #2: domain
 	\mathcal{F}^{-1}\left[#1\right]\ifx\relax#2\relax\else\left(#2\right)\fi%
 }
+\NewDocumentCommand{\fct}{m O{}}{% #1: function, #2: domain
+	\mathcal{F}_{\mathrm{c}}\left[#1\right]\ifx\relax#2\relax\else\left(#2\right)\fi%
+}
+\NewDocumentCommand{\ifct}{m O{}}{% #1: function, #2: domain
+	\mathcal{F}_{\mathrm{c}}^{-1}\left[#1\right]\ifx\relax#2\relax\else\left(#2\right)\fi%
+}
+\NewDocumentCommand{\fst}{m O{}}{% #1: function, #2: domain
+	\mathcal{F}_{\mathrm{s}}\left[#1\right]\ifx\relax#2\relax\else\left(#2\right)\fi%
+}
+\NewDocumentCommand{\ifst}{m O{}}{% #1: function, #2: domain
+	\mathcal{F}_{\mathrm{s}}^{-1}\left[#1\right]\ifx\relax#2\relax\else\left(#2\right)\fi%
+}
 
 %% Custom code
+\DeclareMathOperator{\softmax}{softmax}
+\DeclareMathOperator{\ReLU}{ReLU}
+\DeclareMathOperator{\LayerNorm}{LayerNorm}
+\DeclareMathOperator{\diag}{diag}
 \def\textand{\ \text{and}\ }
 \def\textor{\ \text{or}\ }
 \def\suchthat{\text{ s.t. }}
@@ -229,8 +254,8 @@
 	{{\left\lVert{#2}\right\rVert_{#3}}^{#1}}
 }
 \newcommand{\inv}[1]{{{#1}^{-1}}}
-\newcommand{\trans}[1]{{{#1}^{\mathrm{T}}}}
-\newcommand{\ctrans}[1]{{{#1}^{\mathrm{H}}}} % conjugate transpose
+\newcommand{\trans}[1]{{{#1}^{\top}}} % European notation
+\newcommand{\ctrans}[1]{{{#1}^{*}}} % conjugate transpose, European notation
 \newcommand{\comp}[1]{{{#1}^{\mathrm{C}}}}
 \NewDocumentCommand{\set}{m O{}}{% #1: set, #2: condition
 	\left\{#1\ifx\relax#2\relax\else{}\middle|{}#2\fi\right\} %
@@ -344,10 +369,6 @@
 
 \newcommand{\avec}[1]{{\left\langle{#1}\right\rangle}}
 
-\input{mathematics-symbols.def}
-
-
-
 \define@key{mathematics}{british}[]{
 	\def\@mathematics@vector{underline}
 }
@@ -401,3 +422,5 @@
 	\@mathematics@update@alignment
 	\@mathematics@update@vector
 }
+
+\input{mathematics-symbols.def}

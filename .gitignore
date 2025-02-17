@@ -12,3 +12,6 @@ bibliographies
 *.log
 *.out
 *.synctex.gz
+
+personal.def
+test.*

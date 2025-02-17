@@ -107,20 +107,20 @@
 \newcommand{\Dy}{\Delta y}
 \newcommand{\Dz}{\Delta z}
 \newcommand{\Dt}{\Delta t}
-\newcommand{\dx}{\diff x}
-\newcommand{\dy}{\diff y}
-\newcommand{\dz}{\diff z}
-\newcommand{\dt}{\diff t}
-\newcommand{\dk}{\diff k}
-\newcommand{\dr}{\diff r}
-\newcommand{\du}{\diff u}
-\newcommand{\dv}{\diff v}
-\newcommand{\dV}{\diff V}
-\newcommand{\dm}{\diff m}
-\newcommand{\domega}{\diff\omega}
-\newcommand{\dtau}{\diff\tau}
-\newcommand{\dphi}{\diff\phi}
-\newcommand{\dtheta}{\diff\theta}
+\newcommand{\dx}{\diff[x]}
+\newcommand{\dy}{\diff[y]}
+\newcommand{\dz}{\diff[z]}
+\newcommand{\dt}{\diff[t]}
+\newcommand{\dk}{\diff[k]}
+\newcommand{\dr}{\diff[r]}
+\newcommand{\du}{\diff[u]}
+\newcommand{\dv}{\diff[v]}
+\newcommand{\dV}{\diff[V]}
+\newcommand{\dm}{\diff[m]}
+\newcommand{\domega}{\diff[\omega]}
+\newcommand{\dtau}{\diff[\tau]}
+\newcommand{\dphi}{\diff[\phi]}
+\newcommand{\dtheta}{\diff[\theta]}
 
 % trigonometry
 \newcommand{\asin}{\sin^{-1}}
@@ -141,6 +141,7 @@
 \DeclareMathOperator{\erfi}{erfi}
 \DeclareMathOperator{\dist}{dist}
 \DeclareMathOperator{\Prob}{Prob}
+\DeclareMathOperator{\Si}{Si}
 
 % Linear algebra
 \DeclareMathOperator{\Tr}{Tr}
@@ -158,6 +159,11 @@
 \DeclareMathOperator{\Qbb}{\mathbb{Q}}
 \DeclareMathOperator{\Rbb}{\mathbb{R}}
 \DeclareMathOperator{\Cbb}{\mathbb{C}}
-\DeclareMathOperator{\Re}{Re}
-\DeclareMathOperator{\Im}{Im}
+% \DeclareMathOperator{\Re}{Re}
+% \DeclareMathOperator{\Im}{Im}
+\newcommand{\Re}{\mathop{\mathrm{Re}}}
+\newcommand{\Im}{\mathop{\mathrm{Im}}}
 \DeclareMathOperator{\sgn}{sgn}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
