@@ -25,7 +25,12 @@
 \input{units.def}
 
 %% 10^x notation
-\newcommand{\order}[2][10]{\cdot {#1}^{#2}}
+% \newcommand{\order}[2][10]{\cdot {#1}^{#2}}
+\NewDocumentCommand{\order}{sO{10}m}{
+	\IfBooleanTF#1%
+	{{#2}^{#3}}%
+	{\cdot {#2}^{#3}}%
+}
 
 %% Matrices
 \newenvironment{amatrix}{\left\langle\begin{matrix}}{\end{matrix}\right\rangle}
@@ -265,7 +270,11 @@
 \newcommand{\dimension}[1]{{}\mathop{\left[\mathrm{#1}\right]}{}}
 \newcommand{\intpm}[1]{\int\limits_{-#1}^{#1}}
 \newcommand{\innerprod}[2]{\left\langle#1,#2\right\rangle}
-\newcommand{\mathss}[3][]{{{#2}\ifx\relax#1\relax\else^{#1}\fi_{\mathrm{#3}}}}
+% \newcommand{\mathss}[3][]{{{#2}\ifx\relax#1\relax\else^{#1}\fi_{\mathrm{#3}}}}
+\NewDocumentCommand{\mathss}{mO{}O{}}{%
+	{{#1}\ifx\relax#2\relax\else_{\mathrm{#2}}\fi%
+	\ifx\relax#3\relax\else^{\mathrm{#3}}\fi}%
+}
 \newcommand{\fhat}[1][]{\hat{f}_{#1}}
 
 %% Colour settings

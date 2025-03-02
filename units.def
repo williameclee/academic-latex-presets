@@ -22,6 +22,8 @@
 \newcommand{\fm}[1][]{\@unit@femtometre\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@astronomicalunit}{AU}
 \newcommand{\AU}[1][]{\@unit@astronomicalunit\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@parsec}{pc}
+\newcommand{\pc}[1][]{\@unit@parsec\ifx\relax#1\relax\else^{#1}\fi}
 
 % Volume
 \let\L\undefined%
@@ -41,6 +43,10 @@
 \newcommand{\mg}[1][]{\@unit@mg\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@ppm}{ppm}
 \newcommand{\ppm}[1][]{\@unit@ppm\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@ppb}{ppb}
+\newcommand{\ppb}[1][]{\@unit@ppb\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@Gt}{Gt}
+\newcommand{\GT}[1][]{\@unit@Gt\ifx\relax#1\relax\else^{#1}\fi}
 
 % Weight
 \DeclareMathOperator{\@unit@kgw}{kgw}
@@ -90,6 +96,10 @@
 \newcommand{\degE}{\text{\degree E}}
 \newcommand{\degW}{\text{\degree W}}
 
+% Angle
+\newcommand{\arcmin}{^{\prime}}
+\newcommand{\arcsec}{^{\prime\prime}}
+
 % Sound level
 \DeclareMathOperator{\@unit@decibel}{dB}
 \newcommand{\dB}[1][]{\@unit@decibel\ifx\relax#1\relax\else^{#1}\fi}
@@ -115,6 +125,8 @@
 \newcommand{\bbar}[1][]{\@unit@bar\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@millibar@var}{mbar}
 \newcommand{\mbar}[1][]{\@unit@millibar@var\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@kilobar@var}{kbar}
+\newcommand{\kbar}[1][]{\@unit@kilobar@var\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@atmosphere}{atm}
 \newcommand{\atm}[1][]{\@unit@atmosphere\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@torr}{torr}
@@ -149,6 +161,8 @@
 \newcommand{\kJ}[1][]{\@unit@kilojoule\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@joule}{J}
 \newcommand{\J}[1][]{\@unit@joule\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@erg}{erg}
+\newcommand{\erg}[1][]{\@unit@erg\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@kilocalorie}{kcal}
 \newcommand{\kcal}[1][]{\@unit@kilocalorie\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@calorie}{cal}
@@ -176,8 +190,12 @@
 \newcommand{\mA}[1][]{\@unit@mA\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@C}{C}
 \newcommand{\C}[1][]{\@unit@C\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@statC}{statC}
+\newcommand{\statC}[1][]{\@unit@statC\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@V}{V}
 \newcommand{\V}[1][]{\@unit@V\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@statV}{statV}
+\newcommand{\statV}[1][]{\@unit@statV\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@Ohm}{\Omega}
 \newcommand{\Ohm}[1][]{\@unit@Ohm\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@F}{F}
@@ -193,7 +211,8 @@
 \DeclareMathOperator{\@unit@Henry}{H}
 \newcommand{\Henry}[1][]{\@unit@Henry\ifx\relax#1\relax\else^{#1}\fi}
 
-\DeclareMathOperator{\mol}{mol}
+\DeclareMathOperator{\@unit@mol}{mol}
+\newcommand{\mol}[1][]{\@unit@mol\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\molecule}{molecule}
 \DeclareMathOperator{\M}{M}
 
