@@ -35,7 +35,29 @@
 		],
 		"description": "typewriter text"
 	},
+	// Links
+	"url": {
+		"prefix": ["\\url{}"],
+		"body": [
+			"\\url{${1:url}}"
+		],
+		"description": "URL"
+	},
+	"href": {
+		"prefix": ["\\href{}"],
+		"body": [
+			"\\href{${1:url}}{${2:link text}}"
+		],
+		"description": "hyperlink"
+	},
 	// Coloured text
+	"textcolor": {
+		"prefix": ["\\textcolor{}{}"],
+		"body": [
+			"\\textcolor{${1|red,blue|}}{${2:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "coloured text"
+	},
 	"alert:var": {
 		"prefix": ["\\alert{}"],
 		"body": [
@@ -61,7 +83,7 @@
     "RequirePackage": {
 		"prefix": ["\\RequirePackage{}", "\\usepackage{}"],
 		"body": [
-			"\\RequirePackage{${TM_SELECTED_TEXT}}",
+			"\\\\${1|usepackage,RequirePackage|}{${2:${TM_SELECTED_TEXT}}}",
 			"",
 		],
 		"description": "insert package"

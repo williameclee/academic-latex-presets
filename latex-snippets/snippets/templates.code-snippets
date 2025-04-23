@@ -1,0 +1,40 @@
+{
+	"template:note-course": {
+		"isFileTemplate": true,
+		"scope": "latex",
+		"prefix": "template:course-note",
+		"body": [
+			"\\documentclass[${2|atmo\\, |}${3|geos\\, |}${4|math\\, |}${5|ptys\\, |}${6|chem\\, |}${7|ocean\\, |}${1|draft\\, |}${8|11pt,12pt|}]{note}",
+			"",
+			"\\title{${9:note title}}",
+			"\\course{${10:course title}}",
+			"\\institute{${11|University of Arizona|}}",
+			"\\graphicspath{{${12|figures|}}}",
+			"",
+			"\\begin{document}",
+			"\\maketitle",
+			"${13:\\tableofcontents}",
+			"$0",
+			"\\end{document}"
+		],
+		"description": "template for course notes"
+	},
+	"template:homework": {
+		"isFileTemplate": true,
+		"scope": "latex",
+		"prefix": "template:homework",
+		"body": [
+			"\\documentclass[${2|atmo\\, |}${3|geos\\, |}${4|math\\, |}${5|ptys\\, |}${6|chem\\, |}${7|ocean\\, |}${1|draft\\, |}${8|11pt,12pt|}]{homework}",
+			"",
+			"\\title{${9:note title}}",
+			"\\course{${10:course title}}",
+			"\\graphicspath{{${11|figures|}}}",
+			"",
+			"\\begin{document}",
+			"\\maketitle",
+			"$0",
+			"\\end{document}"
+		],
+		"description": "template for course homework"
+	}
+}

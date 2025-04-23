@@ -51,23 +51,37 @@
 	},
 	// Bibliography
 	"parencite": {
-		"prefix": ["\\parencite{}", "\\cite{}"],
+		"prefix": ["\\parencite{}"],
 		"body": [
 			"\\parencite{${1:${TM_SELECTED_TEXT}}}"
 		],
 		"description": "insert citation in parentheses" 
 	},
-	"parencite:decorations": {
-		"prefix": ["\\parencite[][]{}", "\\cite[][]{}"],
+	"parencite:decorations1": {
+		"prefix": ["\\parencite[]{}"],
+		"body": [
+			"\\parencite[$2]{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert citation in parentheses with decorating strings" 
+	},
+	"parencite:decorations2": {
+		"prefix": ["\\parencite[][]{}"],
 		"body": [
 			"\\parencite[$2][$3]{${1:${TM_SELECTED_TEXT}}}"
 		],
 		"description": "insert citation in parentheses with decorating strings" 
 	},
 	"textcite": {
-		"prefix": ["\\textcite{}", "\\citeA{}"],
+		"prefix": ["\\textcite{}"],
 		"body": [
 			"\\textcite{${1:${TM_SELECTED_TEXT}}}"
+		],
+		"description": "insert citation in text" 
+	},
+	"citeA": {
+		"prefix": ["\\citeA{}"],
+		"body": [
+			"\\citeA{${1:${TM_SELECTED_TEXT}}}"
 		],
 		"description": "insert citation in text" 
 	},

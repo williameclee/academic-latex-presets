@@ -1,5 +1,5 @@
 {
-    "graphicspath": {
+	"graphicspath": {
 		"prefix": "\\graphicspath{}",
 		"body": [
 			"\\graphicspath{{${1:$TM_SELECTED_TEXT}}}",
@@ -7,11 +7,15 @@
 		"description": "graphicspath"
 	},
 	"figure": {
-		"prefix": ["\\begin{figure}", "\\fig", "\\figure"],
+		"prefix": [
+			"\\begin{figure}",
+			"\\fig",
+			"\\figure"
+		],
 		"body": [
 			"\\begin{figure}[${1|hbt,h!|}]\\centering",
-			"\t${2|\\includegraphics[width=\\linewidth],\\input|}{$3}",
-			"\t\\captionsetup{width=\\linewidth}",
+			"\t${2|\\includegraphics[width=0.6\\linewidth],\\input,\\begin{tikzpicture}\n\n\\end{tikzpicture}|}{$3}",
+			"\t\\captionsetup{width=${6:0.6\\linewidth}}",
 			"\t\\caption{$5}",
 			"\t\\label{$4}",
 			"\\end{figure}"
@@ -19,7 +23,11 @@
 		"description": "figure environment"
 	},
 	"subfigure": {
-		"prefix": ["\\begin{figure}", "\\subfigure", "\\subfig"],
+		"prefix": [
+			"\\begin{figure}",
+			"\\subfigure",
+			"\\subfig"
+		],
 		"body": [
 			"\\begin{subfigure}[t]{0.475\\linewidth}\\centering",
 			"\t\\includegraphics[width=\\linewidth]{$1}",
@@ -30,7 +38,11 @@
 		"description": "subfigure environment"
 	},
 	"figure:subfigure": {
-		"prefix": ["\\begin{figure}", "\\subfigure", "\\subfig"],
+		"prefix": [
+			"\\begin{figure}",
+			"\\subfigure",
+			"\\subfig"
+		],
 		"body": [
 			"\\begin{figure}[${1:hbt}]\\centering",
 			"\t\\begin{subfigure}[t]{0.4\\linewidth}\\centering",
@@ -49,8 +61,52 @@
 		],
 		"description": "figure environment with subfigures"
 	},
+	"tikzpicture:axis": {
+		"prefix": [
+			"\\begin{axis}",
+			"\\axis"
+		],
+		"body": [
+			"\\begin{tikzpicture}",
+			"\t\\begin{axis}",
+			"\t\t$1",
+			"\t\\end{axis}",
+			"\\end{tikzpicture}"
+		],
+		"description": "nested tikzpicture and axis environment"
+	},
+	"tikzpicture": {
+		"prefix": [
+			"\\begin{tikzpicture}",
+			"\\tikz",
+			"\\tikzpicture"
+		],
+		"body": [
+			"\\begin{tikzpicture}",
+			"\t$1",
+			"\\end{tikzpicture}"
+		],
+		"description": "tikzpicture environment"
+	},
+	"axis": {
+		"prefix": [
+			"\\begin{axis}",
+			"\\axis"
+		],
+		"body": [
+			"\\begin{axis}",
+			"\t$1",
+			"\\end{axis}"
+		],
+		"description": "axis environment"
+	},
 	"table": {
-		"prefix": ["\\begin{table}", "\\tbl", "\\tab", "\\table"],
+		"prefix": [
+			"\\begin{table}",
+			"\\tbl",
+			"\\tab",
+			"\\table"
+		],
 		"body": [
 			"\\begin{table}[${1|hbt,h!|}]\\centering",
 			"\t\\begin{tabular}{ccc}",
@@ -68,7 +124,9 @@
 		"description": "figure environment"
 	},
 	"captionsetup": {
-		"prefix": ["\\captionsetup"],
+		"prefix": [
+			"\\captionsetup"
+		],
 		"body": [
 			"\\captionsetup{${1:$TM_SELECTED_TEXT}}"
 		],

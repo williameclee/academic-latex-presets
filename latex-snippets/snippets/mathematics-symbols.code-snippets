@@ -1,21 +1,27 @@
 {
     // Constants
     "exponential": {
-		"prefix": ["\\e"],
-		"body": [
-			"\\e"
-		],
-		"description": "exponential (e)"
-	},
+        "prefix": [
+            "\\e"
+        ],
+        "body": [
+            "\\e"
+        ],
+        "description": "exponential (e)"
+    },
     "exponential:exp": {
-		"prefix": ["\\e[]"],
-		"body": [
-			"\\e[]"
-		],
-		"description": "exponential (e) with exponent"
-	},
+        "prefix": [
+            "\\e[]"
+        ],
+        "body": [
+            "\\e[${1:${TM_SELECTED_TEXT}}]"
+        ],
+        "description": "exponential (e) with exponent"
+    },
     "imaginary unit": {
-        "prefix": ["\\i"],
+        "prefix": [
+            "\\i"
+        ],
         "body": [
             "\\i"
         ],
@@ -23,35 +29,45 @@
     },
     // Sets
     "natural numbers": {
-		"prefix": ["\\Nbb"],
-		"body": [
-			"\\Nbb"
-		],
-		"description": "set of natural numbers"
-	},
+        "prefix": [
+            "\\Nbb"
+        ],
+        "body": [
+            "\\Nbb"
+        ],
+        "description": "set of natural numbers"
+    },
     "integers": {
-        "prefix": ["\\Zbb"],
+        "prefix": [
+            "\\Zbb"
+        ],
         "body": [
             "\\Zbb"
         ],
         "description": "set of integers"
     },
     "rational numbers": {
-        "prefix": ["\\Qbb"],
+        "prefix": [
+            "\\Qbb"
+        ],
         "body": [
             "\\Qbb"
         ],
         "description": "set of rational numbers"
     },
     "real numbers": {
-        "prefix": ["\\Rbb"],
+        "prefix": [
+            "\\Rbb"
+        ],
         "body": [
             "\\Rbb"
         ],
         "description": "set of real numbers"
     },
     "complex numbers": {
-        "prefix": ["\\Cbb"],
+        "prefix": [
+            "\\Cbb"
+        ],
         "body": [
             "\\Cbb"
         ],
@@ -59,98 +75,126 @@
     },
     // Unit vectors
     "xhat": {
-		"prefix": ["\\xhat"],
-		"body": [
-			"\\xhat"
-		],
-		"description": "x-hat unit vector"
-	},
+        "prefix": [
+            "\\xhat"
+        ],
+        "body": [
+            "\\xhat"
+        ],
+        "description": "x-hat unit vector"
+    },
     "yhat": {
-        "prefix": ["\\yhat"],
+        "prefix": [
+            "\\yhat"
+        ],
         "body": [
             "\\yhat"
         ],
         "description": "y-hat unit vector"
     },
     "zhat": {
-        "prefix": ["\\zhat"],
+        "prefix": [
+            "\\zhat"
+        ],
         "body": [
             "\\zhat"
         ],
         "description": "z-hat unit vector"
     },
     "ihat": {
-        "prefix": ["\\ihat"],
+        "prefix": [
+            "\\ihat"
+        ],
         "body": [
             "\\ihat"
         ],
         "description": "i-hat unit vector"
     },
     "jhat": {
-        "prefix": ["\\jhat"],
+        "prefix": [
+            "\\jhat"
+        ],
         "body": [
             "\\jhat"
         ],
         "description": "j-hat unit vector"
     },
     "khat": {
-        "prefix": ["\\khat"],
+        "prefix": [
+            "\\khat"
+        ],
         "body": [
             "\\khat"
         ],
         "description": "k-hat unit vector"
     },
     "nhat": {
-        "prefix": ["\\nhat"],
+        "prefix": [
+            "\\nhat"
+        ],
         "body": [
             "\\nhat"
         ],
         "description": "n-hat unit vector"
     },
     "shat": {
-        "prefix": ["\\shat"],
+        "prefix": [
+            "\\shat"
+        ],
         "body": [
             "\\shat"
         ],
         "description": "s-hat unit vector"
     },
     "rhat": {
-        "prefix": ["\\rhat"],
+        "prefix": [
+            "\\rhat"
+        ],
         "body": [
             "\\rhat"
         ],
         "description": "r-hat unit vector"
     },
     "that": {
-        "prefix": ["\\that"],
+        "prefix": [
+            "\\that"
+        ],
         "body": [
             "\\that"
         ],
         "description": "t-hat unit vector"
     },
     "Rhat": {
-        "prefix": ["\\Rhat"],
+        "prefix": [
+            "\\Rhat"
+        ],
         "body": [
             "\\Rhat"
         ],
         "description": "R-hat unit vector"
     },
     "lambdahat": {
-        "prefix": ["\\lambdahat"],
+        "prefix": [
+            "\\lambdahat"
+        ],
         "body": [
             "\\lambdahat"
         ],
         "description": "λ-hat unit vector"
     },
     "thetahat": {
-        "prefix": ["\\thetahat"],
+        "prefix": [
+            "\\thetahat"
+        ],
         "body": [
             "\\thetahat"
         ],
         "description": "θ-hat unit vector"
     },
     "phihat": {
-        "prefix": ["\\phihat"],
+        "prefix": [
+            "\\phihat"
+        ],
         "body": [
             "\\phihat"
         ],
@@ -158,73 +202,159 @@
     },
     // Differentials
     "diff": {
-		"prefix": ["\\diff", "\\d"],
-		"body": ["\\diff"],
-		"description": "differential element"
-	},
-	"Diff": {
-		"prefix": ["\\Diff", "\\D"],
-		"body": ["\\Diff"],
-		"description": "total differential element"
-	},
-	"dx": {
-		"prefix": ["\\dx"],
-		"body": ["\\dx"],
-		"description": "differential element dx"
-	},
-	"dy": {
-		"prefix": ["\\dy"],
-		"body": ["\\dy"],
-		"description": "differential element dy"
-	},
-	"dz": {
-		"prefix": ["\\dz"],
-		"body": ["\\dz"],
-		"description": "differential element dz"
-	},
-	"dt": {
-		"prefix": ["\\dt"],
-		"body": ["\\dt"],
-		"description": "differential element dt"
-	},
-	"du": {
-		"prefix": ["\\du"],
-		"body": ["\\du"],
-		"description": "differential element du"
-	},
-	"dv": {
-		"prefix": ["\\dv"],
-		"body": ["\\dv"],
-		"description": "differential element dv"
-	},
+        "prefix": [
+            "\\diff[]",
+            "\\d[]"
+        ],
+        "body": [
+            "\\diff[${1:${TM_SELECTED_TEXT}}]"
+        ],
+        "description": "differential element"
+    },
+    "Diff": {
+        "prefix": [
+            "\\Diff",
+            "\\D"
+        ],
+        "body": [
+            "\\Diff"
+        ],
+        "description": "total differential element"
+    },
+    "dx": {
+        "prefix": [
+            "\\dx"
+        ],
+        "body": [
+            "\\dx"
+        ],
+        "description": "differential element dx"
+    },
+    "dy": {
+        "prefix": [
+            "\\dy"
+        ],
+        "body": [
+            "\\dy"
+        ],
+        "description": "differential element dy"
+    },
+    "dz": {
+        "prefix": [
+            "\\dz"
+        ],
+        "body": [
+            "\\dz"
+        ],
+        "description": "differential element dz"
+    },
+    "dt": {
+        "prefix": [
+            "\\dt"
+        ],
+        "body": [
+            "\\dt"
+        ],
+        "description": "differential element dt"
+    },
+    "du": {
+        "prefix": [
+            "\\du"
+        ],
+        "body": [
+            "\\du"
+        ],
+        "description": "differential element du"
+    },
+    "dv": {
+        "prefix": [
+            "\\dv"
+        ],
+        "body": [
+            "\\dv"
+        ],
+        "description": "differential element dv"
+    },
     "dk": {
-        "prefix": ["\\dk"],
-        "body": ["\\dk"],
+        "prefix": [
+            "\\dk"
+        ],
+        "body": [
+            "\\dk"
+        ],
         "description": "differential element dk"
     },
     "domega": {
-		"prefix": ["\\domega"],
-		"body": ["\\domega"],
-		"description": "differential element dω"
-	},
-	"Dx": {
-		"prefix": ["\\Dx"],
-		"body": ["\\Dx"],
-		"description": "infitesimal element Δx"
-	},
-	"Dy": {
-		"prefix": ["\\Dy"],
-		"body": ["\\Dy"],
-		"description": "infitesimal element Δy"
-	},
-	"Dz": {
-		"prefix": ["\\Dz"],
-		"body": ["\\Dz"],
-		"description": "infitesimal element Δz"
-	},
-	"Dt": {
-		"prefix": ["\\Dt"],
-		"body": ["\\Dt"],
-		"description": "infitesimal element Δt"
-	},
+        "prefix": [
+            "\\domega"
+        ],
+        "body": [
+            "\\domega"
+        ],
+        "description": "differential element dω"
+    },
+    "Dx": {
+        "prefix": [
+            "\\Dx"
+        ],
+        "body": [
+            "\\Dx"
+        ],
+        "description": "infitesimal element Δx"
+    },
+    "Dy": {
+        "prefix": [
+            "\\Dy"
+        ],
+        "body": [
+            "\\Dy"
+        ],
+        "description": "infitesimal element Δy"
+    },
+    "Dz": {
+        "prefix": [
+            "\\Dz"
+        ],
+        "body": [
+            "\\Dz"
+        ],
+        "description": "infitesimal element Δz"
+    },
+    "Dt": {
+        "prefix": [
+            "\\Dt"
+        ],
+        "body": [
+            "\\Dt"
+        ],
+        "description": "infitesimal element Δt"
+    },
+    // Statistics
+    "argmin": {
+        "prefix": [
+            "\\argmin"
+        ],
+        "body": [
+            "\\argmin_{${1:${TM_SELECTED_TEXT}}}"
+        ],
+        "description": "argmin"
+    },
+    "argmax": {
+        "prefix": [
+            "\\argmax"
+        ],
+        "body": [
+            "\\argmax_{${1:${TM_SELECTED_TEXT}}}"
+        ],
+        "description": "argmax"
+    },
+    "expected value": {
+        "prefix": [
+            "\\Exp"
+        ],
+        "body": [
+            "\\Exp{${1:${TM_SELECTED_TEXT}}}"
+        ],
+        "description": "expected value"
+    },
 }

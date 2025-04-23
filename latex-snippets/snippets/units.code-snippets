@@ -569,6 +569,20 @@
         ],
         "description": "millibar (mb) unit with power"
     },
+    "kilobar (kb)": {
+        "prefix": ["\\kbar", "\\kilobar"],
+        "body": [
+            "\\kbar"
+        ],
+        "description": "kilobar (kbar) unit"
+    },
+    "kilobar (kb):exp": {
+        "prefix": ["\\kbar[]", "\\kilobar[]"],
+        "body": [
+            "\\kbar[$1]"
+        ],
+        "description": "kilobar (kbar) unit with power"
+    },
     "decibar (db)": {
         "prefix": ["\\db", "\\dbar", "\\decibar"],
         "body": [
@@ -902,6 +916,34 @@
             "\\Hz[$1]"
         ],
         "description": "hertz (Hz) unit with power"
+    },
+    "erg": {
+        "prefix": ["\\erg"],
+        "body": [
+            "\\erg"
+        ],
+        "description": "erg unit"
+    },
+    "erg:exp": {
+        "prefix": ["\\erg[]"],
+        "body": [
+            "\\erg[$1]"
+        ],
+        "description": "erg unit with power"
+    },
+    "Gauss": {
+        "prefix": ["\\Gauss"],
+        "body": [
+            "\\Gauss"
+        ],
+        "description": "Gauss unit"
+    },
+    "Gauss:exp": {
+        "prefix": ["\\Gauss[]"],
+        "body": [
+            "\\Gauss[$1]"
+        ],
+        "description": "Gauss unit with power"
     },
     // Compound units
     "kilometre per hour (km/hr)": {
