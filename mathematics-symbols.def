@@ -139,6 +139,7 @@
 % Special functions
 \DeclareMathOperator{\erf}{erf}
 \DeclareMathOperator{\erfi}{erfi}
+\DeclareMathOperator{\erfc}{erfc}
 \DeclareMathOperator{\dist}{dist}
 \DeclareMathOperator{\Prob}{Prob}
 \DeclareMathOperator{\Si}{Si}
@@ -165,5 +166,8 @@
 \newcommand{\Im}{\mathop{\mathrm{Im}}}
 \DeclareMathOperator{\sgn}{sgn}
 
+% Statistics
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\Var}{Var}
+\newcommand{\Exp}[2][]{\mathbb{E}_{#1}\left[#2\right]}

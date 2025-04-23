@@ -171,6 +171,8 @@
 \newcommand{\eV}[1][]{\@unit@electronvolt\ifx\relax#1\relax\else^{#1}\fi}
 \DeclareMathOperator{\@unit@watt}{W}
 \newcommand{\W}[1][]{\@unit@watt\ifx\relax#1\relax\else^{#1}\fi}
+\DeclareMathOperator{\@unit@milliwatt}{mW}
+\newcommand{\mW}[1][]{\@unit@milliwatt\ifx\relax#1\relax\else^{#1}\fi}
 
 % Frequency
 \DeclareMathOperator{\mph}{mph}

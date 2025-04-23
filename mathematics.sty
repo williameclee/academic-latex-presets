@@ -14,7 +14,7 @@
 
 %% Maths
 \RequirePackage{amsmath, amsthm, amsfonts, cancel, mathtools}
-\RequirePackage{wasysym} % additional symbols
+% \RequirePackage{wasysym} % additional symbols
 % \RequirePackage{bbding} % for \Checkmark
 
 %% Maths alignment
@@ -108,8 +108,11 @@
 \DeclareMathOperator{\@mathematics@i}{i}
 \renewcommand{\i}{\ifmmode\@mathematics@i\else\ii\fi}
 
-\newcommand{\diff}[1][]{\mathop{\mathrm{d}#1}}
+% \newcommand{\diff}[1][]{{\mathop{\mathrm{d}#1}}}
 \def\Diff{\mathop{}\!\mathrm{D}}
+\NewDocumentCommand{\diff}{O{}O{}}{%
+	\mathop{\mathrm{d}^{#2}#1}
+}
 
 %% Differentiation
 \RequirePackage{suffix}
@@ -258,8 +261,8 @@
 \NewDocumentCommand{\norm}{O{}mO{}}{%
 	{{\left\lVert{#2}\right\rVert_{#3}}^{#1}}
 }
-\newcommand{\inv}[1]{{{#1}^{-1}}}
-\newcommand{\trans}[1]{{{#1}^{\top}}} % European notation
+\newcommand{\inv}[1]{{#1^{-1}}}
+\newcommand{\trans}[1]{{#1^{\top}}} % European notation
 \newcommand{\ctrans}[1]{{{#1}^{*}}} % conjugate transpose, European notation
 \newcommand{\comp}[1]{{{#1}^{\mathrm{C}}}}
 \NewDocumentCommand{\set}{m O{}}{% #1: set, #2: condition
