@@ -2,7 +2,7 @@
 \ProvidesFile{glossaries-geosciences.def}[2024/02/20]
 
 
-\RequirePackage{glossaries}
+\RequirePackage{glossaries-extra}
 \makeglossaries
 
 \newglossaryentry{amorphous}{
@@ -180,16 +180,37 @@
 	name=uniformitarianism,
 	description=
 }
+\newglossaryentry{slickenline}{
+	name=slickenline,
+	description=
+}
+\newglossaryentry{unconformity}{
+	name=unconformity,
+	plural=unconformities,
+	description=
+}
+\newglossaryentry{angular unconformity}{
+	name=angular unconformity,
+	plural=angular unconformities,
+	parent=unconformity,
+	description=
+}
 \newglossaryentry{disconformity}{
 	name=disconformity,
+	plural=disconformities,
+	parent=unconformity,
 	description=
 }
 \newglossaryentry{paraconformity}{
 	name=paraconformity,
+	plural=paraconformities,
+	parent=unconformity,
 	description=
 }
 \newglossaryentry{nonconformity}{
 	name=nonconformity,
+	plural=nonconformities,
+	parent=unconformity,
 	description=
 }
 \newglossaryentry{faunal succession}{
@@ -684,16 +705,19 @@
 
 	
 	
+\newacronym[description={},]{BIF}{BIF}{banded iron formation}
 \newacronym[description={},]{CN}{CN}{coordination number}
 \newacronym[description={}, plural={coordination polyhedra}]{CP}{CP}{coordination polyhedron}
 \newacronym[description={},]{CSD}{CSD}{crystal size distribution}
 \newacronym[description={},]{CTS}{CTS}{climbing translatent surface}
 \newacronym[description={},]{ENSO}{ENSO}{El Ni\~no Southern Oscillation}
+\newacronym[description={},]{FM}{FM}{forward modelling}
 \newacronym[description={},]{LAB}{LAB}{lithosphere-asthenosphere boundary}
 \newacronym[description={},]{GIA}{GIA}{glacial isostatic adjustment}
 \newacronym[description={},]{LIP}{LIP}{large igneous province}
 \newacronym[description={},]{LLVP}{LLVP}{large low-velocity province}
 \newacronym[description={}, parent={LLVP}]{LLSVP}{LLSVP}{large low-shear-velocity province}
+\newacronym[description={},]{LWS}{LWS}{land water storage}
 \newacronym[description={},]{MO}{MO}{magma ocean}
 \newacronym[description={},]{MOR}{MOR}{mid-ocean ridge}
 \newacronym[description={},]{MORB}{MORB}{mid-ocean ridge basalt}
@@ -703,11 +727,29 @@
 \newacronym[description={}, parent={polarised light}]{XPL}{XPL}{cross polarised light}
 \newacronym[description={},]{REE}{REE}{rare earth element}
 \newacronym[description={},]{VEI}{VEI}{vlocanic explosivity index}
+\newacronym[description={},]{GEL}{GEL}{global equivalent layer}
 
 % Locations and features
 \newacronym[description={},]{EPR}{EPR}{East Pacific Rise}
 \newacronym[description={},]{MAR}{MAR}{Mid-Atlantic Ridge}
 
+% Remote sensing
+\newacronym[description={},]{SLR}{SLR}{satellite laser ranging}
+
+% Datasets
+\newacronym[description={},]{GSHHG}{GSHHG}{Global Self-consistent, Hierarchical, High-resolution Geography Database}
+
+% Research centres and organisations
+\newacronym[description={},]{CSR}{CSR}{Center for Space Research}
+\newacronym[description={},]{GFZ}{GFZ}{GeoForschungsZentrum Potsdam}
+\newacronym[description={},]{GSFC}{GSFC}{Goddard Space Flight Center}
+\newacronym[description={},]{IPRC}{IPRC}{International Pacific Research Center}
+\newacronym[description={},]{JAMSTEC}{JAMSTEC}{Japan Agency for Marine-Earth Science and Technology}
+\newacronym[description={},]{JPL}{JPL}{Jet Propulsion Laboratory}
+\newacronym[description={},]{SIO}{SIO}{Scripps Institution of Oceanography}
+\newacronym[description={},]{IPCC}{IPCC}{Intergovernmental Panel on Climate Change}
+\newacronym[description={},]{IHO}{IHO}{International Hydrographic Organization}
+
 % Satellites and missions
-\newacronym[description={},]{GRACE}{GRACE}{Gravity Recovery And Climate Experiment}
-\newacronym[description={}, parent={GRACE}]{GRACE-FO}{GRACE-FO}{GRACE Follow-On}
+\newacronym[description={},]{GRACE}{GRACE}{Gravity Recovery and Climate Experiment}
+\newacronym[description={},]{GFO}{GRACE-FO}{GRACE Follow-On}

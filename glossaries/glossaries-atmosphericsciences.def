@@ -2,7 +2,7 @@
 \ProvidesFile{glossaries-atmosphericsciences.def}[2024/02/20]
 
 
-\RequirePackage{glossaries}
+\RequirePackage{glossaries-extra}
 \makeglossaries
 
 \newglossaryentry{temperature}{
@@ -252,3 +252,4 @@
 \newacronym[description={},]{SWE}{SWE}{shallow water equation}
 \newacronym[description={}]{CAA}{CAA}{cold air advection}
 \newacronym[description={}]{WAA}{WAA}{warm air advection}
+\newacronym[description={}]{WTC}{WTC}{wet troposphere correction}

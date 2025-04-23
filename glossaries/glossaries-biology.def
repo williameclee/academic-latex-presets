@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesFile{glossaries-biology.def}[2024/01/23]
 
-\RequirePackage{glossaries}
+\RequirePackage{glossaries-extra}
 \makeglossaries
 
 \newglossaryentry{protozoan}{

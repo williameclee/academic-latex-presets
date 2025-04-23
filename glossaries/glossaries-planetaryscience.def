@@ -2,23 +2,40 @@
 \ProvidesFile{glossaries-planetaryscience.def}[2024/02/20]
 
 
-\RequirePackage{glossaries}
-\makeglossaries
+\RequirePackage{glossaries-extra}
+\makeglossaries%
 
 \newglossaryentry{chondrite}{
 	name=chondrite,
 	description=
 }
+\newglossaryentry{chondrule}{
+	name=chondrule,
+	description=
+}
+\newglossaryentry{meteorite}{
+	name=meteorite,
+	description=
+}
+\newglossaryentry{cryovolcanism}{
+	name=cryovolcanism,
+	description=
+}
+
 
 \newacronym[description={},]{CDOD}{CDOD}{column dust optical depth}
-\newacronym[description={},]{GDS}{GDS}{gloal dust storm}
+\newacronym[description={},]{GDS}{GDS}{global dust storm}
+\newacronym[description={},]{GMC}{GMC}{giant molecular cloud}
 \newacronym[description={},]{LHB}{LHB}{Late Heavy Bombardment}
 \newacronym[description={},]{MY}{MY}{Mars year}
+\newacronym[description={},]{MGCM}{MGCM}{Mars general circulation model}
 \newacronym[description={},]{PPO}{PPO}{planetary period oscillation}
 \newacronym[description={},]{RDS}{RDS}{regional dust storm}
 
 % Missions and instruments
+\newacronym[description={},]{ALMA}{ALMA}{Atacama Large Millimeter/submillimeter Array}
 \newacronym[description={},]{ISS}{ISS}{Imaging Science Subsystem}
+\newacronym[description={},]{JWST}{JWST}{James Webb Space Telescope}
 \newacronym[description={},]{MCS}{MCS}{Mars Climate Sounder}
 \newacronym[description={},]{MGS}{MGS}{Mars Global Surveyor}
 \newacronym[description={},]{MRO}{MRO}{Mars Reconnaissance Orbiter}
@@ -26,3 +43,18 @@
 \newacronym[description={},]{TES}{TES}{Thermal Emission Spectrometer}
 \newacronym[description={},]{THEMIS}{THEMIS}{Thermal Emission Imaging System}
 \newacronym[description={},]{VIMS}{VIMS}{Visual and Infrared Mapping Spectrometer}
+\newacronym[description={},]{CIRS}{CIRS}{Composite Infrared Spectrometer}
+\newacronym[description={},]{UVIS}{UVIS}{Ultraviolet Imaging Spectrograph}
+\newacronym[description={},]{DART}{DART}{Double Asteroid Redirection Test}
+\newacronym[description={},]{DRACO}{DRACO}{Didymos Reconnaissance and Asteroid Camera for Optical navigation}
+\newacronym[description={},]{LICIACube}{LICIACube}{Light Italian CubeSat for Imaging of Asteroids}
+\newacronym[description={},]{LUKE}{LUKE}{Unit Key Explorer}
+\newacronym[description={},]{LEIA}{LEIA}{LICIACube Explorer Imaging for Asteroid}
+
+\newacronym[description={},]{XRD}{XRD}{X-ray diffraction}
+\newacronym[description={},]{ICPMS}{ICP-MS}{inductively coupled plasma mass spectrometry}
+\newacronym[description={},]{LAICPMS}{LA-ICP-MS}{laser ablation--inductively coupled plasma mass spectrometry}
+\newacronym[description={},]{LCMS}{LC-MS}{liquid chromatography mass spectrometry}
+\newacronym[description={},]{INAA}{INAA}{instrumental neutron activation analysis}
+\newacronym[description={},]{EPMA}{EMPA}{electron probe microanalysis}
+\newacronym[description={},]{EMP}{EMP}{electron microprobe}

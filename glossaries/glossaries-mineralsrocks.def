@@ -3,43 +3,46 @@
 
 
 \RequirePackage[version=3]{mhchem}
-\RequirePackage{glossaries}
+\RequirePackage{glossaries-extra}
 \makeglossaries
 
 % Mineral groups
 \newglossaryentry{amphibole}{
 	name=amphibole,
+	category={mineral},
 	description=
 }
 \newglossaryentry{feldspar}{
 	name=feldspar,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{alkali feldspar}{
 	name=alkali feldspar,
 	user1={\ce{KAlSi3O8 - NaAlSi3O8}},
 	parent={feldspar},
+	category={mineral},
 	description=
 }
 \newglossaryentry{garnet}{
 	name=garnet,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{mica}{
 	name=mica,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{plagioclase}{
 	name=plagioclase,
 	user1={\ce{NaAlSi3O8 - CaAl2Si2O8}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{pyroxene}{
 	name=pyroxene,
+	category={mineral},
 	description=
 }
 
@@ -49,355 +52,355 @@
 	name=albite,
 	symbol={Ab},
 	user1={\ce{NaAlSi3O8}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{andesine}{
 	name=andesine,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{anhydrite}{
 	name=anhydrite,
 	user1={\ce{CaSO4}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{anorthite}{
 	name=anorthite,
 	symbol={An},
 	user1={\ce{CaAl2Si2O8}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{apatite}{
 	name=apatite,
 	user1={\ce{Ca5(PO4)3(F \text{,} Cl \text{,} OH)}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{aragonite}{
 	name=aragonite,
 	user1={\ce{CaCO3}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{augite}{
 	name=augite,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{barite}{
 	name=barite,
 	user1={\ce{BaSO4}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{beryl}{
 	name=beryl,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{biotite}{
 	name=biotite,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{bornite}{
 	name=bornite,
 	user1={\ce{Cu5FeS4}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{bytownite}{
 	name=bytownite,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{calcite}{
 	name=calcite,
 	user1={\ce{CaCO3}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{celestine}{
 	name=celestine,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{chalcopyrite}{
 	name=chalcopyrite,
 	user1={\ce{CuFeS2}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{chert}{
 	name=chert,
 	user1={\ce{SiO2}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{chlorite}{
 	name=chlorite,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{cinnabar}{
 	name=cinnabar,
 	user1={\ce{HgS}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{corundum}{
 	name=corundum,
 	user1={\ce{Al2O3}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{diamond}{
 	name=diamond,
 	user1={\ce{C}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{diopside}{
 	name=diopside,
 	symbol={Di},
 	user1={\ce{CaMgSi2O6}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{dolomite}{
 	name=dolomite,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{enargite}{
 	name=enargite,
 	user1={\ce{Cu3AsS4}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{enstatite}{
 	name=enstatite,
 	user1={\ce{MgSiO3}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{epidote}{
 	name=epidote,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{ferrosilite}{
 	name=ferrosilite,
 	user1={\ce{FeSiO3}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{fluorite}{
 	name=fluorite,
 	user1={\ce{CaF2}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{fulgurite}{
 	name=fulgurite,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{galena}{
 	name=galena,
 	user1={\ce{PbS}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{goethite}{
 	name=goethite,
 	user1={\ce{FeO(OH)}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{gypsum}{
 	name=gypsum,
 	user1={\ce{CaSO4 . 2 H2O}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{halite}{
 	name=halite,
 	user1={\ce{NaCl}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{hematite}{
 	name=hematite,
 	user1={\ce{Fe2O3}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{hornblende}{
 	name=hornblende,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{labradorite}{
 	name=labradorite,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{magnetite}{
 	name=magnetite,
 	user1={\ce{Fe3O4}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{malachite}{
 	name=malachite,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{microcline}{
 	name=microcline,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{molybdenite}{
 	name=molybdenite,
 	user1={\ce{MoS2}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{muscovite}{
 	name=muscovite,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{nepheline}{
 	name=nepheline,
 	user1={\ce{(Na \text{,} K)AlSiO4}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{oligoclase}{
 	name=oligoclase,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{olivine}{
 	name=olivine,
 	user1={\ce{(Mg \text{,} Fe)2SiO4}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{forsterite}{
 	name=forsterite,
 	symbol={Fo},
 	user1={\ce{Mg2SiO4}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{fayalite}{
 	name=fayalite,
 	symbol={Fa},
 	user1={\ce{Fe2SiO4}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{opal}{
 	name=opal,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{orpiment}{
 	name=orpiment,
 	user1={\ce{As2S3}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{orthoclase}{
 	name=orthoclase,
 	user1={\ce{KAlSi3O8}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{pyrite}{
 	name=pyrite,
 	user1={\ce{FeS2}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{pyrrhotite}{
 	name=pyrrhotite,
 	user1={\ce{FeS}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{quartz}{
 	name=quartz,
 	user1={\ce{SiO2}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{realgar}{
 	name=realgar,
 	user1={\ce{AsS}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{sanidine}{
 	name=sanidine,
 	user1={\ce{KAlSi3O8}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{serpentine}{
 	name=serpentine,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{sphalerite}{
-		name=sphalerite,
-		user1={\ce{ZnS}},
-		% type={mineral},
-		description=
+	name=sphalerite,
+	user1={\ce{ZnS}},
+	category={mineral},
+	description=
 }
 \newglossaryentry{stibnite}{
 	name=stibnite,
 	user1={\ce{Sb2S3}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{stishovite}{
 	name=stishovite,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{talc}{
 	name=talc,
 	user1={\ce{Mg3SiO10(OH)2}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{topaz}{
 	name=topaz,
 	user1={\ce{Al2SiO4(F \text{,} OH)2}},
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{tourmaline}{
 	name=tourmaline,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{turquoise}{
 	name=turquoise,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 \newglossaryentry{zircon}{
 	name=zircon,
-	% type={mineral},
+	category={mineral},
 	description=
 }
 
@@ -405,61 +408,75 @@
 % Igneous rocks
 \newglossaryentry{spilite}{
 	name=spilite,
+	category={rock},
 	description=
 }
 \newglossaryentry{tuff}{
 	name=tuff,
+	category={rock},
 	description=
 }
 \newglossaryentry{basalt}{
 	name=basalt,
+	category={rock},
 	description=,
-	user1=basaltic
+	user1={basaltic}
 }
 \newglossaryentry{tholeiite}{
 	name=tholeiite,
+	category={rock},
 	description=
 }
 \newglossaryentry{peridotite}{
 	name=peridotite,
+	category={rock},
 	description=
 }
 \newglossaryentry{dunite}{
 	name=dunite,
+	category={rock},
 	description=
 }
 \newglossaryentry{harzburgite}{
 	name=harzburgite,
+	category={rock},
 	description=
 }
 \newglossaryentry{lherzolite}{
 	name=lherzolite,
+	category={rock},
 	description=
 }
 \newglossaryentry{gabbro}{
 	name=gabbro,
+	category={rock},
 	description=,
-	user1=gabbroic
+	user1={gabbroic}
 }
 % Metamorphic rocks
 \newglossaryentry{novaculite}{
 	name=novaculite,
+	category={rock},
 	description=
 }
 \newglossaryentry{tektite}{
 	name=tektite,
+	category={rock},
 	description=
 }
 \newglossaryentry{orthogneiss}{
 	name=orthogneiss,
+	category={rock},
 	description=
 }
 \newglossaryentry{paragneiss}{
 	name=paragneiss,
+	category={rock},
 	description=
 }
 \newglossaryentry{eclogite}{
 	name=eclogite,
+	category={rock},
 	description=
 }
 

@@ -2,7 +2,7 @@
 \ProvidesFile{glossaries-mathematics.def}[2024/02/20]
 
 
-\RequirePackage{glossaries}
+\RequirePackage{glossaries-extra}
 \makeglossaries
 
 \newglossaryentry{domain}{
@@ -402,8 +402,32 @@
 	parent={matrix},
 	description=
 }
+\newglossaryentry{Bessel equation}{
+	name=Bessel equation,
+	description=
+}
+\newglossaryentry{Bessel function}{
+	name=Bessel function,
+	description=
+}
+\newglossaryentry{Helmholtz equation}{
+	name=Helmholtz equation,
+	description=
+}
+\newglossaryentry{Laplace equation}{
+	name=Laplace equation,
+	description=
+}
+\newglossaryentry{Legendre equation}{
+	name=Legendre equation,
+	description=
+}
 \newglossaryentry{Legendre polynomial}{
 	name=Legendre polynomial,
+	description=
+}
+\newglossaryentry{associated Legendre polynomial}{
+	name=associated Legendre polynomial,
 	description=
 }
 \newglossaryentry{Chebyshev polynomial}{
@@ -634,3 +658,6 @@
 \newacronym[description={}, ]{VS}{VS}{vector space}
 \newacronym[description={}, ]{FD}{FD}{finite difference}
 \newacronym[description={}, ]{PDF}{PDF}{probability density function}
+\newacronym[description={}, plural={SH}, \glsshortpluralkey={SH}]{SH}{SH}{spherical harmonic}
+\newacronym[description={}, ]{SVD}{SVD}{singular value decomposition}
+\newacronym[description={}, ]{ED}{ED}{eigenvalue decomposition}

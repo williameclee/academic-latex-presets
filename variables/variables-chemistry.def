@@ -38,3 +38,10 @@
 		{F}{{9.65\cdot10^{4}\C\mol^{-1}}}%
 	}
 }
+
+% \newenvironment{calign}{
+% 	\begin{align}\cee{
+% }{
+% 	}\end{align}
+% }
+% \newenvironment{cequation}{\begin{equation}\cee{}{}\end{equation}}
